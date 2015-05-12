@@ -12,6 +12,12 @@ html {
     line-height: 1.4;
 }
 
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
 ::-moz-selection {
     background: #e1560e;
     color: #fff;
@@ -24,6 +30,10 @@ html {
     text-shadow: none;
 }
 
+/*
+ * A better looking default horizontal rule
+ */
+
 hr {
     display: block;
     height: 1px;
@@ -33,10 +43,10 @@ hr {
     padding: 0;
 }
 
-ol, ul {
-  list-style: none;
-  padding: 0;
-}
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
 
 audio,
 canvas,
@@ -45,15 +55,42 @@ video {
     vertical-align: middle;
 }
 
+/*
+ * Remove default fieldset styles.
+ */
+
 fieldset {
     border: 0;
     margin: 0;
     padding: 0;
 }
 
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
 textarea {
     resize: vertical;
 }
+
+/* ==========================================================================
+   Browse Happy prompt
+   ========================================================================== */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+
+
 
 
 /* ==========================================================================
@@ -136,7 +173,33 @@ h6{
 .main-header{
     position: relative;
 }
-
+.main-header.slider-on{
+    height: 100%;
+}
+.main-header > .container{
+    position: relative;
+}
+.main-header .logo-container{
+    padding-top: 26px;
+    padding-bottom: 32px;
+}
+.main-header .main-header-slider{
+    width:100%;
+    height: 100%;
+    position:relative;
+    padding:0;
+}
+.main-header .main-slider{
+    width:100%;
+    height: 100%;
+    position:relative;
+}
+.main-header .main-slider > ul{
+    opacity: 0;
+}
+.main-header .main-slider.revslider-initialised > ul{
+    opacity: 1;
+}
 .main-header .top-banner-container{
     position: relative;
     background: #23292c;
@@ -146,8 +209,10 @@ h6{
 .js .main-header .top-banner .bottom-image{
     opacity: 0;
 }
-
-.main-header .top-banner-container-style{
+.main-header .top-banner-container-style1{
+    height: 530px;
+}
+.main-header .top-banner-container-style2{
     height: 600px;
 }
 .main-header .top-banner-container .top-banner-bg{
@@ -174,20 +239,23 @@ h6{
     bottom: 0;
     left: 0;
     width: 100%;
-    background: #FF9500;
-  	opacity: 0.8;
+    background: #23292c;
 }
 
 .header-bottom-bar .row{
 	text-align: center;	
 }
 
+.main-header .logo-container + .header-bottom-bar{
+    position: relative;
+    bottom: auto;
+    left: auto;
+}
 .main-header .header-bottom-bar div[class^=col-]{
     height: 100%;
 }
 .main-header .header-bottom-bar .category-filter{
-    padding: 15px 0;
-    margin: 0;
+    padding: 27px 0;
 }
 .main-header .header-bottom-bar .category-filter li{
     font-family: "Palatino Linotype", Palatino, "Book Antiqua", "URW Palladio L", serif;
@@ -201,7 +269,7 @@ h6{
     display: inline-block;
     width: 2px;
     height: 10px;
-    background: white;
+    background: #4e5a61;
     margin-left: 23px;
 }
 .main-header .header-bottom-bar .category-filter li:last-child:after{
@@ -209,7 +277,7 @@ h6{
 }
 .main-header .header-bottom-bar .category-filter li span{
     cursor: pointer;
-    color: white;
+    color: #73848e;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease;
@@ -218,11 +286,6 @@ h6{
 .main-header .header-bottom-bar .category-filter li span:hover{
     color: white;
 }
-
-.main-header .header-bottom-bar .category-filter li.active span{
-	font-weight: 700;
-}
-
 .main-header .header-bottom-bar .search-form{
     color: #73848e;
     position: relative;
@@ -268,6 +331,31 @@ h6{
     -moz-transform: translateY(-50%);
     transform: translateY(-50%);
 }
+.main-header .header-bottom-bar .contact-info{
+    padding-top: 26px;
+    padding-bottom: 28px;
+}
+.main-header .header-bottom-bar .contact-info ul li{
+    font-family: "Palatino Linotype", Palatino, "Book Antiqua", "URW Palladio L", serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    display: inline-block;
+    color: #73848e;
+}
+.main-header .header-bottom-bar .contact-info ul li a{
+    color: #73848e;
+}
+.main-header .header-bottom-bar .contact-info ul li a:hover{
+    color: white;
+}
+.main-header .header-bottom-bar .contact-info ul li:after{
+    content: '|';
+    margin-left: 6px;
+    margin-right: 4px;
+}
+.main-header .header-bottom-bar .contact-info ul li:last-child:after{
+    content: none;
+}
 
 @media (max-width: 991px){
 
@@ -293,6 +381,9 @@ h6{
 }
 
 
+
+
+
 /* ==========================================================================
    STORE
    ========================================================================== */
@@ -308,14 +399,9 @@ h6{
 .food-banner .banner .image-container{
     position: relative;
 }
-
-.food-banner .banner-image{
-	width: 100%;
-	background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top left;
+.food-banner .banner .image-container img{
+    width: 100%;
 }
-
 .food-banner .banner .image-container .banner-title img{
     width: auto;
 }
@@ -452,7 +538,13 @@ h6{
     font-style: italic;
     color: #73848e;
 }
-
+/*.food-banner .banner:hover .banner-features{
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+}*/
 .food-banner .banner.features-right.features-active .image-container .banner-title img{
     -webkit-transform: translateX(-75px);
     -moz-transform: translateX(-75px);
@@ -470,13 +562,6 @@ h6{
     text-align: center;
     margin-bottom: 70px;
 }
-
-.store-item .store-image{
-	background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top left;	
-}
-
 .store-items .mix{
     display: none;
 }

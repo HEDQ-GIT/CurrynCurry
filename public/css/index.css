@@ -105,7 +105,7 @@ h1 {
     height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: top center;
 }
 
 .rslides h1 {
@@ -260,12 +260,15 @@ figure {
     cursor: pointer;
 }
 
-figure img {
+figure div.food-img {
     position: relative;
     display: block;
     min-height: 100%;
     max-width: 100%;
     opacity: 0.8;
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
 }
 
 figure figcaption {
@@ -320,14 +323,14 @@ figure p {
     font-size: 68.5%;
 }
 
-figure.effect-chico img {
+figure.effect-chico div.food-img {
     -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
     transition: opacity 0.35s, transform 0.35s;
     -webkit-transform: scale(1.12);
     transform: scale(1.12);
 }
 
-figure.effect-chico:hover img {
+figure.effect-chico:hover div.food-img {
     opacity: 0.5;
     -webkit-transform: scale(1);
     transform: scale(1);

@@ -26,8 +26,9 @@
 				   speed: 2000
 				});
 
-			    var cw = $('img.food-img').width();
-				$('img.food-img').css('height', 3 * cw / 4);
+			    var cw = $('div.food').width();
+			    $('div.food-img').css('width', cw - 30);
+				$('div.food-img').css('height', 3 * cw / 4);
 
 				new WOW().init();
 
@@ -112,7 +113,7 @@ We needed a new Singapore web developer for our website and didn’t want an in-
         	<div class="row">
         		<div class="food col-lg-4 col-md-4 col-sm-4 wow fadeInDown">
         			<figure class="effect-chico">
-						<img class="food-img" src="/img/food9.jpg" alt="img15">
+						<div class="food-img" style="background-image: url('/img/food1.jpg');" alt="img15"></div>
 						<figcaption>
 							<h2>Curry <span>Fish</span></h2>
 							<p>Chico's main fear was missing the morning bus.</p>
@@ -122,7 +123,7 @@ We needed a new Singapore web developer for our website and didn’t want an in-
 				</div>
 				<div class="food col-lg-4 col-md-4 col-sm-4 wow fadeInDown" data-wow-delay="0.2s">
 					<figure class="effect-chico">
-						<img class="food-img" src="/img/food2.jpg" alt="img15">
+						<div class="food-img" style="background-image: url('/img/food2.jpg');" alt="img15"></div>
 						<figcaption>
 							<h2>Curry <span>Fish</span></h2>
 							<p>Chico's main fear was missing the morning bus.</p>
@@ -132,7 +133,7 @@ We needed a new Singapore web developer for our website and didn’t want an in-
         		</div>
         		<div class="food col-lg-4 col-md-4 col-sm-4 wow fadeInDown" data-wow-delay="0.4s">
 					<figure class="effect-chico">
-						<img class="food-img" src="/img/food3.jpg" alt="img15">
+						<div class="food-img" style="background-image: url('/img/food3.jpg');" alt="img15"></div>
 						<figcaption>
 							<h2>Curry <span>Fish</span></h2>
 							<p>Chico's main fear was missing the morning bus.</p>
@@ -142,7 +143,7 @@ We needed a new Singapore web developer for our website and didn’t want an in-
         		</div>
         		<div class="food col-lg-4 col-md-4 col-sm-4 wow fadeInDown">
 					<figure class="effect-chico">
-						<img class="food-img" src="/img/food4.jpg" alt="img15">
+						<div class="food-img" style="background-image: url('/img/food4.jpg');" alt="img15"></div>
 						<figcaption>
 							<h2>Curry <span>Fish</span></h2>
 							<p>Chico's main fear was missing the morning bus.</p>
@@ -152,7 +153,7 @@ We needed a new Singapore web developer for our website and didn’t want an in-
         		</div>
         		<div class="food col-lg-4 col-md-4 col-sm-4 wow fadeInDown" data-wow-delay="0.2s">
 					<figure class="effect-chico">
-						<img class="food-img" src="/img/food5.jpg" alt="img15">
+						<div class="food-img" style="background-image: url('/img/food5.jpg');" alt="img15"></div>
 						<figcaption>
 							<h2>Curry <span>Fish</span></h2>
 							<p>Chico's main fear was missing the morning bus.</p>
@@ -162,7 +163,7 @@ We needed a new Singapore web developer for our website and didn’t want an in-
         		</div>
         		<div class="food col-lg-4 col-md-4 col-sm-4 wow fadeInDown" data-wow-delay="0.4s">
 					<figure class="effect-chico">
-						<img class="food-img" src="/img/food6.jpg" alt="img15">
+						<div class="food-img" style="background-image: url('/img/food6.jpg');" alt="img15"></div>
 						<figcaption>
 							<h2>Curry <span>Fish</span></h2>
 							<p>Chico's main fear was missing the morning bus.</p>
