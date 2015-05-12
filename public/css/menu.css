@@ -1,0 +1,1196 @@
+@import url(http://fonts.googleapis.com/css?family=Cookie);
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+html {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #e1560e;
+    color: #fff;
+    text-shadow: none;
+}
+
+::selection {
+    background: #e1560e;
+    color: #fff;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browse Happy prompt
+   ========================================================================== */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+
+
+
+
+/* ==========================================================================
+   GENERAL STYLES
+   ========================================================================== */
+html, body{
+    height: 100%;
+}
+html{
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #73848e;
+    min-width: 360px;
+}
+p{
+    line-height: 1.875em;
+}
+a{
+    color: #23323a;
+}
+a, a:hover, a:focus{
+    text-decoration: none;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+img{
+    max-width: 100%;
+}
+section{
+    padding-top: 60px;
+    padding-bottom: 110px;
+    position: relative;
+    z-index: 2;
+    background: white;
+}
+.wrapper{
+    height: 100%;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: "Palatino Linotype", Palatino, "Book Antiqua", "URW Palladio L", serif;
+}
+h1{
+    font-size: 36px;
+}
+h2{
+    font-size: 30px;
+}
+h3{
+    font-size: 24px;
+}
+h4{
+    font-size: 18px;
+}
+h5{
+    font-size: 16px;
+}
+h6{
+    font-size: 14px;
+}
+
+/* ==========================================================================
+   MAIN HEADER
+   ========================================================================== */
+.custom-bg{
+	background-image:url('/img/kitchen.jpg');
+}
+
+.main-header h1{
+	color: white;
+	font-family: 'Cookie';
+	font-size: 6em;
+}
+
+.main-header{
+    position: relative;
+}
+.main-header.slider-on{
+    height: 100%;
+}
+.main-header > .container{
+    position: relative;
+}
+.main-header .logo-container{
+    padding-top: 26px;
+    padding-bottom: 32px;
+}
+.main-header .main-header-slider{
+    width:100%;
+    height: 100%;
+    position:relative;
+    padding:0;
+}
+.main-header .main-slider{
+    width:100%;
+    height: 100%;
+    position:relative;
+}
+.main-header .main-slider > ul{
+    opacity: 0;
+}
+.main-header .main-slider.revslider-initialised > ul{
+    opacity: 1;
+}
+.main-header .top-banner-container{
+    position: relative;
+    background: #23292c;
+    overflow: hidden;
+}
+.js .main-header .top-banner .top-image,
+.js .main-header .top-banner .bottom-image{
+    opacity: 0;
+}
+.main-header .top-banner-container-style1{
+    height: 530px;
+}
+.main-header .top-banner-container-style2{
+    height: 600px;
+}
+.main-header .top-banner-container .top-banner-bg{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    -webkit-transform-origin: center bottom;
+    -moz-transform-origin: center bottom;
+    transform-origin: center bottom;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+.main-header .top-banner-container .top-banner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    text-align: center;
+    -webkit-transform: translateX(-50%) translateY(-50%) translateZ(0);
+    -moz-transform: translateX(-50%) translateY(-50%) translateZ(0);
+    transform: translateX(-50%) translateY(-50%) translateZ(0);
+}
+.main-header .header-bottom-bar{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #23292c;
+}
+
+.header-bottom-bar .row{
+	text-align: center;	
+}
+
+.main-header .logo-container + .header-bottom-bar{
+    position: relative;
+    bottom: auto;
+    left: auto;
+}
+.main-header .header-bottom-bar div[class^=col-]{
+    height: 100%;
+}
+.main-header .header-bottom-bar .category-filter{
+    padding: 27px 0;
+}
+.main-header .header-bottom-bar .category-filter li{
+    font-family: "Palatino Linotype", Palatino, "Book Antiqua", "URW Palladio L", serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-right: 18px;
+}
+.main-header .header-bottom-bar .category-filter li:after{
+    content: '';
+    display: inline-block;
+    width: 2px;
+    height: 10px;
+    background: #4e5a61;
+    margin-left: 23px;
+}
+.main-header .header-bottom-bar .category-filter li:last-child:after{
+    content: none;
+}
+.main-header .header-bottom-bar .category-filter li span{
+    cursor: pointer;
+    color: #73848e;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.main-header .header-bottom-bar .category-filter li.active span,
+.main-header .header-bottom-bar .category-filter li span:hover{
+    color: white;
+}
+.main-header .header-bottom-bar .search-form{
+    color: #73848e;
+    position: relative;
+}
+.main-header .header-bottom-bar .search-form ::-webkit-input-placeholder{
+   color: #73848e;
+}
+.main-header .header-bottom-bar .search-form :-moz-placeholder{
+   color: #73848e;
+}
+.main-header .header-bottom-bar .search-form :-ms-input-placeholder{
+   color: #73848e;
+}
+.main-header .header-bottom-bar .search-form ::-moz-placeholder{
+   color: #73848e;
+}
+.main-header .header-bottom-bar .search-form input{
+    width: 100%;
+    color: #73848e;
+    background: #1b2022;
+    border: none;
+    padding-right: 50px;
+    padding-left: 20px;
+    height: 70px;
+    margin: 0;
+}
+.main-header .header-bottom-bar .search-form input:focus{
+    outline: none;
+}
+.main-header .header-bottom-bar .search-form button{
+    display: inline-block;
+    height: 100%;
+    width: 60px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    color: #73848e;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.main-header .header-bottom-bar .contact-info{
+    padding-top: 26px;
+    padding-bottom: 28px;
+}
+.main-header .header-bottom-bar .contact-info ul li{
+    font-family: "Palatino Linotype", Palatino, "Book Antiqua", "URW Palladio L", serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    display: inline-block;
+    color: #73848e;
+}
+.main-header .header-bottom-bar .contact-info ul li a{
+    color: #73848e;
+}
+.main-header .header-bottom-bar .contact-info ul li a:hover{
+    color: white;
+}
+.main-header .header-bottom-bar .contact-info ul li:after{
+    content: '|';
+    margin-left: 6px;
+    margin-right: 4px;
+}
+.main-header .header-bottom-bar .contact-info ul li:last-child:after{
+    content: none;
+}
+
+@media (max-width: 991px){
+
+    .main-header .header-bottom-bar .category-filter{
+        margin-bottom: 30px;
+    }
+    .main-header .top-banner-container .top-banner-bg{
+          -webkit-transform: scale(1) translateZ(0px) !important;
+          transform: scale(1) translateZ(0px) !important;
+          opacity: 1 !important;
+    }
+    .main-header .header-bottom-bar .contact-info ul li{
+        display: block;
+        text-align: left;
+        margin-bottom: 1em;
+    }
+    .main-header .header-bottom-bar .contact-info ul li:after{
+        content: none;
+    }
+    .main-header .header-bottom-bar .contact-info ul li:last-child{
+        margin-bottom: 0;
+    }
+}
+
+
+
+
+
+/* ==========================================================================
+   STORE
+   ========================================================================== */
+.food-banner{
+    background: #eae5d6;
+    padding-top: 40px;
+    padding-bottom: 50px;
+    overflow: hidden;
+}
+.food-banner .banner{
+    position: relative;
+}
+.food-banner .banner .image-container{
+    position: relative;
+}
+.food-banner .banner .image-container img{
+    width: 100%;
+}
+.food-banner .banner .image-container .banner-title img{
+    width: auto;
+}
+.food-banner .banner .banner-title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+.food-banner .banner .banner-title img{
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.food-banner .banner .banner-features{
+    background: white;
+    position: absolute;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    z-index: 100;
+    text-align: center;
+    padding: 8px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.food-banner .banner .banner-features:before{
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 42px;
+    z-index: 999;
+    border-top: 13px solid transparent;
+    border-right: 14px solid transparent;
+    border-bottom: 13px solid transparent;
+    border-left: 14px solid transparent;
+}
+.food-banner .banner.features-right{
+    margin-right: -30px;
+}
+.food-banner .banner.features-right .banner-features{
+    right: -135px;
+    /*-webkit-transform: translateX(10%);
+    -moz-transform: translateX(10%);
+    transform: translateX(10%);*/
+}
+.food-banner .banner.features-right .banner-features:before{
+    left: -28px;
+    border-right-color: white;
+}
+.food-banner .banner.features-left{
+    margin-left: -30px;
+    z-index: -1;
+}
+.food-banner .banner.features-left .banner-features{
+    left: -135px;
+    -webkit-transform: translateX(-10%);
+    -moz-transform: translateX(-10%);
+    transform: translateX(-10%);
+}
+.food-banner .banner.features-left .banner-features:before{
+    right: -28px;
+    border-left-color: white;
+}
+.food-banner .banner .banner-features .banner-features-inner{
+    display: inline-block;
+    min-height: 100%;
+    width: 100%;
+    padding: 15px 23px 0;
+    background-image: url(/img/slider-images/coffee-cup.png);
+    background-color: #f7f5ef;
+    background-repeat: no-repeat;
+    border: 1px solid #e7e5df;
+}
+.food-banner .banner.features-left .banner-features .banner-features-inner{
+    background-position: left bottom;
+}
+.food-banner .banner.features-right .banner-features .banner-features-inner{
+    background-position: right bottom;
+}
+.food-banner .banner .banner-features .food-price{
+    color: #e1560e;
+    margin-bottom: 22px;
+}
+.food-banner .banner .banner-features .food-price p{
+    font-family: "Palatino Linotype", Palatino, "Book Antiqua", "URW Palladio L", serif;
+    font-size: 60px;
+    line-height: 1em;
+    padding-bottom: 2px;
+    position: relative;
+}
+.food-banner .banner .banner-features .food-price p sup{
+    font-size: 35px;
+    position: relative;
+    top: -0.56em;
+}
+.food-banner .banner .banner-features .food-price p:after,
+.food-banner .banner .banner-features .food-price p:before{
+    content: '';
+    display: inline-block;
+    width: 100px;
+    height: 1px;
+    background: #dddede;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+.food-banner .banner .banner-features .food-price p:after{
+    bottom: -3px;
+}
+.food-banner .banner .banner-features ul li{
+    margin-bottom: 19px;
+}
+.food-banner .banner .banner-features ul li h6{
+    text-transform: uppercase;
+    color: #23292c;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+.food-banner .banner .banner-features ul li p{
+    font-size: 12px;
+    line-height: 1.5em;
+    font-style: italic;
+    color: #73848e;
+}
+/*.food-banner .banner:hover .banner-features{
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+}*/
+.food-banner .banner.features-right.features-active .image-container .banner-title img{
+    -webkit-transform: translateX(-75px);
+    -moz-transform: translateX(-75px);
+    transform: translateX(-75px);
+}
+.food-banner .banner.features-left.features-active .image-container .banner-title img{
+    -webkit-transform: translateX(75px);
+    -moz-transform: translateX(75px);
+    transform: translateX(75px);
+}
+.store-items{
+    padding-bottom: 80px;
+}
+.store-item{
+    text-align: center;
+    margin-bottom: 70px;
+}
+.store-items .mix{
+    display: none;
+}
+.store-items .load-more{
+    margin-top: 10px;
+}
+.store-item{
+    text-align: center;
+}
+.store-item figure{
+    margin-bottom: 16px;
+}
+.store-item .food-name{
+    margin-bottom: 12px;
+}
+.store-item .food-name a{
+    color: #283233;
+}
+.store-item .food-name a:hover{
+    color: #e1560e;
+}
+.store-item .food-category{
+    padding-bottom: 18px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #d9dcdd;
+}
+.store-item .food-category li{
+    font-size: 12px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+.store-item .food-category li:after{
+    content: ',';
+}
+.store-item .food-category li:last-child:after{
+    content: none;
+}
+.store-item .food-order{
+    position: relative;
+    text-align: center;
+}
+.store-item .food-order .food-price,
+.store-item .food-order .add-to-cart-link{
+    font-family: "Palatino Linotype", Palatino, "Book Antiqua", "URW Palladio L", serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #e1560e;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.store-item .food-order .add-to-cart-link{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    display: block;
+    width: 100%;
+    visibility: hidden;
+    -webkit-transform: translateX(-50%) translateY(-70%);
+    -moz-transform: translateX(-50%) translateY(-70%);
+    transform: translateX(-50%) translateY(-70%);
+}
+.store-item:hover .food-order .add-to-cart-link{
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+.store-item:hover .food-order .food-price{
+    -webkit-transform: translateY(30%);
+    -moz-transform: translateY(30%);
+    transform: translateY(30%);
+    opacity: 0;
+    visibility: hidden;
+}
+.store-items-details{
+    padding-bottom: 50px;
+}
+.store-items-details .store-item-detail{
+    text-align: left;
+}
+.store-items-details .store-item-detail .item-slideshow .thumbnails,
+.store-items-details .store-item-detail .item-slideshow .main-image{
+    cursor: -webkit-grab;
+    cursor: grab;
+}
+.store-items-details .store-item-detail .item-slideshow .thumbnails figure{
+    cursor: pointer;
+}
+.store-items-details .store-item-detail .breadcrumb{
+    margin-bottom: 20px;
+}
+.store-items-details .store-item-detail .breadcrumb li{
+    display: inline-block;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-right: 3px;
+}
+.store-items-details .store-item-detail .breadcrumb li:after{
+    content: '|';
+    margin-left: 4px;
+}
+.store-items-details .store-item-detail .breadcrumb li:last-child:after{
+    content: none;
+}
+.store-items-details .store-item-detail .breadcrumb li a{
+    color: #73848e;
+}
+.store-items-details .store-item-detail .breadcrumb li a:hover{
+    color: #283233;
+}
+.store-items-details .store-item-detail .food-info{
+    border-bottom: 1px solid #d9dcdd;
+    padding-bottom: 27px;
+    margin-bottom: 34px;
+}
+.store-items-details .store-item-detail .food-info .food-name{
+    font-size: 48px;
+    color: #283233;
+    margin-bottom: 17px;
+}
+.store-items-details .store-item-detail .food-info .food-name a{
+    color: #283233;
+}
+.store-items-details .store-item-detail .food-info .food-price{
+    font-family: "Palatino Linotype", Palatino, "Book Antiqua", "URW Palladio L", serif;
+    font-size: 30px;
+    color: #e1560e;
+    margin-bottom: 15px;
+}
+.store-items-details .store-item-detail .food-ingredients{
+    margin-bottom: 24px;
+}
+.store-items-details .store-item-detail .food-ingredients h3{
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #283233;
+    margin-bottom: 22px;
+}
+.store-items-details .store-item-detail .food-ingredients ul li{
+    margin-bottom: 14px;
+}
+.store-items-details .store-item-detail .food-ingredients ul li:before{
+    content: '-';
+    margin-right: 9px;
+}
+.store-items-details .store-item-detail .food-order-form{
+    margin-bottom: 40px;
+}
+.store-items-details .store-item-detail .food-order-form #order-count{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #19242a;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    outline: none !important;
+    margin-right: 6px;
+    margin-bottom: 0;
+    padding: 0;
+}
+.store-items-details .store-item-detail .food-order-form input[type=submit]{
+    display: inline-block;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: #15333b;
+    color: white;
+    border: none;
+    padding-bottom: 0;
+    padding-top: 0;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-top: 0;
+    margin-bottom: 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid transparent;
+}
+.store-items-details .store-item-detail .food-order-form input[type=submit]:hover{
+    background: transparent;
+    border-color: #15333b;
+    color: #15333b;
+
+}
+.store-items-details .store-item-detail .food-tags-category{
+    font-family: "Palatino Linotype", Palatino, "Book Antiqua", "URW Palladio L", serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-top: 1px solid #d9dcdd;
+    border-bottom: 1px solid #d9dcdd;
+    padding-top: 29px;
+    padding-bottom: 28px;
+    margin-bottom: 33px;
+}
+.store-items-details .store-item-detail .food-tags-category h6{
+    font-size: 12px;
+    color: #23323a;
+    display: inline-block;
+}
+.store-items-details .store-item-detail .food-tags-category ul li,
+.store-items-details .store-item-detail .food-tags-category ul li a{
+    color: #73848e;
+}
+.store-items-details .store-item-detail .food-tags-category ul,
+.store-items-details .store-item-detail .food-tags-category ul li{
+    display: inline-block;
+}
+.store-items-details .store-item-detail .food-tags-category ul li:after{
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    background: #73848e;
+    margin-right: 2px;
+    -webkit-border-radius: 50em;
+    -moz-border-radius: 50em;
+    border-radius: 50em;
+    margin-left: 5px;
+}
+.store-items-details .store-item-detail .food-tags-category ul li:last-child:after{
+    content: none;
+}
+.store-items-details .store-item-detail .food-tags-category .food-category{
+    border: none;
+    margin-bottom: 0;
+}
+.store-items-details .store-item-detail .food-review-container .review-toggle{
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #283233;
+    margin-bottom: 37px;
+}
+.store-items-details .store-item-detail .food-review-container .review-toggle span{
+    color: #e1560e;
+}
+.store-items-details .store-item-detail .food-review-list .review{
+    position: relative;
+    border-bottom: 1px solid #d9dcdd;
+    padding-bottom: 34px;
+    margin-bottom: 32px;
+}
+.store-items-details .store-item-detail .food-review-list .review .review-body{
+    position: relative;
+    z-index: 1;
+}
+.store-items-details .store-item-detail .food-review-list .review .review-author-avatar{
+    float: left;
+    margin-right: 27px;
+    position: relative;
+}
+.store-items-details .store-item-detail .food-review-list .review .review-contents{
+    overflow: hidden;
+}
+.store-items-details .store-item-detail .food-review-list .review .review-header{
+    margin-bottom: 15px;
+}
+.store-items-details .store-item-detail .food-review-list .review .review-header .review-rating{
+    margin-bottom: 16px;
+}
+.store-items-details .store-item-detail .food-review-list .review .review-header .review-rating li{
+    display: inline-block;
+    margin-right: 2px;
+    color: #e1560e;
+    font-size: 0.95em;
+}
+.store-items-details .store-item-detail .food-review-list .review .review-header .review-author{
+    color: #283233;
+    margin-bottom: 5px;
+}
+.store-items-details .store-item-detail .food-review-list .review .review-header .review-author a{
+    color: #e36630;
+}
+.store-items-details .store-item-detail .food-review-list .review .review-header time{
+    font-size: 13px;
+    font-style: italic;
+    color: #73848e;
+}
+.store-items-details .store-item-detail .food-review-list .review .review-text p{
+    line-height: 1.5em;
+}
+.store-items-details .store-item-detail .review-form h3{
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #283233;
+    margin-bottom: 18px;
+}
+.store-items-details .store-item-detail .review-form input[type=submit]{
+    padding: 13px 45px;
+    margin-top: 18px;
+}
+.store-items-details .related-items-container{
+    padding-top: 45px;
+    border-top: 1px solid #d9dcdd;
+}
+.related-items-container .section-title{
+    margin-bottom: 47px;
+}
+
+@media (min-width: 1199px){
+
+    .nicescroll-rails{
+        display: none !important;
+    }
+}
+@media (max-width: 1199px){
+
+    .food-banner .banner{
+        margin-bottom: 1em;
+    }
+    .food-banner .banner .banner-features{
+        width: 100%;
+    }
+    .food-banner .banner .banner-features:before{
+        content: none;
+    }
+    .food-banner .banner.features-right{
+        margin-right: 0;
+    }
+    .food-banner .banner.features-right .banner-features{
+        right: 0;
+        -webkit-transform: translateX(5%);
+        -moz-transform: translateX(5%);
+        transform: translateX(5%);
+    }
+    .food-banner .banner.features-left{
+        margin-left: 0;
+    }
+    .food-banner .banner.features-left .banner-features{
+        left: 0;
+        -webkit-transform: translateX(-5%);
+        -moz-transform: translateX(-5%);
+        transform: translateX(-5%);
+    }
+    .food-banner .banner:hover .banner-features{
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        transform: translateX(0);
+    }
+    .food-banner .banner.features-right:hover .image-container .banner-title img{
+        -webkit-transform: translateX(-30px);
+        -moz-transform: translateX(-30px);
+        transform: translateX(-30px);
+        opacity: 0;
+        visibility: hidden;
+    }
+    .food-banner .banner.features-left:hover .image-container .banner-title img{
+        -webkit-transform: translateX(30px);
+        -moz-transform: translateX(30px);
+        transform: translateX(30px);
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+@media (max-width: 991px){
+
+    .food-banner .banner .banner-features{
+        position: relative;
+        top: auto;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        opacity: 1;
+        visibility: visible;
+        width: 100%;
+    }
+    .food-banner .banner .banner-features:before{
+        content: none;
+    }
+    .food-banner .banner.features-right .banner-features{
+        right: 0;
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        transform: translateX(0);
+    }
+    .food-banner .banner.features-right .banner-features:before{
+        left: 0;
+    }
+    .food-banner .banner.features-left .banner-features{
+        left: 0;
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        transform: translateX(0);
+    }
+    .food-banner .banner.features-left .banner-features:before{
+        right: 0;
+    }
+    .food-banner .banner .banner-features .banner-features-inner{
+        width: 100%;
+    }
+    .food-banner .banner:hover .banner-features{
+        opacity: 1;
+        visibility: visible;
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        transform: translateX(0);
+    }
+    .food-banner .banner.features-right:hover .image-container .banner-title img{
+        opacity: 1;
+        visibility: visible;
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        transform: translateX(0);
+    }
+    .food-banner .banner.features-left:hover .image-container .banner-title img{
+        opacity: 1;
+        visibility: visible;
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        transform: translateX(0);
+    }
+    .store-item .food-order .food-price{
+        margin-bottom: 0.5em;
+    }
+    .store-item .food-order .add-to-cart-link{
+        position: relative;
+        top: auto;
+        left: auto;
+        opacity: 1;
+        visibility: visible;
+        -webkit-transform: translateX(0) translateY(0);
+        -moz-transform: translateX(0) translateY(0);
+        transform: translateX(0) translateY(0);
+    }
+    .store-item:hover .food-order .add-to-cart-link{
+        -webkit-transform: translateX(0) translateY(0);
+        -moz-transform: translateX(0) translateY(0);
+        transform: translateX(0) translateY(0);
+    }
+    .store-item:hover .food-order .food-price{
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

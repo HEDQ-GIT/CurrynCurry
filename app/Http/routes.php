@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+//Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
@@ -19,3 +19,11 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+//DQ route start
+get('/', 'WelcomeController@index');
+get('menu', 'WelcomeController@menu');
+get('order', 'WelcomeController@order');
+get('contact', 'WelcomeController@contact');
+
+//DQ route end
