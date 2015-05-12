@@ -2,6 +2,8 @@
 <link rel="stylesheet" href="/css/wheelmenu.css">
 
 <style>
+    @import url(http://fonts.googleapis.com/css?family=Cookie);
+
     #toggle-menu {
         position: absolute;
         top: 1%;
