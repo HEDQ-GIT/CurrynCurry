@@ -85,17 +85,51 @@
     </div><!-- /container -->
 </section>
 
+
+{{--cart start--}}
+<div class="shopping-cart wow bounceInRight" data-wow-delay="5s" data-wow-duration="2s">
+    <div class="cart-container clearfix">
+        <i id="end"></i>
+        <a href="#" class="cart-link"><span>2</span></a>
+        <div class="cart-items">
+            <div class="cart-counter">
+                <h5><span><span>2</span> Items</span> In Cart</h5>
+            </div><!-- /cart-counter -->
+            <a href="" class="remove-items"><i class="fa fa-times-circle"></i></a>
+            <ul>
+                <li>
+                    <div class="item-container clearfix">
+                    <figure><img src="img/gallery/gallery20.jpg" alt="Marine Food Items"></figure>
+                    <p class="food-name"><a href="#">Black Pasta with Meat</a></p>
+                    <p class="food-price">$27</p>
+                    </div><!-- /item-contaeinr -->
+                </li>
+                <li>
+                    <div class="item-container clearfix">
+                        <figure><img src="img/gallery/gallery20.jpg" alt="Marine Food Items"></figure>
+                        <p class="food-name"><a href="#">Black Pasta with Meat</a></p>
+                        <p class="food-price">$27</p>
+                    </div><!-- /item-contaeinr -->
+                </li>
+            </ul>
+            <a href="store-checkout.html" class="button checkout-btn">Checkout</a>
+        </div><!-- /cart-items -->
+    </div><!-- /cart-container -->
+</div>
+{{--cart end--}}
+
 <section class="store-items" id="MixItUp09871A">
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
                 <div class="store-item wow fadeInDown" style="visibility: hidden; -webkit-animation-name: none;">
                     <figure>
-                        <a href="http://gourmet.arenaofthemes.com/store-item.html">
+                        <a href="">
+                            {{--<img src="/img/food3.jpg" alt=""/>--}}
                             <div class="store-image" style="background-image:url('/img/food3.jpg');"></div>
                         </a>
                     </figure>
-                    <h3 class="food-name"><a href="http://gourmet.arenaofthemes.com/store-item.html">Spicy Baked Eggs</a></h3>
+                    <h3 class="food-name"><a href="">Spicy Baked Eggs</a></h3>
                     <ul class="food-category">
                         <li>Local</li>
                         <li>Greens</li>
@@ -103,7 +137,7 @@
                     </ul>
                     <div class="food-order">
                         <p class="food-price">$19.99</p>
-                        <a href="http://gourmet.arenaofthemes.com/store.html#" class="add-to-cart-link">Add To Cart</a>
+                        <a href="javascript:void(0);" class="add-to-cart-link">Add To Cart</a>
                     </div><!-- /food-order -->
                 </div><!-- /store-item -->
             </div><!-- /col-md-4 -->
@@ -111,11 +145,11 @@
             <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
                 <div class="store-item wow fadeInDown" data-wow-delay="0.2s" style="visibility: hidden; -webkit-animation-delay: 0.2s; -webkit-animation-name: none;">
                     <figure>
-                        <a href="http://gourmet.arenaofthemes.com/store-item.html">
+                        <a href="">
                             <div class="store-image" style="background-image:url('/img/food4.jpg');"></div>
                         </a>
                     </figure>
-                    <h3 class="food-name"><a href="http://gourmet.arenaofthemes.com/store-item.html">Grilled Meat with Fruits</a></h3>
+                    <h3 class="food-name"><a href="">Grilled Meat with Fruits</a></h3>
                     <ul class="food-category">
                         <li>Local</li>
                         <li>Fruits</li>
@@ -123,7 +157,7 @@
                     </ul>
                     <div class="food-order">
                         <p class="food-price">$34.95</p>
-                        <a href="http://gourmet.arenaofthemes.com/store.html#" class="add-to-cart-link">Add To Cart</a>
+                        <a href="" class="add-to-cart-link">Add To Cart</a>
                     </div><!-- /food-order -->
                 </div><!-- /store-item -->
             </div><!-- /col-md-4 -->
@@ -131,11 +165,11 @@
             <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
                 <div class="store-item wow fadeInDown" data-wow-delay="0.4s" style="visibility: hidden; -webkit-animation-delay: 0.4s; -webkit-animation-name: none;">
                     <figure>
-                        <a href="http://gourmet.arenaofthemes.com/store-item.html">
+                        <a href="">
                             <div class="store-image" style="background-image:url('/img/food5.jpg');"></div>
                         </a>
                     </figure>
-                    <h3 class="food-name"><a href="http://gourmet.arenaofthemes.com/store-item.html">Black Pasta with Meat</a></h3>
+                    <h3 class="food-name"><a href="">Black Pasta with Meat</a></h3>
                     <ul class="food-category">
                         <li>Italian</li>
                         <li>Pasta</li>
@@ -143,7 +177,7 @@
                     </ul>
                     <div class="food-order">
                         <p class="food-price">$27.99</p>
-                        <a href="http://gourmet.arenaofthemes.com/store.html#" class="add-to-cart-link">Add To Cart</a>
+                        <a href="" class="add-to-cart-link">Add To Cart</a>
                     </div><!-- /food-order -->
                 </div><!-- /store-item -->
             </div><!-- /col-md-4 -->
@@ -151,11 +185,11 @@
             <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
                 <div class="store-item wow fadeInDown" style="visibility: hidden; -webkit-animation-name: none;">
                     <figure>
-                        <a href="http://gourmet.arenaofthemes.com/store-item.html">
+                        <a href="">
                             <div class="store-image" style="background-image:url('/img/food5.jpg');"></div>
                         </a>
                     </figure>
-                    <h3 class="food-name"><a href="http://gourmet.arenaofthemes.com/store-item.html">Chips with Sour Cream </a></h3>
+                    <h3 class="food-name"><a href="">Chips with Sour Cream </a></h3>
                     <ul class="food-category">
                         <li>Local</li>
                         <li>Greens</li>
@@ -163,7 +197,7 @@
                     </ul>
                     <div class="food-order">
                         <p class="food-price">$13.99</p>
-                        <a href="http://gourmet.arenaofthemes.com/store.html#" class="add-to-cart-link">Add To Cart</a>
+                        <a href="" class="add-to-cart-link">Add To Cart</a>
                     </div><!-- /food-order -->
                 </div><!-- /store-item -->
             </div><!-- /col-md-4 -->
@@ -171,11 +205,11 @@
             <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
                 <div class="store-item wow fadeInDown" data-wow-delay="0.2s" style="visibility: hidden; -webkit-animation-delay: 0.2s; -webkit-animation-name: none;">
                     <figure>
-                        <a href="http://gourmet.arenaofthemes.com/store-item.html">
+                        <a href="">
                             <div class="store-image" style="background-image:url('/img/food6.jpg');"></div>
                         </a>
                     </figure>
-                    <h3 class="food-name"><a href="http://gourmet.arenaofthemes.com/store-item.html">Taco with Meat &amp; Avocado</a></h3>
+                    <h3 class="food-name"><a href="">Taco with Meat &amp; Avocado</a></h3>
                     <ul class="food-category">
                         <li>mexican</li>
                         <li>fruits</li>
@@ -184,18 +218,18 @@
                     </ul>
                     <div class="food-order">
                         <p class="food-price">$11.89</p>
-                        <a href="http://gourmet.arenaofthemes.com/store.html#" class="add-to-cart-link">Add To Cart</a>
+                        <a href="" class="add-to-cart-link">Add To Cart</a>
                     </div><!-- /food-order -->
                 </div><!-- /store-item -->
             </div><!-- /col-md-4 -->
             <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
                 <div class="store-item wow fadeInDown" data-wow-delay="0.4s" style="visibility: hidden; -webkit-animation-delay: 0.4s; -webkit-animation-name: none;">
                     <figure>
-                        <a href="http://gourmet.arenaofthemes.com/store-item.html">
+                        <a href="">
                             <div class="store-image" style="background-image:url('/img/food7.jpg');"></div>
                         </a>
                     </figure>
-                    <h3 class="food-name"><a href="http://gourmet.arenaofthemes.com/store-item.html">Spring Fruit Salad</a></h3>
+                    <h3 class="food-name"><a href="">Spring Fruit Salad</a></h3>
                     <ul class="food-category">
                         <li>Spanish</li>
                         <li>Fruits</li>
@@ -203,7 +237,7 @@
                     </ul>
                     <div class="food-order">
                         <p class="food-price">$24.95</p>
-                        <a href="http://gourmet.arenaofthemes.com/store.html#" class="add-to-cart-link">Add To Cart</a>
+                        <a href="" class="add-to-cart-link">Add To Cart</a>
                     </div>
                 </div>
             </div>
@@ -211,11 +245,11 @@
             <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
                 <div class="store-item wow fadeInDown" style="visibility: hidden; -webkit-animation-name: none;">
                     <figure>
-                        <a href="http://gourmet.arenaofthemes.com/store-item.html">
+                        <a href="">
                             <div class="store-image" style="background-image:url('/img/food8.jpg');"></div>
                         </a>
                     </figure>
-                    <h3 class="food-name"><a href="http://gourmet.arenaofthemes.com/store-item.html">Spicy Baked Eggs</a></h3>
+                    <h3 class="food-name"><a href="">Spicy Baked Eggs</a></h3>
                     <ul class="food-category">
                         <li>Local</li>
                         <li>Greens</li>
@@ -223,7 +257,7 @@
                     </ul>
                     <div class="food-order">
                         <p class="food-price">$19.99</p>
-                        <a href="http://gourmet.arenaofthemes.com/store.html#" class="add-to-cart-link">Add To Cart</a>
+                        <a href="" class="add-to-cart-link">Add To Cart</a>
                     </div><!-- /food-order -->
                 </div><!-- /store-item -->
             </div><!-- /col-md-4 -->
@@ -231,11 +265,11 @@
             <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
                 <div class="store-item wow fadeInDown" data-wow-delay="0.2s" style="visibility: hidden; -webkit-animation-delay: 0.2s; -webkit-animation-name: none;">
                     <figure>
-                        <a href="http://gourmet.arenaofthemes.com/store-item.html">
+                        <a href="">
                             <div class="store-image" style="background-image:url('/img/food9.jpg');"></div>
                         </a>
                     </figure>
-                    <h3 class="food-name"><a href="http://gourmet.arenaofthemes.com/store-item.html">Grilled Meat with Fruits</a></h3>
+                    <h3 class="food-name"><a href="">Grilled Meat with Fruits</a></h3>
                     <ul class="food-category">
                         <li>Local</li>
                         <li>Fruits</li>
@@ -243,7 +277,7 @@
                     </ul>
                     <div class="food-order">
                         <p class="food-price">$34.95</p>
-                        <a href="http://gourmet.arenaofthemes.com/store.html#" class="add-to-cart-link">Add To Cart</a>
+                        <a href="" class="add-to-cart-link">Add To Cart</a>
                     </div><!-- /food-order -->
                 </div><!-- /store-item -->
             </div><!-- /col-md-4 -->
@@ -251,11 +285,11 @@
             <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
                 <div class="store-item wow fadeInDown" data-wow-delay="0.4s" style="visibility: hidden; -webkit-animation-delay: 0.4s; -webkit-animation-name: none;">
                     <figure>
-                        <a href="http://gourmet.arenaofthemes.com/store-item.html">
+                        <a href="">
                             <div class="store-image" style="background-image:url('/img/food10.jpg');"></div>
                         </a>
                     </figure>
-                    <h3 class="food-name"><a href="http://gourmet.arenaofthemes.com/store-item.html">Black Pasta with Meat</a></h3>
+                    <h3 class="food-name"><a href="">Black Pasta with Meat</a></h3>
                     <ul class="food-category">
                         <li>Italian</li>
                         <li>Pasta</li>
@@ -263,7 +297,7 @@
                     </ul>
                     <div class="food-order">
                         <p class="food-price">$27.99</p>
-                        <a href="http://gourmet.arenaofthemes.com/store.html#" class="add-to-cart-link">Add To Cart</a>
+                        <a href="" class="add-to-cart-link">Add To Cart</a>
                     </div><!-- /food-order -->
                 </div><!-- /store-item -->
             </div><!-- /col-md-4 -->
@@ -271,11 +305,11 @@
             <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
                 <div class="store-item wow fadeInDown" style="visibility: hidden; -webkit-animation-name: none;">
                     <figure>
-                        <a href="http://gourmet.arenaofthemes.com/store-item.html">
+                        <a href="">
                             <div class="store-image" style="background-image:url('/img/food11.jpg');"></div>
                         </a>
                     </figure>
-                    <h3 class="food-name"><a href="http://gourmet.arenaofthemes.com/store-item.html">Spicy Baked Eggs</a></h3>
+                    <h3 class="food-name"><a href="">Spicy Baked Eggs</a></h3>
                     <ul class="food-category">
                         <li>Local</li>
                         <li>Greens</li>
@@ -283,7 +317,7 @@
                     </ul>
                     <div class="food-order">
                         <p class="food-price">$19.99</p>
-                        <a href="http://gourmet.arenaofthemes.com/store.html#" class="add-to-cart-link">Add To Cart</a>
+                        <a href="" class="add-to-cart-link">Add To Cart</a>
                     </div><!-- /food-order -->
                 </div><!-- /store-item -->
             </div><!-- /col-md-4 -->
@@ -291,11 +325,11 @@
             <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
                 <div class="store-item wow fadeInDown" data-wow-delay="0.2s" style="visibility: hidden; -webkit-animation-delay: 0.2s; -webkit-animation-name: none;">
                     <figure>
-                        <a href="http://gourmet.arenaofthemes.com/store-item.html">
+                        <a href="">
                             <div class="store-image" style="background-image:url('/img/food12.jpg');"></div>
                         </a>
                     </figure>
-                    <h3 class="food-name"><a href="http://gourmet.arenaofthemes.com/store-item.html">Grilled Meat with Fruits</a></h3>
+                    <h3 class="food-name"><a href="">Grilled Meat with Fruits</a></h3>
                     <ul class="food-category">
                         <li>Local</li>
                         <li>Fruits</li>
@@ -303,7 +337,7 @@
                     </ul>
                     <div class="food-order">
                         <p class="food-price">$34.95</p>
-                        <a href="http://gourmet.arenaofthemes.com/store.html#" class="add-to-cart-link">Add To Cart</a>
+                        <a href="" class="add-to-cart-link">Add To Cart</a>
                     </div><!-- /food-order -->
                 </div><!-- /store-item -->
             </div><!-- /col-md-4 -->
@@ -311,11 +345,11 @@
             <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
                 <div class="store-item wow fadeInDown" data-wow-delay="0.4s" style="visibility: hidden; -webkit-animation-delay: 0.4s; -webkit-animation-name: none;">
                     <figure>
-                        <a href="http://gourmet.arenaofthemes.com/store-item.html">
+                        <a href="">
                             <div class="store-image" style="background-image:url('/img/food13.jpg');"></div>
                         </a>
                     </figure>
-                    <h3 class="food-name"><a href="http://gourmet.arenaofthemes.com/store-item.html">Black Pasta with Meat</a></h3>
+                    <h3 class="food-name"><a href="">Black Pasta with Meat</a></h3>
                     <ul class="food-category">
                         <li>Italian</li>
                         <li>Pasta</li>
@@ -323,7 +357,7 @@
                     </ul>
                     <div class="food-order">
                         <p class="food-price">$27.99</p>
-                        <a href="http://gourmet.arenaofthemes.com/store.html#" class="add-to-cart-link">Add To Cart</a>
+                        <a href="" class="add-to-cart-link">Add To Cart</a>
                     </div><!-- /food-order -->
                 </div><!-- /store-item -->
             </div><!-- /col-md-4 -->
@@ -331,11 +365,11 @@
             <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
                 <div class="store-item wow fadeInDown" style="visibility: hidden; -webkit-animation-name: none;">
                     <figure>
-                        <a href="http://gourmet.arenaofthemes.com/store-item.html">
+                        <a href="">
                             <div class="store-image" style="background-image:url('/img/food14.jpg');"></div>
                         </a>
                     </figure>
-                    <h3 class="food-name"><a href="http://gourmet.arenaofthemes.com/store-item.html">Spicy Baked Eggs</a></h3>
+                    <h3 class="food-name"><a href="">Spicy Baked Eggs</a></h3>
                     <ul class="food-category">
                         <li>Local</li>
                         <li>Greens</li>
@@ -343,7 +377,7 @@
                     </ul>
                     <div class="food-order">
                         <p class="food-price">$19.99</p>
-                        <a href="http://gourmet.arenaofthemes.com/store.html#" class="add-to-cart-link">Add To Cart</a>
+                        <a href="" class="add-to-cart-link">Add To Cart</a>
                     </div><!-- /food-order -->
                 </div><!-- /store-item -->
             </div><!-- /col-md-4 -->
@@ -351,11 +385,11 @@
             <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
                 <div class="store-item wow fadeInDown" data-wow-delay="0.2s" style="visibility: hidden; -webkit-animation-delay: 0.2s; -webkit-animation-name: none;">
                     <figure>
-                        <a href="http://gourmet.arenaofthemes.com/store-item.html">
+                        <a href="">
                             <div class="store-image" style="background-image:url('/img/food15.jpg');"></div>
                         </a>
                     </figure>
-                    <h3 class="food-name"><a href="http://gourmet.arenaofthemes.com/store-item.html">Grilled Meat with Fruits</a></h3>
+                    <h3 class="food-name"><a href="">Grilled Meat with Fruits</a></h3>
                     <ul class="food-category">
                         <li>Local</li>
                         <li>Fruits</li>
@@ -363,7 +397,7 @@
                     </ul>
                     <div class="food-order">
                         <p class="food-price">$34.95</p>
-                        <a href="http://gourmet.arenaofthemes.com/store.html#" class="add-to-cart-link">Add To Cart</a>
+                        <a href="" class="add-to-cart-link">Add To Cart</a>
                     </div><!-- /food-order -->
                 </div><!-- /store-item -->
             </div><!-- /col-md-4 -->
@@ -371,11 +405,11 @@
             <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
                 <div class="store-item wow fadeInDown" data-wow-delay="0.4s" style="visibility: hidden; -webkit-animation-delay: 0.4s; -webkit-animation-name: none;">
                     <figure>
-                        <a href="http://gourmet.arenaofthemes.com/store-item.html">
+                        <a href="">
                             <div class="store-image" style="background-image:url('/img/food16.jpg');"></div>
                         </a>
                     </figure>
-                    <h3 class="food-name"><a href="http://gourmet.arenaofthemes.com/store-item.html">Black Pasta with Meat</a></h3>
+                    <h3 class="food-name"><a href="">Black Pasta with Meat</a></h3>
                     <ul class="food-category">
                         <li>Italian</li>
                         <li>Pasta</li>
@@ -383,7 +417,7 @@
                     </ul>
                     <div class="food-order">
                         <p class="food-price">$27.99</p>
-                        <a href="http://gourmet.arenaofthemes.com/store.html#" class="add-to-cart-link">Add To Cart</a>
+                        <a href="" class="add-to-cart-link">Add To Cart</a>
                     </div><!-- /food-order -->
                 </div><!-- /store-item -->
             </div><!-- /col-md-4 -->
@@ -392,20 +426,53 @@
     </div>
 </section>
 
+
+{{--<script src='http://libs.baidu.com/jquery/1.9.1/jquery.min.js'></script>--}}
+
 <script src="/js/imagesloaded.pkgd.min.js"></script>
 <script src="/js/jquery.nav.js"></script>
 <script src="/js/wow.min.js"></script>
 <script src="/js/main.js"></script>
+<script src="/js/fly.min.js"></script>
+<script src='https://rawgit.com/amibug/fly/master/src/requestAnimationFrame.js'></script>
+{{--<script src='https://rawgit.com/amibug/fly/master/dist/jquery.fly.min.js'></script>--}}
 <script type="text/javascript">
     $(function () {
         var cw = $('div.image-container').width();
         $('div.banner-image').css('width', cw);
         $('div.banner-image').css('height', 3 * cw / 4);
 
-
         var storecw = $('.store-item').width();
         $('.store-image').css('width', storecw);
         $('.store-image').css('height', storecw);
+
+//        cart start
+        $(".add-to-cart-link").click(function(event){
+            var offset = $("#end").offset();
+            var addcar = $(this);
+            var img = addcar.parent().parent().find('figure').find('a').find('img').attr('src');
+            var flyer = $('<img class="u-flyer" src="'+img+'">');
+            flyer.fly({
+                start: {
+                    left: 30, //开始位置（必填）
+                    top: 30 //开始位置（必填）
+                },
+                end: {
+                    left: offset.left, //结束位置（必填）
+                    top: offset.top, //结束位置（必填）
+                    width: 0, //结束时宽度
+                    height: 0 //结束时高度
+                },
+                speed: 1,
+                onEnd: function(){ //结束回调
+//                    $("#msg").show().animate({width: '250px'}, 200).fadeOut(1000); //提示信息
+//                    addcar.css("cursor","default").removeClass('orange').unbind('click');
+//                    this.destory(); //移除dom
+                }
+            });
+        });
+
+//        cart end
     });
 </script>
 

@@ -1109,3 +1109,220 @@ h6{
         page-break-after: avoid;
     }
 }
+
+
+
+/*cart start*/
+/*.shopping-cart{*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*right: 0;*/
+    /*z-index: 99;*/
+    /*-webkit-perspective: 1200;*/
+    /*-moz-perspective: 1200;*/
+    /*perspective: 1200;*/
+/*}*/
+
+.shopping-cart {
+    position: fixed;
+    top: 25%;
+    right: 0;
+    width: 60px !important;
+    height: 55px !important;
+    float: right;
+    -webkit-perspective: 1200;
+    -moz-perspective: 1200;
+    perspective: 1200;
+    z-index: 1000;
+    /*display: none;*/
+}
+
+.shopping-cart .cart-link{
+    display: inline-block;
+    width: 60px !important;
+    height: 55px !important;
+    float: right;
+    clear: both;
+    background-color: #23292c;
+    background-image: url('/img/cart.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.shopping-cart .cart-link span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 1.8em;
+    position: absolute;
+    top: 5px;
+    right: 6px;
+    text-align: center;
+    background: white;
+    color: #e1560e;
+    -webkit-border-radius: 50em;
+    -moz-border-radius: 50em;
+    border-radius: 50em;
+}
+.shopping-cart .cart-items{
+    background: white;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 280px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: 1px 14px 32px rgba(0, 0, 0, 0.1);
+    -webkit-transition: opacity 0.1s 0.25s ease, visibility 0.1s 0.25s ease, -webkit-transform 0.4s ease;
+    -moz-transition: opacity 0.1s 0.25s ease, visibility 0.1s 0.25s ease, -moz-transform 0.4s ease;
+    transition: opacity 0.1s 0.25s ease, visibility 0.1s 0.25s ease, transform 0.4s ease;
+    -webkit-transform-origin: top center;
+    -moz-transform-origin: top center;
+    transform-origin: top center;
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+}
+.shopping-cart .cart-items .cart-counter{
+    display: inline-block;
+    padding-left: 20px;
+    margin-bottom: 18px;
+}
+.shopping-cart .cart-items .cart-counter h5{
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.shopping-cart .cart-items .cart-counter span{
+    color: #0b2b33;
+}
+.shopping-cart .cart-items .cart-counter span span{
+    color: #e1560e;
+}
+.shopping-cart .cart-items .remove-items{
+    float: right;
+    margin-right: 22px;
+}
+.shopping-cart .cart-items .remove-items:hover{
+    color: #ec4d4d;
+}
+.shopping-cart .cart-items ul{
+    margin-bottom: 10px;
+}
+.shopping-cart .cart-items ul li{
+    display: block;
+    border-bottom: 1px solid #eceded;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+.shopping-cart .cart-items ul li:last-child{
+    border-bottom: none;
+}
+.shopping-cart .cart-items ul li .item-container{
+    padding: 0 10px;
+}
+.shopping-cart .cart-items ul li .item-container figure{
+    display: inline-block;
+    width: 80px;
+    float: left;
+    margin-right: 19px;
+}
+.shopping-cart .cart-items ul li .item-container .food-name{
+    font-family: "Palatino Linotype", Palatino, "Book Antiqua", "URW Palladio L", serif;
+    font-size: 14px;
+    line-height: 1.5em;
+    color: #23323a;
+    margin-top: 18px;
+    margin-bottom: 4px;
+}
+.shopping-cart .cart-items ul li .item-container .food-name a{
+    color: #23323a;
+}
+.shopping-cart .cart-items ul li .item-container .food-name a:hover{
+    color: #e1560e;
+}
+.shopping-cart .cart-items ul li .item-container .food-price{
+    font-family: "Palatino Linotype", Palatino, "Book Antiqua", "URW Palladio L", serif;
+    font-size: 18px;
+    line-height: 1em;
+    color: #e1560e;
+}
+.shopping-cart .cart-container .button{
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-block;
+    width: 123px;
+    height: 40px;
+    margin-left: 10px;
+    border: 2px solid transparent;
+    padding-top: 12px;
+}
+.shopping-cart .cart-container .view-cart-btn{
+    border: 2px solid #19242a;
+    color: #19242a;
+}
+.shopping-cart .cart-container .view-cart-btn:hover{
+    background: #19242a;
+    color: white;
+}
+.shopping-cart .cart-container .checkout-btn{
+    background: #e1560e;
+    color: white;
+}
+.shopping-cart .cart-container .checkout-btn:hover{
+    border-color: #e1560e;
+    background: transparent;
+    color: #e1560e;
+}
+.shopping-cart:hover .cart-items{
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: opacity 0.1s ease, visibility 0.1s ease, -webkit-transform 0.4s ease;
+    -moz-transition: opacity 0.1s ease, visibility 0.1s ease, -moz-transform 0.4s ease;
+    transition: opacity 0.1s ease, visibility 0.1s ease, transform 0.4s ease;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+}
+
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+.u-flyer{
+    display: block;width: 50px;height: 50px;border-radius: 50px;position: fixed;
+    z-index: 99999;
+}
+/*cart end*/
