@@ -17,5 +17,6 @@ return array(
     $vendorDir . '/react/promise/src/functions_include.php',
     $vendorDir . '/kriswallsmith/assetic/src/functions.php',
     $vendorDir . '/illuminate/html/helpers.php',
+    $vendorDir . '/laracasts/flash/src/Laracasts/Flash/functions.php',
     $baseDir . '/app/Http/helpers.php',
 );

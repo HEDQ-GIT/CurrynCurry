@@ -141,7 +141,8 @@ return [
 		'Illuminate\Html\HtmlServiceProvider',
 		'Frozennode\Administrator\AdministratorServiceProvider',
 		'Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider',
-
+		'Laracasts\Generators\GeneratorsServiceProvider',
+		'Laracasts\Flash\FlashServiceProvider',
 
 
 		/*
@@ -206,6 +207,7 @@ return [
 		'FORM'      => 'Illuminate\Html\FormFacade',
 		'HTML'      => 'Illuminate\Html\HtmlFacade',
 		'LL'        => 'Mcamara\LaravelLocalization\Facades\LaravelLocalization',
+		'FLASH'     => 'Laracasts\Flash\Flash',
 
 	],
 

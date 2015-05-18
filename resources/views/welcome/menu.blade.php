@@ -87,10 +87,10 @@
 
 
 {{--cart start--}}
-{{--<div class="shopping-cart wow bounceInRight" data-wow-delay="5s" data-wow-duration="2s">--}}
-    {{--<div class="cart-container clearfix">--}}
-        {{--<i id="end"></i>--}}
-        {{--<a href="#" class="cart-link"><span>2</span></a>--}}
+<div class="shopping-cart wow bounceInRight" data-wow-delay="3s" data-wow-duration="3s">
+    <div class="cart-container clearfix">
+        <i id="end"></i>
+        <a href="#" class="cart-link"><span id="itemno"></span></a>
         {{--<div class="cart-items">--}}
             {{--<div class="cart-counter">--}}
                 {{--<h5><span><span>2</span> Items</span> In Cart</h5>--}}
@@ -114,8 +114,8 @@
             {{--</ul>--}}
             {{--<a href="store-checkout.html" class="button checkout-btn">Checkout</a>--}}
         {{--</div><!-- /cart-items -->--}}
-    {{--</div><!-- /cart-container -->--}}
-{{--</div>--}}
+    </div><!-- /cart-container -->
+</div>
 {{--cart end--}}
 
 <section class="store-items" id="MixItUp09871A">
@@ -125,7 +125,6 @@
                 <div class="store-item wow fadeInDown" style="visibility: hidden; -webkit-animation-name: none;">
                     <figure>
                         <a href="">
-                            {{--<img src="/img/food3.jpg" alt=""/>--}}
                             <div class="store-image" style="background-image:url('/img/food3.jpg');"></div>
                         </a>
                     </figure>
@@ -447,19 +446,26 @@
         $('.store-image').css('height', storecw);
 
 //        cart start
+        var itemno = 0;
+        $('#itemno').html(itemno);
+
         $(".add-to-cart-link").click(function(event){
-            var offset = $("#end").offset();
+            itemno++;
+            var endtop = $(window).height() * 0.25;
+            var endleft = $(window).width();
+
             var addcar = $(this);
-            var img = addcar.parent().parent().find('figure').find('a').find('img').attr('src');
-            var flyer = $('<img class="u-flyer" src="'+img+'">');
+            var img = addcar.parent().parent().find('.store-image').css('background-image');
+            var src = img.replace('url(','').replace(')','');
+            var flyer = $('<img class="u-flyer" src="'+src+'">');
             flyer.fly({
                 start: {
-                    left: 30, //开始位置（必填）
-                    top: 30 //开始位置（必填）
+                    left: event.clientX, //开始位置（必填）
+                    top: event.clientY-200 //开始位置（必填）
                 },
                 end: {
-                    left: offset.left, //结束位置（必填）
-                    top: offset.top, //结束位置（必填）
+                    left: endleft, //结束位置（必填）
+                    top: endtop, //结束位置（必填）
                     width: 0, //结束时宽度
                     height: 0 //结束时高度
                 },
@@ -468,6 +474,9 @@
 //                    $("#msg").show().animate({width: '250px'}, 200).fadeOut(1000); //提示信息
 //                    addcar.css("cursor","default").removeClass('orange').unbind('click');
 //                    this.destory(); //移除dom
+
+                    $('#itemno').html(itemno);
+
                 }
             });
         });
