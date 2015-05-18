@@ -28,6 +28,7 @@ get('contact', 'WelcomeController@contact');
 
 post('adddish', 'WelcomeController@addDish');
 post('removedish', 'WelcomeController@removeDish');
+post('prepareOrder', 'WelcomeController@prepareOrder');
 get('clear', 'WelcomeController@clear');
 get('all', 'WelcomeController@all');
 

@@ -5,11 +5,11 @@ function flyInCart(imgUrl) {
     //var addcar = $(this);
     //var img = addcar.parent().parent().find('.store-image').css('background-image');
     //var src = img.replace('url(','').replace(')','');
-    var flyer = $('<img class="u-flyer" src="'+imgUrl+'">');
+    var flyer = $('<img class="u-flyer" src="' + imgUrl + '">');
     flyer.fly({
         start: {
             left: event.clientX, //开始位置（必填）
-            top: event.clientY-200 //开始位置（必填）
+            top: event.clientY - 200 //开始位置（必填）
         },
         end: {
             left: endleft, //结束位置（必填）
@@ -18,7 +18,7 @@ function flyInCart(imgUrl) {
             height: 0 //结束时高度
         },
         speed: 1,
-        onEnd: function(){ //结束回调
+        onEnd: function () { //结束回调
 //                    $("#msg").show().animate({width: '250px'}, 200).fadeOut(1000); //提示信息
 //                    addcar.css("cursor","default").removeClass('orange').unbind('click');
 
@@ -40,8 +40,8 @@ app.controller('MainCtrl', function ($scope, $http) {
         $http({
             method: 'POST',
             url: requesturl,
-            data    : $.param(data),  // pass in data as strings
-            headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+            data: $.param(data),  // pass in data as strings
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}  // set the headers so angular passing info as form data (not request payload)
         }).success(function (data, status) {
             //alert(data);
         }).error(function (data, status) {
@@ -50,20 +50,27 @@ app.controller('MainCtrl', function ($scope, $http) {
     }
 
 
+    //$http({
+    //    method: 'POST',
+    //    url: 'prepareorder'
+    //}).success(function (data, status) {
+    //    $scope.dishes = data;
+    //}).error(function (data, status) {
+    //    alert('fail');
+    //});
+
     $scope.removeDish = function ($event, dish) {
         requesturl = removeDishUrl;
         data = {dishId: dish.id};
         $http({
             method: 'POST',
             url: requesturl,
-            data    : $.param(data),  // pass in data as strings
-            headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
-
+            data: $.param(data),  // pass in data as strings
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}  // set the headers so angular passing info as form data (not request payload)
         }).success(function (data, status) {
             //alert(data);
             trele = angular.element($event.target).parent().parent();
             trele.fadeOut('slow');
-            $scope.idx = 0;
         }).error(function (data, status) {
             alert('fail');
         });

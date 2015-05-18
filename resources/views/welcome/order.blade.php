@@ -108,7 +108,7 @@
                 <tbody>
                     @foreach($dishes as $idx => $dishNum)
                         <tr class="row">
-                            <th class="col-xs-1 col-sm-1 col-md-1 col-lg-1" scope="row">{{ $idx+1 }}</th>
+                            <th class="col-xs-1 col-sm-1 col-md-1 col-lg-1" scope="row">{{$idx+1}}</th>
                             <td class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                                 <div class="food-wraper row">
                                     <img class="image col-sm-4 col-md-4 col-lg-4" src="/img/{{ $dishNum->dish->imgUrl }}" alt="Curry chicken with chesse"/>
@@ -119,11 +119,11 @@
                                 </div>
                             </td>
                             <td class="col-xs-1 col-sm-1 col-md-1 col-lg-1"><span class="avail-sign glyphicon glyphicon-ok-sign"></span></td>
-                            <td class="col-xs-1 col-sm-1 col-md-1 col-lg-1"><input class="quan-input form-control" type="text" value="{{ $dishNum->count }}"></input></td>
+                            <td class="col-xs-1 col-sm-1 col-md-1 col-lg-1"><input class="quan-input form-control" type="text" ng-init="{{ $dishNum->count }}" ng-model="piece"/></td>
                             <td class="col-xs-1 col-sm-1 col-md-1 col-lg-1">S${{ $dishNum->dish->price }}</td>
                             <td class="col-xs-1 col-sm-1 col-md-1 col-lg-1">Pending</td>
                             <td class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                                <a class="btn btn-warning" ng-click="removeDish($event,{{ $dishNum->dish }})">Remove</a>
+                                <a class="btn btn-warning" ng-click="removeDish($event, {{ $dishNum->dish }})">Remove @{{ piece }}</a>
                             </td>
                         </tr>
                     @endforeach
@@ -132,7 +132,7 @@
 
             <div id="tb-footer">
                 <p class="total"><span>Total:&nbsp;&nbsp;</span>S$ 100.40</p>
-                <a class="send btn btn-success">Send my order.</a>
+                <a class="send btn btn-success">Send my order</a>
             </div>
 
         </div>

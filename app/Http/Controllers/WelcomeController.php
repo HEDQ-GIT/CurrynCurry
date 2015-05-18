@@ -54,10 +54,14 @@ class WelcomeController extends Controller {
 	public function removeDish(Request $request)
 	{
 		$dishId = $request->get('dishId');
-		while ($key = array_search($dishId, Session::get('dishIds')))
+//		$key = array_search($dishId, Session::get('dishIds'));
+//		Session::forget('dishIds.'.$key);
+
+		while (true == ($key = array_search($dishId, Session::get('dishIds'))))
 		{
 			Session::forget('dishIds.'.$key);
 		}
+
 		return response()->json($dishId);
 	}
 
@@ -69,6 +73,21 @@ class WelcomeController extends Controller {
 	public function all()
 	{
 		dd(Session::get('dishIds'));
+	}
+
+	public function prepareOrder()
+	{
+		$dishes = array();
+		$data = array_count_values(Session::get('dishIds'));
+		foreach ($data as $dishId => $count)
+		{
+			$dn = new DishNum();
+			$dish = Dish::find($dishId);
+			$dn->dish = $dish;
+			$dn->count = $count;
+			$dishes[] = $dn;
+		}
+		return response()->json($dishes);
 	}
 
 	public function order()
@@ -84,6 +103,7 @@ class WelcomeController extends Controller {
 			$dishes[] = $dn;
 		}
 		return view('welcome.order', compact('dishes'));
+
 	}
 
 	public function contact()
