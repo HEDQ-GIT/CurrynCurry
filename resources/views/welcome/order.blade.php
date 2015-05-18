@@ -17,6 +17,7 @@
     <script src="http://cdn.bootcss.com/angular.js/1.4.0-rc.1/angular.min.js"></script>
     <script>
         var removeDishUrl = "{{ URL('removedish') }}";
+        var emailUrl = "{{ URL('email') }}";
     </script>
     <script src="/js/menu.js"></script>
 
@@ -64,13 +65,14 @@
 
 @if (Session::has('dishIds'))
     @if(count(Session::get('dishIds')) > 0)
-        <form id="order-form">
+        <form id="order-form" ng-submit="submitOrder()">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="form-group">
                 <div class="form-label">
                     <label for="consume-time">Consuming time:</label>
                 </div>
                 <div class="date-wraper form-input">
-                    <input type="text" id="consume-time" class="form-control" name="consumeTime" placeholder="Consuming time" value="" data-date-format="YYYY-MM-DD HH:MM:SS">
+                    <input type="text" id="consume-time" class="form-control" ng-model="formData.consumeTime" name="consumeTime" placeholder="Consuming time" data-date-format="YYYY-MM-DD HH:MM:SS">
                 </div>
             </div>
             <div class="form-group">
@@ -78,7 +80,7 @@
                     <label for="name">Your name:</label>
                 </div>
                 <div class="name-wraper form-input">
-                    <input type="text" id="name" class="form-control" name="name" placeholder="Your name">
+                    <input type="text" ng-model="formData.name" id="name" class="form-control" name="name" placeholder="Your name">
                 </div>
             </div>
             <div class="form-group">
@@ -86,7 +88,7 @@
                     <label for="phone">Phone:</label>
                 </div>
                 <div class="name-wraper form-input">
-                    <input type="text" id="phone" class="form-control" name="phone" placeholder="Your phone ">
+                    <input type="text" ng-model="formData.phone" id="phone" class="form-control" name="phone" placeholder="Your phone ">
                 </div>
             </div>
         </form>
@@ -109,21 +111,21 @@
                     @foreach($dishes as $idx => $dishNum)
                         <tr class="row">
                             <th class="col-xs-1 col-sm-1 col-md-1 col-lg-1" scope="row">{{$idx+1}}</th>
-                            <td class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <td class="col-xs-6 col-sm-6 col-md-6 col-lg-6 name-td">
                                 <div class="food-wraper row">
                                     <img class="image col-sm-4 col-md-4 col-lg-4" src="/img/{{ $dishNum->dish->imgUrl }}" alt="Curry chicken with chesse"/>
                                     <div class="summary col-sm-8 col-md-8 col-lg-8">
-                                        <h5 class="title">{{ $dishNum->dish->name }}</h5>
+                                        <h5 class="title dish-name">{{ $dishNum->dish->name }}</h5>
                                         <p class="content">It will not be possible for the Singapore Armed Forces (SAF) to be a modern integrated force today</p>
                                     </div>
                                 </div>
                             </td>
                             <td class="col-xs-1 col-sm-1 col-md-1 col-lg-1"><span class="avail-sign glyphicon glyphicon-ok-sign"></span></td>
-                            <td class="col-xs-1 col-sm-1 col-md-1 col-lg-1"><input class="quan-input form-control" type="text" ng-init="{{ $dishNum->count }}" ng-model="piece"/></td>
-                            <td class="col-xs-1 col-sm-1 col-md-1 col-lg-1">S${{ $dishNum->dish->price }}</td>
+                            <td class="col-xs-1 col-sm-1 col-md-1 col-lg-1 count-td"><input class="quan-input form-control" type="text" value="{{ $dishNum->count }}"/></td>
+                            <td class="col-xs-1 col-sm-1 col-md-1 col-lg-1 price-td">S$<span class="price">{{ $dishNum->dish->price }}</span></td>
                             <td class="col-xs-1 col-sm-1 col-md-1 col-lg-1">Pending</td>
                             <td class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                                <a class="btn btn-warning" ng-click="removeDish($event, {{ $dishNum->dish }})">Remove @{{ piece }}</a>
+                                <a class="btn btn-warning" ng-click="removeDish($event, {{ $dishNum->dish }})">Remove</a>
                             </td>
                         </tr>
                     @endforeach
@@ -131,11 +133,14 @@
             </table>
 
             <div id="tb-footer">
-                <p class="total"><span>Total:&nbsp;&nbsp;</span>S$ 100.40</p>
-                <a class="send btn btn-success">Send my order</a>
+                <p class="total"><span>Total:&nbsp;&nbsp;</span>S$&nbsp;<span id="amount"></span></p>
+                <input id="submit" type="submit" class="send btn btn-success" ng-click="submitOrder()" value="Send">
+
             </div>
 
         </div>
+        {{--</form>--}}
+
         {{--table end--}}
 
     @else

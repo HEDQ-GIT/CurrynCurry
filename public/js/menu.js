@@ -1,3 +1,30 @@
+function init() {
+    var amount = 0;
+    $(".quan-input").each(function(i){
+        n = $(this).val();
+        m = $(this).parent().next('.price-td').children('.price').html();
+        //alert(m);
+        amount += n*m;
+    });
+    $('#amount').html(amount.toFixed(2));
+}
+
+$(function() {
+    init();
+    $('.quan-input').change( function() {
+        init();
+
+        //var amount = 0;
+        //$(".quan-input").each(function(i){
+        //    n = $(this).val();
+        //    m = $(this).parent().next('.price-td').children('.price').html();
+        //    //alert(m);
+        //    amount += n*m;
+        //});
+        //$('#amount').html(amount.toFixed(2));
+    });
+})
+
 function flyInCart(imgUrl) {
     var endtop = $(window).height() * 0.25;
     var endleft = $(window).width();
@@ -26,7 +53,6 @@ function flyInCart(imgUrl) {
             //        this.destory(); //移除dom
         }
     });
-
 }
 
 var app = angular.module('app', []);
@@ -49,16 +75,6 @@ app.controller('MainCtrl', function ($scope, $http) {
         });
     }
 
-
-    //$http({
-    //    method: 'POST',
-    //    url: 'prepareorder'
-    //}).success(function (data, status) {
-    //    $scope.dishes = data;
-    //}).error(function (data, status) {
-    //    alert('fail');
-    //});
-
     $scope.removeDish = function ($event, dish) {
         requesturl = removeDishUrl;
         data = {dishId: dish.id};
@@ -68,12 +84,28 @@ app.controller('MainCtrl', function ($scope, $http) {
             data: $.param(data),  // pass in data as strings
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}  // set the headers so angular passing info as form data (not request payload)
         }).success(function (data, status) {
-            //alert(data);
             trele = angular.element($event.target).parent().parent();
             trele.fadeOut('slow');
+            trele.remove();
+            init();
         }).error(function (data, status) {
             alert('fail');
         });
     }
 
+    $scope.formData = {};
+
+    $scope.submitOrder = function() {
+        alert($.param($scope.formData));
+        $http({
+            method: 'POST',
+            url: emailUrl,
+            data    : $.param($scope.formData),  // pass in data as strings
+            headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+        }).success(function (data, status) {
+            alert(data);
+        }).error(function (data, status) {
+            alert(data);
+        });
+    }
 })

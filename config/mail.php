@@ -54,7 +54,7 @@ return [
 	|
 	*/
 
-	'from' => ['address' => null, 'name' => null],
+	'from' => ['address' => 'info@ekoolab.com', 'name' => 'Ekoolab Mail'],
 
 	/*
 	|--------------------------------------------------------------------------
