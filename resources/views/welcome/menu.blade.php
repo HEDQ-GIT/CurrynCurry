@@ -14,9 +14,14 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css" media="all">
     <link rel="stylesheet" href="/css/menu.css">
     <script src="/js/jquery-2.1.1.min.js"></script>
+    <script src="http://cdn.bootcss.com/angular.js/1.4.0-rc.1/angular.min.js"></script>
+    <script>
+        var addDishUrl = "{{ URL('adddish') }}";
+    </script>
+    <script src="/js/menu.js"></script>
 
 </head>
-<body>
+<body ng-app="app" ng-controller="MainCtrl">
 @include('common.nav')
 <header class="main-header" id="top">
     <div class="top-banner-container top-banner-container-style">
@@ -121,305 +126,309 @@
 <section class="store-items" id="MixItUp09871A">
     <div class="container">
         <div class="row">
+
+            @foreach($dishes as $dish)
+            {{--dish start--}}
             <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
                 <div class="store-item wow fadeInDown" style="visibility: hidden; -webkit-animation-name: none;">
                     <figure>
-                        <a href="">
-                            <div class="store-image" style="background-image:url('/img/food3.jpg');"></div>
-                        </a>
+                        {{--<a href="">--}}
+                            <div class="store-image" style="background-image:url('/img/{{ $dish->imgUrl }}');"></div>
+                        {{--</a>--}}
                     </figure>
-                    <h3 class="food-name"><a href="">Spicy Baked Eggs</a></h3>
+                    <h3 class="food-name">{{ $dish->name }}</h3>
                     <ul class="food-category">
-                        <li>Local</li>
-                        <li>Greens</li>
-                        <li>Eggs</li>
+                        @foreach($dish->tags as $tag)
+                        <li>{{ $tag->name }}</li>
+                        @endforeach
                     </ul>
                     <div class="food-order">
-                        <p class="food-price">$19.99</p>
-                        <a href="javascript:void(0);" class="add-to-cart-link">Add To Cart</a>
+                        <p class="food-price">S${{ $dish->price }}</p>
+                        {{--<a href="javascript:void(0);" class="add-to-cart-link">Add To Cart</a>--}}
+                        <a href="javascript:void(0);" ng-click="addToCart({{ $dish }})" class="add-to-cart-link">Add To Cart</a>
                     </div><!-- /food-order -->
                 </div><!-- /store-item -->
             </div><!-- /col-md-4 -->
+            {{--dish end--}}
+            @endforeach
 
-            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
-                <div class="store-item wow fadeInDown" data-wow-delay="0.2s" style="visibility: hidden; -webkit-animation-delay: 0.2s; -webkit-animation-name: none;">
-                    <figure>
-                        <a href="">
-                            <div class="store-image" style="background-image:url('/img/food4.jpg');"></div>
-                        </a>
-                    </figure>
-                    <h3 class="food-name"><a href="">Grilled Meat with Fruits</a></h3>
-                    <ul class="food-category">
-                        <li>Local</li>
-                        <li>Fruits</li>
-                        <li>Meat</li>
-                    </ul>
-                    <div class="food-order">
-                        <p class="food-price">$34.95</p>
-                        <a href="" class="add-to-cart-link">Add To Cart</a>
-                    </div><!-- /food-order -->
-                </div><!-- /store-item -->
-            </div><!-- /col-md-4 -->
+            {{--<div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">--}}
+                {{--<div class="store-item wow fadeInDown" data-wow-delay="0.2s" style="visibility: hidden; -webkit-animation-delay: 0.2s; -webkit-animation-name: none;">--}}
+                    {{--<figure>--}}
+                        {{--<a href="">--}}
+                            {{--<div class="store-image" style="background-image:url('/img/food4.jpg');"></div>--}}
+                        {{--</a>--}}
+                    {{--</figure>--}}
+                    {{--<h3 class="food-name"><a href="">Grilled Meat with Fruits</a></h3>--}}
+                    {{--<ul class="food-category">--}}
+                        {{--<li>Local</li>--}}
+                        {{--<li>Fruits</li>--}}
+                        {{--<li>Meat</li>--}}
+                    {{--</ul>--}}
+                    {{--<div class="food-order">--}}
+                        {{--<p class="food-price">$34.95</p>--}}
+                        {{--<a href="" class="add-to-cart-link">Add To Cart</a>--}}
+                    {{--</div><!-- /food-order -->--}}
+                {{--</div><!-- /store-item -->--}}
+            {{--</div><!-- /col-md-4 -->--}}
+            {{--<div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">--}}
+                {{--<div class="store-item wow fadeInDown" data-wow-delay="0.4s" style="visibility: hidden; -webkit-animation-delay: 0.4s; -webkit-animation-name: none;">--}}
+                    {{--<figure>--}}
+                        {{--<a href="">--}}
+                            {{--<div class="store-image" style="background-image:url('/img/food5.jpg');"></div>--}}
+                        {{--</a>--}}
+                    {{--</figure>--}}
+                    {{--<h3 class="food-name"><a href="">Black Pasta with Meat</a></h3>--}}
+                    {{--<ul class="food-category">--}}
+                        {{--<li>Italian</li>--}}
+                        {{--<li>Pasta</li>--}}
+                        {{--<li>Meat</li>--}}
+                    {{--</ul>--}}
+                    {{--<div class="food-order">--}}
+                        {{--<p class="food-price">$27.99</p>--}}
+                        {{--<a href="" class="add-to-cart-link">Add To Cart</a>--}}
+                    {{--</div><!-- /food-order -->--}}
+                {{--</div><!-- /store-item -->--}}
+            {{--</div><!-- /col-md-4 -->--}}
+            {{--<div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">--}}
+                {{--<div class="store-item wow fadeInDown" style="visibility: hidden; -webkit-animation-name: none;">--}}
+                    {{--<figure>--}}
+                        {{--<a href="">--}}
+                            {{--<div class="store-image" style="background-image:url('/img/food5.jpg');"></div>--}}
+                        {{--</a>--}}
+                    {{--</figure>--}}
+                    {{--<h3 class="food-name"><a href="">Chips with Sour Cream </a></h3>--}}
+                    {{--<ul class="food-category">--}}
+                        {{--<li>Local</li>--}}
+                        {{--<li>Greens</li>--}}
+                        {{--<li>Chips</li>--}}
+                    {{--</ul>--}}
+                    {{--<div class="food-order">--}}
+                        {{--<p class="food-price">$13.99</p>--}}
+                        {{--<a href="" class="add-to-cart-link">Add To Cart</a>--}}
+                    {{--</div><!-- /food-order -->--}}
+                {{--</div><!-- /store-item -->--}}
+            {{--</div><!-- /col-md-4 -->--}}
 
-            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
-                <div class="store-item wow fadeInDown" data-wow-delay="0.4s" style="visibility: hidden; -webkit-animation-delay: 0.4s; -webkit-animation-name: none;">
-                    <figure>
-                        <a href="">
-                            <div class="store-image" style="background-image:url('/img/food5.jpg');"></div>
-                        </a>
-                    </figure>
-                    <h3 class="food-name"><a href="">Black Pasta with Meat</a></h3>
-                    <ul class="food-category">
-                        <li>Italian</li>
-                        <li>Pasta</li>
-                        <li>Meat</li>
-                    </ul>
-                    <div class="food-order">
-                        <p class="food-price">$27.99</p>
-                        <a href="" class="add-to-cart-link">Add To Cart</a>
-                    </div><!-- /food-order -->
-                </div><!-- /store-item -->
-            </div><!-- /col-md-4 -->
+            {{--<div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">--}}
+                {{--<div class="store-item wow fadeInDown" data-wow-delay="0.2s" style="visibility: hidden; -webkit-animation-delay: 0.2s; -webkit-animation-name: none;">--}}
+                    {{--<figure>--}}
+                        {{--<a href="">--}}
+                            {{--<div class="store-image" style="background-image:url('/img/food6.jpg');"></div>--}}
+                        {{--</a>--}}
+                    {{--</figure>--}}
+                    {{--<h3 class="food-name"><a href="">Taco with Meat &amp; Avocado</a></h3>--}}
+                    {{--<ul class="food-category">--}}
+                        {{--<li>mexican</li>--}}
+                        {{--<li>fruits</li>--}}
+                        {{--<li>meat</li>--}}
+                        {{--<li>taco</li>--}}
+                    {{--</ul>--}}
+                    {{--<div class="food-order">--}}
+                        {{--<p class="food-price">$11.89</p>--}}
+                        {{--<a href="" class="add-to-cart-link">Add To Cart</a>--}}
+                    {{--</div><!-- /food-order -->--}}
+                {{--</div><!-- /store-item -->--}}
+            {{--</div><!-- /col-md-4 -->--}}
+            {{--<div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">--}}
+                {{--<div class="store-item wow fadeInDown" data-wow-delay="0.4s" style="visibility: hidden; -webkit-animation-delay: 0.4s; -webkit-animation-name: none;">--}}
+                    {{--<figure>--}}
+                        {{--<a href="">--}}
+                            {{--<div class="store-image" style="background-image:url('/img/food7.jpg');"></div>--}}
+                        {{--</a>--}}
+                    {{--</figure>--}}
+                    {{--<h3 class="food-name"><a href="">Spring Fruit Salad</a></h3>--}}
+                    {{--<ul class="food-category">--}}
+                        {{--<li>Spanish</li>--}}
+                        {{--<li>Fruits</li>--}}
+                        {{--<li>Salad</li>--}}
+                    {{--</ul>--}}
+                    {{--<div class="food-order">--}}
+                        {{--<p class="food-price">$24.95</p>--}}
+                        {{--<a href="" class="add-to-cart-link">Add To Cart</a>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
 
-            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
-                <div class="store-item wow fadeInDown" style="visibility: hidden; -webkit-animation-name: none;">
-                    <figure>
-                        <a href="">
-                            <div class="store-image" style="background-image:url('/img/food5.jpg');"></div>
-                        </a>
-                    </figure>
-                    <h3 class="food-name"><a href="">Chips with Sour Cream </a></h3>
-                    <ul class="food-category">
-                        <li>Local</li>
-                        <li>Greens</li>
-                        <li>Chips</li>
-                    </ul>
-                    <div class="food-order">
-                        <p class="food-price">$13.99</p>
-                        <a href="" class="add-to-cart-link">Add To Cart</a>
-                    </div><!-- /food-order -->
-                </div><!-- /store-item -->
-            </div><!-- /col-md-4 -->
+            {{--<div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">--}}
+                {{--<div class="store-item wow fadeInDown" style="visibility: hidden; -webkit-animation-name: none;">--}}
+                    {{--<figure>--}}
+                        {{--<a href="">--}}
+                            {{--<div class="store-image" style="background-image:url('/img/food8.jpg');"></div>--}}
+                        {{--</a>--}}
+                    {{--</figure>--}}
+                    {{--<h3 class="food-name"><a href="">Spicy Baked Eggs</a></h3>--}}
+                    {{--<ul class="food-category">--}}
+                        {{--<li>Local</li>--}}
+                        {{--<li>Greens</li>--}}
+                        {{--<li>Eggs</li>--}}
+                    {{--</ul>--}}
+                    {{--<div class="food-order">--}}
+                        {{--<p class="food-price">$19.99</p>--}}
+                        {{--<a href="" class="add-to-cart-link">Add To Cart</a>--}}
+                    {{--</div><!-- /food-order -->--}}
+                {{--</div><!-- /store-item -->--}}
+            {{--</div><!-- /col-md-4 -->--}}
 
-            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
-                <div class="store-item wow fadeInDown" data-wow-delay="0.2s" style="visibility: hidden; -webkit-animation-delay: 0.2s; -webkit-animation-name: none;">
-                    <figure>
-                        <a href="">
-                            <div class="store-image" style="background-image:url('/img/food6.jpg');"></div>
-                        </a>
-                    </figure>
-                    <h3 class="food-name"><a href="">Taco with Meat &amp; Avocado</a></h3>
-                    <ul class="food-category">
-                        <li>mexican</li>
-                        <li>fruits</li>
-                        <li>meat</li>
-                        <li>taco</li>
-                    </ul>
-                    <div class="food-order">
-                        <p class="food-price">$11.89</p>
-                        <a href="" class="add-to-cart-link">Add To Cart</a>
-                    </div><!-- /food-order -->
-                </div><!-- /store-item -->
-            </div><!-- /col-md-4 -->
-            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
-                <div class="store-item wow fadeInDown" data-wow-delay="0.4s" style="visibility: hidden; -webkit-animation-delay: 0.4s; -webkit-animation-name: none;">
-                    <figure>
-                        <a href="">
-                            <div class="store-image" style="background-image:url('/img/food7.jpg');"></div>
-                        </a>
-                    </figure>
-                    <h3 class="food-name"><a href="">Spring Fruit Salad</a></h3>
-                    <ul class="food-category">
-                        <li>Spanish</li>
-                        <li>Fruits</li>
-                        <li>Salad</li>
-                    </ul>
-                    <div class="food-order">
-                        <p class="food-price">$24.95</p>
-                        <a href="" class="add-to-cart-link">Add To Cart</a>
-                    </div>
-                </div>
-            </div>
+            {{--<div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">--}}
+                {{--<div class="store-item wow fadeInDown" data-wow-delay="0.2s" style="visibility: hidden; -webkit-animation-delay: 0.2s; -webkit-animation-name: none;">--}}
+                    {{--<figure>--}}
+                        {{--<a href="">--}}
+                            {{--<div class="store-image" style="background-image:url('/img/food9.jpg');"></div>--}}
+                        {{--</a>--}}
+                    {{--</figure>--}}
+                    {{--<h3 class="food-name"><a href="">Grilled Meat with Fruits</a></h3>--}}
+                    {{--<ul class="food-category">--}}
+                        {{--<li>Local</li>--}}
+                        {{--<li>Fruits</li>--}}
+                        {{--<li>Meat</li>--}}
+                    {{--</ul>--}}
+                    {{--<div class="food-order">--}}
+                        {{--<p class="food-price">$34.95</p>--}}
+                        {{--<a href="" class="add-to-cart-link">Add To Cart</a>--}}
+                    {{--</div><!-- /food-order -->--}}
+                {{--</div><!-- /store-item -->--}}
+            {{--</div><!-- /col-md-4 -->--}}
 
-            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
-                <div class="store-item wow fadeInDown" style="visibility: hidden; -webkit-animation-name: none;">
-                    <figure>
-                        <a href="">
-                            <div class="store-image" style="background-image:url('/img/food8.jpg');"></div>
-                        </a>
-                    </figure>
-                    <h3 class="food-name"><a href="">Spicy Baked Eggs</a></h3>
-                    <ul class="food-category">
-                        <li>Local</li>
-                        <li>Greens</li>
-                        <li>Eggs</li>
-                    </ul>
-                    <div class="food-order">
-                        <p class="food-price">$19.99</p>
-                        <a href="" class="add-to-cart-link">Add To Cart</a>
-                    </div><!-- /food-order -->
-                </div><!-- /store-item -->
-            </div><!-- /col-md-4 -->
+            {{--<div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">--}}
+                {{--<div class="store-item wow fadeInDown" data-wow-delay="0.4s" style="visibility: hidden; -webkit-animation-delay: 0.4s; -webkit-animation-name: none;">--}}
+                    {{--<figure>--}}
+                        {{--<a href="">--}}
+                            {{--<div class="store-image" style="background-image:url('/img/food10.jpg');"></div>--}}
+                        {{--</a>--}}
+                    {{--</figure>--}}
+                    {{--<h3 class="food-name"><a href="">Black Pasta with Meat</a></h3>--}}
+                    {{--<ul class="food-category">--}}
+                        {{--<li>Italian</li>--}}
+                        {{--<li>Pasta</li>--}}
+                        {{--<li>Meat</li>--}}
+                    {{--</ul>--}}
+                    {{--<div class="food-order">--}}
+                        {{--<p class="food-price">$27.99</p>--}}
+                        {{--<a href="" class="add-to-cart-link">Add To Cart</a>--}}
+                    {{--</div><!-- /food-order -->--}}
+                {{--</div><!-- /store-item -->--}}
+            {{--</div><!-- /col-md-4 -->--}}
 
-            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
-                <div class="store-item wow fadeInDown" data-wow-delay="0.2s" style="visibility: hidden; -webkit-animation-delay: 0.2s; -webkit-animation-name: none;">
-                    <figure>
-                        <a href="">
-                            <div class="store-image" style="background-image:url('/img/food9.jpg');"></div>
-                        </a>
-                    </figure>
-                    <h3 class="food-name"><a href="">Grilled Meat with Fruits</a></h3>
-                    <ul class="food-category">
-                        <li>Local</li>
-                        <li>Fruits</li>
-                        <li>Meat</li>
-                    </ul>
-                    <div class="food-order">
-                        <p class="food-price">$34.95</p>
-                        <a href="" class="add-to-cart-link">Add To Cart</a>
-                    </div><!-- /food-order -->
-                </div><!-- /store-item -->
-            </div><!-- /col-md-4 -->
+            {{--<div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">--}}
+                {{--<div class="store-item wow fadeInDown" style="visibility: hidden; -webkit-animation-name: none;">--}}
+                    {{--<figure>--}}
+                        {{--<a href="">--}}
+                            {{--<div class="store-image" style="background-image:url('/img/food11.jpg');"></div>--}}
+                        {{--</a>--}}
+                    {{--</figure>--}}
+                    {{--<h3 class="food-name"><a href="">Spicy Baked Eggs</a></h3>--}}
+                    {{--<ul class="food-category">--}}
+                        {{--<li>Local</li>--}}
+                        {{--<li>Greens</li>--}}
+                        {{--<li>Eggs</li>--}}
+                    {{--</ul>--}}
+                    {{--<div class="food-order">--}}
+                        {{--<p class="food-price">$19.99</p>--}}
+                        {{--<a href="" class="add-to-cart-link">Add To Cart</a>--}}
+                    {{--</div><!-- /food-order -->--}}
+                {{--</div><!-- /store-item -->--}}
+            {{--</div><!-- /col-md-4 -->--}}
 
-            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
-                <div class="store-item wow fadeInDown" data-wow-delay="0.4s" style="visibility: hidden; -webkit-animation-delay: 0.4s; -webkit-animation-name: none;">
-                    <figure>
-                        <a href="">
-                            <div class="store-image" style="background-image:url('/img/food10.jpg');"></div>
-                        </a>
-                    </figure>
-                    <h3 class="food-name"><a href="">Black Pasta with Meat</a></h3>
-                    <ul class="food-category">
-                        <li>Italian</li>
-                        <li>Pasta</li>
-                        <li>Meat</li>
-                    </ul>
-                    <div class="food-order">
-                        <p class="food-price">$27.99</p>
-                        <a href="" class="add-to-cart-link">Add To Cart</a>
-                    </div><!-- /food-order -->
-                </div><!-- /store-item -->
-            </div><!-- /col-md-4 -->
+            {{--<div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">--}}
+                {{--<div class="store-item wow fadeInDown" data-wow-delay="0.2s" style="visibility: hidden; -webkit-animation-delay: 0.2s; -webkit-animation-name: none;">--}}
+                    {{--<figure>--}}
+                        {{--<a href="">--}}
+                            {{--<div class="store-image" style="background-image:url('/img/food12.jpg');"></div>--}}
+                        {{--</a>--}}
+                    {{--</figure>--}}
+                    {{--<h3 class="food-name"><a href="">Grilled Meat with Fruits</a></h3>--}}
+                    {{--<ul class="food-category">--}}
+                        {{--<li>Local</li>--}}
+                        {{--<li>Fruits</li>--}}
+                        {{--<li>Meat</li>--}}
+                    {{--</ul>--}}
+                    {{--<div class="food-order">--}}
+                        {{--<p class="food-price">$34.95</p>--}}
+                        {{--<a href="" class="add-to-cart-link">Add To Cart</a>--}}
+                    {{--</div><!-- /food-order -->--}}
+                {{--</div><!-- /store-item -->--}}
+            {{--</div><!-- /col-md-4 -->--}}
 
-            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
-                <div class="store-item wow fadeInDown" style="visibility: hidden; -webkit-animation-name: none;">
-                    <figure>
-                        <a href="">
-                            <div class="store-image" style="background-image:url('/img/food11.jpg');"></div>
-                        </a>
-                    </figure>
-                    <h3 class="food-name"><a href="">Spicy Baked Eggs</a></h3>
-                    <ul class="food-category">
-                        <li>Local</li>
-                        <li>Greens</li>
-                        <li>Eggs</li>
-                    </ul>
-                    <div class="food-order">
-                        <p class="food-price">$19.99</p>
-                        <a href="" class="add-to-cart-link">Add To Cart</a>
-                    </div><!-- /food-order -->
-                </div><!-- /store-item -->
-            </div><!-- /col-md-4 -->
+            {{--<div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">--}}
+                {{--<div class="store-item wow fadeInDown" data-wow-delay="0.4s" style="visibility: hidden; -webkit-animation-delay: 0.4s; -webkit-animation-name: none;">--}}
+                    {{--<figure>--}}
+                        {{--<a href="">--}}
+                            {{--<div class="store-image" style="background-image:url('/img/food13.jpg');"></div>--}}
+                        {{--</a>--}}
+                    {{--</figure>--}}
+                    {{--<h3 class="food-name"><a href="">Black Pasta with Meat</a></h3>--}}
+                    {{--<ul class="food-category">--}}
+                        {{--<li>Italian</li>--}}
+                        {{--<li>Pasta</li>--}}
+                        {{--<li>Meat</li>--}}
+                    {{--</ul>--}}
+                    {{--<div class="food-order">--}}
+                        {{--<p class="food-price">$27.99</p>--}}
+                        {{--<a href="" class="add-to-cart-link">Add To Cart</a>--}}
+                    {{--</div><!-- /food-order -->--}}
+                {{--</div><!-- /store-item -->--}}
+            {{--</div><!-- /col-md-4 -->--}}
 
-            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
-                <div class="store-item wow fadeInDown" data-wow-delay="0.2s" style="visibility: hidden; -webkit-animation-delay: 0.2s; -webkit-animation-name: none;">
-                    <figure>
-                        <a href="">
-                            <div class="store-image" style="background-image:url('/img/food12.jpg');"></div>
-                        </a>
-                    </figure>
-                    <h3 class="food-name"><a href="">Grilled Meat with Fruits</a></h3>
-                    <ul class="food-category">
-                        <li>Local</li>
-                        <li>Fruits</li>
-                        <li>Meat</li>
-                    </ul>
-                    <div class="food-order">
-                        <p class="food-price">$34.95</p>
-                        <a href="" class="add-to-cart-link">Add To Cart</a>
-                    </div><!-- /food-order -->
-                </div><!-- /store-item -->
-            </div><!-- /col-md-4 -->
+            {{--<div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">--}}
+                {{--<div class="store-item wow fadeInDown" style="visibility: hidden; -webkit-animation-name: none;">--}}
+                    {{--<figure>--}}
+                        {{--<a href="">--}}
+                            {{--<div class="store-image" style="background-image:url('/img/food14.jpg');"></div>--}}
+                        {{--</a>--}}
+                    {{--</figure>--}}
+                    {{--<h3 class="food-name"><a href="">Spicy Baked Eggs</a></h3>--}}
+                    {{--<ul class="food-category">--}}
+                        {{--<li>Local</li>--}}
+                        {{--<li>Greens</li>--}}
+                        {{--<li>Eggs</li>--}}
+                    {{--</ul>--}}
+                    {{--<div class="food-order">--}}
+                        {{--<p class="food-price">$19.99</p>--}}
+                        {{--<a href="" class="add-to-cart-link">Add To Cart</a>--}}
+                    {{--</div><!-- /food-order -->--}}
+                {{--</div><!-- /store-item -->--}}
+            {{--</div><!-- /col-md-4 -->--}}
 
-            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
-                <div class="store-item wow fadeInDown" data-wow-delay="0.4s" style="visibility: hidden; -webkit-animation-delay: 0.4s; -webkit-animation-name: none;">
-                    <figure>
-                        <a href="">
-                            <div class="store-image" style="background-image:url('/img/food13.jpg');"></div>
-                        </a>
-                    </figure>
-                    <h3 class="food-name"><a href="">Black Pasta with Meat</a></h3>
-                    <ul class="food-category">
-                        <li>Italian</li>
-                        <li>Pasta</li>
-                        <li>Meat</li>
-                    </ul>
-                    <div class="food-order">
-                        <p class="food-price">$27.99</p>
-                        <a href="" class="add-to-cart-link">Add To Cart</a>
-                    </div><!-- /food-order -->
-                </div><!-- /store-item -->
-            </div><!-- /col-md-4 -->
+            {{--<div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">--}}
+                {{--<div class="store-item wow fadeInDown" data-wow-delay="0.2s" style="visibility: hidden; -webkit-animation-delay: 0.2s; -webkit-animation-name: none;">--}}
+                    {{--<figure>--}}
+                        {{--<a href="">--}}
+                            {{--<div class="store-image" style="background-image:url('/img/food15.jpg');"></div>--}}
+                        {{--</a>--}}
+                    {{--</figure>--}}
+                    {{--<h3 class="food-name"><a href="">Grilled Meat with Fruits</a></h3>--}}
+                    {{--<ul class="food-category">--}}
+                        {{--<li>Local</li>--}}
+                        {{--<li>Fruits</li>--}}
+                        {{--<li>Meat</li>--}}
+                    {{--</ul>--}}
+                    {{--<div class="food-order">--}}
+                        {{--<p class="food-price">$34.95</p>--}}
+                        {{--<a href="" class="add-to-cart-link">Add To Cart</a>--}}
+                    {{--</div><!-- /food-order -->--}}
+                {{--</div><!-- /store-item -->--}}
+            {{--</div><!-- /col-md-4 -->--}}
 
-            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
-                <div class="store-item wow fadeInDown" style="visibility: hidden; -webkit-animation-name: none;">
-                    <figure>
-                        <a href="">
-                            <div class="store-image" style="background-image:url('/img/food14.jpg');"></div>
-                        </a>
-                    </figure>
-                    <h3 class="food-name"><a href="">Spicy Baked Eggs</a></h3>
-                    <ul class="food-category">
-                        <li>Local</li>
-                        <li>Greens</li>
-                        <li>Eggs</li>
-                    </ul>
-                    <div class="food-order">
-                        <p class="food-price">$19.99</p>
-                        <a href="" class="add-to-cart-link">Add To Cart</a>
-                    </div><!-- /food-order -->
-                </div><!-- /store-item -->
-            </div><!-- /col-md-4 -->
-
-            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
-                <div class="store-item wow fadeInDown" data-wow-delay="0.2s" style="visibility: hidden; -webkit-animation-delay: 0.2s; -webkit-animation-name: none;">
-                    <figure>
-                        <a href="">
-                            <div class="store-image" style="background-image:url('/img/food15.jpg');"></div>
-                        </a>
-                    </figure>
-                    <h3 class="food-name"><a href="">Grilled Meat with Fruits</a></h3>
-                    <ul class="food-category">
-                        <li>Local</li>
-                        <li>Fruits</li>
-                        <li>Meat</li>
-                    </ul>
-                    <div class="food-order">
-                        <p class="food-price">$34.95</p>
-                        <a href="" class="add-to-cart-link">Add To Cart</a>
-                    </div><!-- /food-order -->
-                </div><!-- /store-item -->
-            </div><!-- /col-md-4 -->
-
-            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
-                <div class="store-item wow fadeInDown" data-wow-delay="0.4s" style="visibility: hidden; -webkit-animation-delay: 0.4s; -webkit-animation-name: none;">
-                    <figure>
-                        <a href="">
-                            <div class="store-image" style="background-image:url('/img/food16.jpg');"></div>
-                        </a>
-                    </figure>
-                    <h3 class="food-name"><a href="">Black Pasta with Meat</a></h3>
-                    <ul class="food-category">
-                        <li>Italian</li>
-                        <li>Pasta</li>
-                        <li>Meat</li>
-                    </ul>
-                    <div class="food-order">
-                        <p class="food-price">$27.99</p>
-                        <a href="" class="add-to-cart-link">Add To Cart</a>
-                    </div><!-- /food-order -->
-                </div><!-- /store-item -->
-            </div><!-- /col-md-4 -->
+            {{--<div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">--}}
+                {{--<div class="store-item wow fadeInDown" data-wow-delay="0.4s" style="visibility: hidden; -webkit-animation-delay: 0.4s; -webkit-animation-name: none;">--}}
+                    {{--<figure>--}}
+                        {{--<a href="">--}}
+                            {{--<div class="store-image" style="background-image:url('/img/food16.jpg');"></div>--}}
+                        {{--</a>--}}
+                    {{--</figure>--}}
+                    {{--<h3 class="food-name"><a href="">Black Pasta with Meat</a></h3>--}}
+                    {{--<ul class="food-category">--}}
+                        {{--<li>Italian</li>--}}
+                        {{--<li>Pasta</li>--}}
+                        {{--<li>Meat</li>--}}
+                    {{--</ul>--}}
+                    {{--<div class="food-order">--}}
+                        {{--<p class="food-price">$27.99</p>--}}
+                        {{--<a href="" class="add-to-cart-link">Add To Cart</a>--}}
+                    {{--</div><!-- /food-order -->--}}
+                {{--</div><!-- /store-item -->--}}
+            {{--</div><!-- /col-md-4 -->--}}
 
         </div>
     </div>
@@ -476,7 +485,6 @@
 //                    this.destory(); //移除dom
 
                     $('#itemno').html(itemno);
-
                 }
             });
         });

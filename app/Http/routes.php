@@ -26,4 +26,10 @@ get('menu', 'WelcomeController@menu');
 get('order', 'WelcomeController@order');
 get('contact', 'WelcomeController@contact');
 
+post('adddish', 'WelcomeController@addDish');
+post('removedish', 'WelcomeController@removeDish');
+get('clear', 'WelcomeController@clear');
+get('all', 'WelcomeController@all');
+
+
 //DQ route end

@@ -1,5 +1,10 @@
 <?php namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use App\Dish;
+use App\Http\DishNum;
+
 class WelcomeController extends Controller {
 
 	/*
@@ -35,12 +40,50 @@ class WelcomeController extends Controller {
 
 	public function menu()
 	{
-		return view('welcome.menu');
+		$dishes = Dish::all();
+		return view('welcome.menu', compact('dishes'));
+	}
+
+	public function addDish(Request $request)
+	{
+		$dishId = $request->get('dishId');
+		Session::push('dishIds', $dishId);
+		return response()->json($dishId);
+	}
+
+	public function removeDish(Request $request)
+	{
+		$dishId = $request->get('dishId');
+		while ($key = array_search($dishId, Session::get('dishIds')))
+		{
+			Session::forget('dishIds.'.$key);
+		}
+		return response()->json($dishId);
+	}
+
+	public function clear()
+	{
+		Session::flush();
+	}
+
+	public function all()
+	{
+		dd(Session::get('dishIds'));
 	}
 
 	public function order()
 	{
-		return view('welcome.order');
+		$dishes = array();
+		$data = array_count_values(Session::get('dishIds'));
+		foreach ($data as $dishId => $count)
+		{
+			$dn = new DishNum();
+			$dish = Dish::find($dishId);
+			$dn->dish = $dish;
+			$dn->count = $count;
+			$dishes[] = $dn;
+		}
+		return view('welcome.order', compact('dishes'));
 	}
 
 	public function contact()
