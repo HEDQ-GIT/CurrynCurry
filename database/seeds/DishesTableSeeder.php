@@ -12,7 +12,7 @@ class DishesTableSeeder extends Seeder
 
 //        Dish::truncate();
 
-        foreach (range(1, 20) as $idx) {
+        foreach (range(1, 18) as $idx) {
             Dish::create([
                 'name' => "Spicy Baked Eggs",
                 'price' => $faker->randomFloat($nbMaxDecimals = 2, $min = 15, $max = 99), // 48.8932,
