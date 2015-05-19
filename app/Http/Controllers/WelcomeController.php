@@ -112,6 +112,8 @@ class WelcomeController extends Controller
         $customTime = $request->input('consumeTime');
         $customName = $request->input('name');
         $customPhone = $request->input('phone');
+        $amount = $request->get('amount');
+//        dd($amount);
 
         $result = array();
         $arr = array_count_values(Session::get('dishIds'));
@@ -124,11 +126,12 @@ class WelcomeController extends Controller
         }
 
         $data = ['email' => $email, 'name' => $name, 'subject' => $subject,
-            'customName' => $customName, 'customTime' => $customTime, 'customPhone' => $customPhone, 'result' => $result];
+            'customName' => $customName, 'customTime' => $customTime, 'customPhone' => $customPhone,
+            'result' => $result, 'amount' => $amount];
         Mail::send('emails.testmail', $data, function ($message) use ($data) {
             $message->to($data['email'])->subject($data['subject']);
         });
-        return 'Your email has been sent and we will serve you ASAP !';
+        return 'We are waiting for you!';
     }
 
     public function contact()

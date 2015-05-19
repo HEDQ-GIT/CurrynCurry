@@ -10,10 +10,13 @@ Hi CurrynCurry,<br/>
 Congratulations!
 <br/>
 ********Order Details********
+<br/>
 @foreach($result as $idx => $dishNum)
     {{$idx+1}}.&nbsp;&nbsp; <em>{{ $dishNum->dish->name }}</em>&nbsp;&nbsp;×&nbsp; {{ $dishNum->count }}<br>
 @endforeach
-<br/><br/>
+<br/>
+Total:&nbsp;S$&nbsp;{{$amount}}
+<br/>
 ********Customer Details********
 <br/>
 Time:

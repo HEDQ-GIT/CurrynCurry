@@ -115,7 +115,9 @@ app.controller('MainCtrl', function ($scope, $http) {
     $scope.submitOrder = function() {
         consumeTime = $('#consume-time').val();
         $scope.formData.consumeTime = consumeTime;
-        alert($.param($scope.formData));
+        amount = $('#amount').html();
+        $scope.formData.amount = amount;
+        //alert($.param($scope.formData));
         $http({
             method: 'POST',
             url: emailUrl,
