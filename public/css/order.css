@@ -86,8 +86,16 @@ label.error{
 	margin-left: 16px;
 }
 
-.quan-input{
+
+.quan-input {
 	width: 64px;
+	float: left;
+	margin: 5px 3px;
+	/*display: inline-block !important;*/
+}
+.addbtn, .subbtn {
+	width: 35px;
+	margin: 5px 3px;
 }
 
 .pagination {

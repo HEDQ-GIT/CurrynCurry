@@ -14,14 +14,6 @@ $(function() {
     $('.quan-input').change( function() {
         init();
 
-        //var amount = 0;
-        //$(".quan-input").each(function(i){
-        //    n = $(this).val();
-        //    m = $(this).parent().next('.price-td').children('.price').html();
-        //    //alert(m);
-        //    amount += n*m;
-        //});
-        //$('#amount').html(amount.toFixed(2));
     });
 })
 
@@ -58,36 +50,61 @@ function flyInCart(imgUrl) {
 var app = angular.module('app', []);
 
 app.controller('MainCtrl', function ($scope, $http) {
-    $scope.addToCart = function (dish) {
-        imgUrl = '/img/' + dish.imgUrl;
-        flyInCart(imgUrl);
-        requesturl = addDishUrl;
+    $scope.addToCart = function ($event, dish, bfly) {
+        if (bfly) {
+            imgUrl = '/img/' + dish.imgUrl;
+            flyInCart(imgUrl);
+        }
+        else {
+            var ele = angular.element($event.target).siblings('.quan-input');
+            old = ele.val();
+            alert(old);
+            newval = Number(old) + 1;
+            ele.val(newval);
+            alert(ele.val());
+            init();
+        }
+alert('fly')
+        requesturl = addToCartishUrl;
         data = {dishId: dish.id};
+        alert(data);
         $http({
             method: 'POST',
             url: requesturl,
             data: $.param(data),  // pass in data as strings
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}  // set the headers so angular passing info as form data (not request payload)
         }).success(function (data, status) {
-            //alert(data);
+            alert(data);
         }).error(function (data, status) {
             alert('fail');
         });
     }
 
-    $scope.removeDish = function ($event, dish) {
+    $scope.removeDish = function ($event, dish, ball) {
         requesturl = removeDishUrl;
-        data = {dishId: dish.id};
+        data = {dishId: dish.id, ball: ball};
         $http({
             method: 'POST',
             url: requesturl,
             data: $.param(data),  // pass in data as strings
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}  // set the headers so angular passing info as form data (not request payload)
         }).success(function (data, status) {
-            trele = angular.element($event.target).parent().parent();
-            trele.fadeOut('slow');
-            trele.remove();
+            if (ball){
+                trele = angular.element($event.target).parent().parent();
+                trele.fadeOut('slow');
+                trele.remove();
+            }
+            else {
+                var ele = angular.element($event.target).siblings('.quan-input');
+                old = ele.val();
+                alert(old);
+                newval = Number(old) - 1;
+                ele.val(newval);
+                alert(ele.val());
+                init();
+            }
             init();
+
         }).error(function (data, status) {
             alert('fail');
         });

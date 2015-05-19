@@ -43,7 +43,9 @@ class WelcomeController extends Controller
     public function menu()
     {
         $dishes = Dish::all();
-        return view('welcome.menu', compact('dishes'));
+        $itemno = count(Session::get('dishIds'));
+
+        return view('welcome.menu', compact('dishes'))->with('itemno', $itemno);
     }
 
     public function addDish(Request $request)
@@ -56,7 +58,15 @@ class WelcomeController extends Controller
     public function removeDish(Request $request)
     {
         $dishId = $request->get('dishId');
-        while (!(($key = array_search($dishId, Session::get('dishIds'))) === false)) {
+        $ball = $request->get('ball');
+
+        if ($ball == 'true') {
+            while (!(($key = array_search($dishId, Session::get('dishIds'))) === false)) {
+                Session::forget('dishIds.' . $key);
+            }
+        }
+        else {
+            $key = array_search($dishId, Session::get('dishIds'));
             Session::forget('dishIds.' . $key);
         }
 

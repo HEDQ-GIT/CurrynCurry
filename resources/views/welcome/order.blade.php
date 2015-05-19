@@ -16,6 +16,7 @@
 
     <script src="http://cdn.bootcss.com/angular.js/1.4.0-rc.1/angular.min.js"></script>
     <script>
+        var addToCartishUrl = "{{ URL('adddish') }}";
         var removeDishUrl = "{{ URL('removedish') }}";
         var emailUrl = "{{ URL('email') }}";
     </script>
@@ -100,7 +101,7 @@
                 <tr class="row">
                     <th>#</th>
                     <th>Food</th>
-                    <th>Available</th>
+                    {{--<th>Available</th>--}}
                     <th>Quantity</th>
                     <th>Price</th>
                     <th>State</th>
@@ -120,12 +121,16 @@
                                     </div>
                                 </div>
                             </td>
-                            <td class="col-xs-1 col-sm-1 col-md-1 col-lg-1"><span class="avail-sign glyphicon glyphicon-ok-sign"></span></td>
-                            <td class="col-xs-1 col-sm-1 col-md-1 col-lg-1 count-td"><input class="quan-input form-control" type="text" value="{{ $dishNum->count }}"/></td>
+                            {{--<td class="col-xs-1 col-sm-1 col-md-1 col-lg-1"><span class="avail-sign glyphicon glyphicon-ok-sign"></span></td>--}}
+                            <td class="col-xs-2 col-sm-2 col-md-2 col-lg-2 count-td">
+                                <input class="quan-input form-control" type="text" value="{{ $dishNum->count }}"/>
+                                <a class="subbtn btn btn-primary" href="javascript:void(0)" ng-click="removeDish($event, {{ $dishNum->dish }}, false)">-</a>
+                                <a class="addbtn btn btn-primary" href="javascript:void(0)" ng-click="addToCart($event, {{ $dishNum->dish }}, false)">+</a>
+                            </td>
                             <td class="col-xs-1 col-sm-1 col-md-1 col-lg-1 price-td">S$<span class="price">{{ $dishNum->dish->price }}</span></td>
                             <td class="col-xs-1 col-sm-1 col-md-1 col-lg-1">Pending</td>
                             <td class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                                <a class="btn btn-warning" ng-click="removeDish($event, {{ $dishNum->dish }})">Remove</a>
+                                <a class="btn btn-warning" ng-click="removeDish($event, {{ $dishNum->dish }}, true)">Remove</a>
                             </td>
                         </tr>
                     @endforeach

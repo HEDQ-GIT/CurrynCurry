@@ -16,7 +16,7 @@
     <script src="/js/jquery-2.1.1.min.js"></script>
     <script src="http://cdn.bootcss.com/angular.js/1.4.0-rc.1/angular.min.js"></script>
     <script>
-        var addDishUrl = "{{ URL('adddish') }}";
+        var addToCartishUrl = "{{ URL('adddish') }}";
     </script>
     <script src="/js/menu.js"></script>
 
@@ -92,10 +92,11 @@
 
 
 {{--cart start--}}
-<div class="shopping-cart wow bounceInRight" data-wow-delay="3s" data-wow-duration="3s">
+{{--<div class="shopping-cart wow bounceInRight" data-wow-delay="3s" data-wow-duration="3s">--}}
+<div class="shopping-cart">
     <div class="cart-container clearfix">
         <i id="end"></i>
-        <a href="#" class="cart-link"><span id="itemno"></span></a>
+        <a href="#" class="cart-link"><span id="itemno">{{ $itemno }}</span></a>
         {{--<div class="cart-items">--}}
             {{--<div class="cart-counter">--}}
                 {{--<h5><span><span>2</span> Items</span> In Cart</h5>--}}
@@ -145,7 +146,7 @@
                     <div class="food-order">
                         <p class="food-price">S${{ $dish->price }}</p>
                         {{--<a href="javascript:void(0);" class="add-to-cart-link">Add To Cart</a>--}}
-                        <a href="javascript:void(0);" ng-click="addToCart({{ $dish }})" class="add-to-cart-link">Add To Cart</a>
+                        <a href="javascript:void(0);" ng-click="addToCart($event, {{ $dish }}, true)" class="add-to-cart-link">Add To Cart</a>
                     </div><!-- /food-order -->
                 </div><!-- /store-item -->
             </div><!-- /col-md-4 -->
