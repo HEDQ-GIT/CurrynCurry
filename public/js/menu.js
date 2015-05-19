@@ -40,7 +40,8 @@ function flyInCart(imgUrl) {
         onEnd: function () { //结束回调
 //                    $("#msg").show().animate({width: '250px'}, 200).fadeOut(1000); //提示信息
 //                    addcar.css("cursor","default").removeClass('orange').unbind('click');
-
+            old = $('#itemno').html();
+            itemno = Number(old)+1;
             $('#itemno').html(itemno);
             //        this.destory(); //移除dom
         }
@@ -58,23 +59,22 @@ app.controller('MainCtrl', function ($scope, $http) {
         else {
             var ele = angular.element($event.target).siblings('.quan-input');
             old = ele.val();
-            alert(old);
+            //alert(old);
             newval = Number(old) + 1;
             ele.val(newval);
-            alert(ele.val());
+            //alert(ele.val());
             init();
         }
-alert('fly')
         requesturl = addToCartishUrl;
         data = {dishId: dish.id};
-        alert(data);
+        //alert(data);
         $http({
             method: 'POST',
             url: requesturl,
             data: $.param(data),  // pass in data as strings
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}  // set the headers so angular passing info as form data (not request payload)
         }).success(function (data, status) {
-            alert(data);
+            //alert(data);
         }).error(function (data, status) {
             alert('fail');
         });
@@ -97,10 +97,10 @@ alert('fly')
             else {
                 var ele = angular.element($event.target).siblings('.quan-input');
                 old = ele.val();
-                alert(old);
+                //alert(old);
                 newval = Number(old) - 1;
                 ele.val(newval);
-                alert(ele.val());
+                //alert(ele.val());
                 init();
             }
             init();

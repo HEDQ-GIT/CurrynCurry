@@ -92,8 +92,8 @@
 
 
 {{--cart start--}}
-{{--<div class="shopping-cart wow bounceInRight" data-wow-delay="3s" data-wow-duration="3s">--}}
-<div class="shopping-cart">
+<div class="shopping-cart wow bounceInRight" data-wow-delay="3s" data-wow-duration="3s">
+{{--<div class="shopping-cart">--}}
     <div class="cart-container clearfix">
         <i id="end"></i>
         <a href="#" class="cart-link"><span id="itemno">{{ $itemno }}</span></a>
@@ -456,40 +456,37 @@
         $('.store-image').css('height', storecw);
 
 //        cart start
-        var itemno = 0;
-        $('#itemno').html(itemno);
-
-        $(".add-to-cart-link").click(function(event){
-            itemno++;
-            var endtop = $(window).height() * 0.25;
-            var endleft = $(window).width();
-
-            var addcar = $(this);
-            var img = addcar.parent().parent().find('.store-image').css('background-image');
-            var src = img.replace('url(','').replace(')','');
-            var flyer = $('<img class="u-flyer" src="'+src+'">');
-            flyer.fly({
-                start: {
-                    left: event.clientX, //开始位置（必填）
-                    top: event.clientY-200 //开始位置（必填）
-                },
-                end: {
-                    left: endleft, //结束位置（必填）
-                    top: endtop, //结束位置（必填）
-                    width: 0, //结束时宽度
-                    height: 0 //结束时高度
-                },
-                speed: 1,
-                onEnd: function(){ //结束回调
-//                    $("#msg").show().animate({width: '250px'}, 200).fadeOut(1000); //提示信息
-//                    addcar.css("cursor","default").removeClass('orange').unbind('click');
-//                    this.destory(); //移除dom
-
-                    $('#itemno').html(itemno);
-                }
-            });
-        });
-
+//        var itemno = $('#itemno').html();
+//        $(".add-to-cart-link").click(function(event){
+//            itemno++;
+//            var endtop = $(window).height() * 0.25;
+//            var endleft = $(window).width();
+//
+//            var addcar = $(this);
+//            var img = addcar.parent().parent().find('.store-image').css('background-image');
+//            var src = img.replace('url(','').replace(')','');
+//            var flyer = $('<img class="u-flyer" src="'+src+'">');
+//            flyer.fly({
+//                start: {
+//                    left: event.clientX, //开始位置（必填）
+//                    top: event.clientY-200 //开始位置（必填）
+//                },
+//                end: {
+//                    left: endleft, //结束位置（必填）
+//                    top: endtop, //结束位置（必填）
+//                    width: 0, //结束时宽度
+//                    height: 0 //结束时高度
+//                },
+//                speed: 1,
+//                onEnd: function(){ //结束回调
+////                    $("#msg").show().animate({width: '250px'}, 200).fadeOut(1000); //提示信息
+////                    addcar.css("cursor","default").removeClass('orange').unbind('click');
+////                    this.destory(); //移除dom
+//
+//                    $('#itemno').html(itemno);
+//                }
+//            });
+//        });
 //        cart end
     });
 </script>
