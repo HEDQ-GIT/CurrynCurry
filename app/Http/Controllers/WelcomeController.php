@@ -109,14 +109,22 @@ class WelcomeController extends Controller
         $subject = 'You hava a new order!';
 
         //content
-//        $customTime = $request->input('consumeTime');
-        $customTime = '';
+        $customTime = $request->input('consumeTime');
         $customName = $request->input('name');
         $customPhone = $request->input('phone');
-        $order = Session::get('dishIds');
-//dd(array_count_values($order));
+
+        $result = array();
+        $arr = array_count_values(Session::get('dishIds'));
+        foreach($arr as $id => $no) {
+            $dn = new DishNum();
+            $dish = Dish::find($id);
+            $dn->dish = $dish;
+            $dn->count = $no;
+            $result[] = $dn;
+        }
+
         $data = ['email' => $email, 'name' => $name, 'subject' => $subject,
-            'customName' => $customName, 'customTime' => $customTime, 'customPhone' => $customPhone, 'order' => $order];
+            'customName' => $customName, 'customTime' => $customTime, 'customPhone' => $customPhone, 'result' => $result];
         Mail::send('emails.testmail', $data, function ($message) use ($data) {
             $message->to($data['email'])->subject($data['subject']);
         });

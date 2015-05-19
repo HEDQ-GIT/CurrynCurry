@@ -73,7 +73,7 @@
                     <label for="consume-time">Consuming time:</label>
                 </div>
                 <div class="date-wraper form-input">
-                    <input type="text" id="consume-time" class="form-control" ng-model="formData.consumeTime" name="consumeTime" placeholder="Consuming time" data-date-format="YYYY-MM-DD HH:MM:SS">
+                    <input type="text" id="consume-time" class="form-control" name="consumeTime" placeholder="Consuming time" data-date-format="YYYY-MM-DD HH:MM:SS"></input>
                 </div>
             </div>
             <div class="form-group">

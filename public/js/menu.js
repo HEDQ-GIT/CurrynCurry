@@ -113,6 +113,8 @@ app.controller('MainCtrl', function ($scope, $http) {
     $scope.formData = {};
 
     $scope.submitOrder = function() {
+        consumeTime = $('#consume-time').val();
+        $scope.formData.consumeTime = consumeTime;
         alert($.param($scope.formData));
         $http({
             method: 'POST',

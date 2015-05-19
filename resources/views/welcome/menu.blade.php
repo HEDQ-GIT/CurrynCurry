@@ -96,7 +96,7 @@
 {{--<div class="shopping-cart">--}}
     <div class="cart-container clearfix">
         <i id="end"></i>
-        <a href="#" class="cart-link"><span id="itemno">{{ $itemno }}</span></a>
+        <a href="{{ url('order') }}" class="cart-link"><span id="itemno">{{ $itemno }}</span></a>
         {{--<div class="cart-items">--}}
             {{--<div class="cart-counter">--}}
                 {{--<h5><span><span>2</span> Items</span> In Cart</h5>--}}

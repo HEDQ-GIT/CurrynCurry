@@ -5,25 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
 <body>
-Hi,<br/>
+Hi CurrynCurry,<br/>
 <br/>
-Congratulations, a new customer wants to cooperate with you!
+Congratulations!
 <br/>
-Please get in touch ASAP.
+********Order Details********
+@foreach($result as $idx => $dishNum)
+    {{$idx+1}}.&nbsp;&nbsp; <em>{{ $dishNum->dish->name }}</em>&nbsp;&nbsp;×&nbsp; {{ $dishNum->count }}<br>
+@endforeach
 <br/><br/>
 ********Customer Details********
 <br/>
+Time:
+<em>{{$customTime}}</em> <br/>
 Name:
-<br/>
-<strong><em>{{$customName}}</em></strong> <br/>
-Email:
-<br/>
-<strong><em>{{$customTime}}</em></strong> <br/>
-Message:
-<br/>
-<strong><em>{{$customPhone}}</em></strong> <br/>
+<em>{{$customName}}</em> <br/>
+Phone:
+<em>{{$customPhone}}</em> <br/>
 <br/><br/>
-{{$order}}
+
 Have a great cooperation!
 <br/><br/>
 Thanks for hiring <em>Ekoolab</em> !
