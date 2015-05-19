@@ -474,7 +474,7 @@ h6{
 .store-item .store-image{
 	background-size: cover;
     background-repeat: no-repeat;
-    background-position: top left;	
+    background-position: center center;
 }
 
 .store-items .mix{
