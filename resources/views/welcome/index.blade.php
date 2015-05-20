@@ -8,7 +8,7 @@
 		<title>Curry & Curry</title>
 
 		<link href="fonts/css" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" href="http://www.cssvillain.com/hungry/css/animate.mod.min.css" media="all">
+		{{--<link rel="stylesheet" href="http://www.cssvillain.com/hungry/css/animate.mod.min.css" media="all">--}}
 		<link rel="stylesheet" href="/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/css/index.css" media="all">
 		<link rel="stylesheet" href="/css/animate.css">
