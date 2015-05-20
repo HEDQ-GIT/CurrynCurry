@@ -1,8 +1,8 @@
 function init() {
     var amount = 0;
     $(".quan-input").each(function(i){
-        n = $(this).val();
-        m = $(this).parent().next('.price-td').children('.price').html();
+        n = $(this).html();
+        m = $(this).parent().parent().next('.price-td').children('.price').html();
         //alert(m);
         amount += n*m;
     });
@@ -57,11 +57,11 @@ app.controller('MainCtrl', function ($scope, $http) {
             flyInCart(imgUrl);
         }
         else {
-            var ele = angular.element($event.target).siblings('.quan-input');
-            old = ele.val();
+            var ele = angular.element($event.target).parent().siblings('.quan-input');
+            old = ele.html();
             //alert(old);
             newval = Number(old) + 1;
-            ele.val(newval);
+            ele.html(newval);
             //alert(ele.val());
             init();
         }
@@ -81,6 +81,28 @@ app.controller('MainCtrl', function ($scope, $http) {
     }
 
     $scope.removeDish = function ($event, dish, ball) {
+        if (ball){
+            trele = angular.element($event.target).parent().parent();
+            trele.fadeOut(1000);
+            trele.remove();
+        }
+        else {
+            var ele = angular.element($event.target).parent().siblings('.quan-input');
+            old = ele.html();
+            //alert(old);
+            newval = Number(old) - 1;
+            if (newval == 0) {
+                trele = angular.element($event.target).parent().parent().parent().parent();
+                trele.fadeOut(1000);
+                trele.remove();
+            }
+            else
+                ele.html(newval);
+            //alert(ele.val());
+            //init();
+        }
+        init();
+
         requesturl = removeDishUrl;
         data = {dishId: dish.id, ball: ball};
         $http({
@@ -89,21 +111,20 @@ app.controller('MainCtrl', function ($scope, $http) {
             data: $.param(data),  // pass in data as strings
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}  // set the headers so angular passing info as form data (not request payload)
         }).success(function (data, status) {
-            if (ball){
-                trele = angular.element($event.target).parent().parent();
-                trele.fadeOut('slow');
-                trele.remove();
-            }
-            else {
-                var ele = angular.element($event.target).siblings('.quan-input');
-                old = ele.val();
-                //alert(old);
-                newval = Number(old) - 1;
-                ele.val(newval);
-                //alert(ele.val());
-                init();
-            }
-            init();
+            //if (ball){
+            //    trele = angular.element($event.target).parent().parent();
+            //    trele.fadeOut('slow');
+            //    trele.remove();
+            //}
+            //else {
+            //    var ele = angular.element($event.target).parent().siblings('.quan-input');
+            //    old = ele.html();
+            //    //alert(old);
+            //    newval = Number(old) - 1;
+            //    ele.html(newval);
+            //    //alert(ele.val());
+            //    init();
+            //}
 
         }).error(function (data, status) {
             alert('fail');

@@ -75,7 +75,7 @@ label.error{
 .content{
 	font-size: 14px;
 	overflow: hidden;
-	margin:0;
+	margin-right: 5px;
 	max-height: 60px;
 	line-height: 20px;
 }
@@ -86,16 +86,34 @@ label.error{
 	margin-left: 16px;
 }
 
+.count-row {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
 
 .quan-input {
-	width: 64px;
-	float: left;
-	margin: 5px 3px;
+	padding: 0 !important;
+	font-size: 1.5em;
+	font-weight: normal;
+	margin-bottom: 0 !important;
+	text-align: center;
+	transform: translateY(50%);
+}
+/*.quan-input {*/
+	/*width: 64px;*/
+	/*float: left;*/
+	/*margin: 5px 3px;*/
 	/*display: inline-block !important;*/
+/*}*/
+.btn-grp {
+	padding: 0 !important;
 }
 .addbtn, .subbtn {
-	width: 35px;
-	margin: 5px 3px;
+	padding-top: 5px !important;
+	margin: 3px auto;
+	border-radius: 3px !important;
+	/*width: 35px;*/
+	/*margin: 5px 3px;*/
 }
 
 .pagination {
