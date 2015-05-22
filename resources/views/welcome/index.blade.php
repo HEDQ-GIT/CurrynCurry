@@ -4,6 +4,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+		<link rel="shortcut icon" href="http://gourmet.arenaofthemes.com/favicon.ico">
 
 		<title>Curry & Curry</title>
 
@@ -153,7 +154,7 @@ We needed a new Singapore web developer for our website and didn’t want an in-
         		</div>
         		<div class="food col-lg-4 col-md-4 col-sm-4 wow fadeInDown" data-wow-delay="0.2s">
 					<figure class="effect-chico">
-						<div class="food-img" style="background-image: url('/img/food5.jpg');" alt="img15"></div>
+						<div class="food-img" style="background-image: url('/img/food5.png');" alt="img15"></div>
 						<figcaption>
 							<h2>Curry <span>Fish</span></h2>
 							<p>Chico's main fear was missing the morning bus.</p>

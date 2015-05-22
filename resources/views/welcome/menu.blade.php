@@ -37,10 +37,10 @@
         <div class="header-bottom-bar">
             <div class="row">
                 <ul class="category-filter store-category-filter">
-                    <li class="filter active" data-filter="all"><span>All Products</span></li>
-                    <li class="filter" data-filter=".main"><span>Mains</span></li>
-                    <li class="filter" data-filter=".salad"><span>Salads</span></li>
-                    <li class="filter" data-filter=".starter"><span>Starters</span></li>
+                    <li class="filter active" data-filter="all"></li>
+                    <li class="filter" data-filter=".main"></li>
+                    <li class="filter" data-filter=".salad"></li>
+                    <li class="filter" data-filter=".starter"></li>
                 </ul>
             </div><!-- /row -->
         </div><!-- /header-bottom-bar -->
