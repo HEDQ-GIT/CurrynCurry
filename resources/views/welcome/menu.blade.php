@@ -137,7 +137,10 @@
                             <div class="store-image" style="background-image:url('/img/{{ $dish->imgUrl }}');"></div>
                         {{--</a>--}}
                     </figure>
-                    <h3 class="food-name">{{ $dish->name }}</h3>
+                    <div style="overflow: hidden; height: 25px; font-size: 1.2em; margin-bottom: 12px;">
+                    {{ $dish->name }}
+                    </div>
+                    {{--<h3 class="food-name" style="display: inline; overflow: hidden">{{ $dish->name }}</h3>--}}
                     <ul class="food-category">
                         @foreach($dish->tags as $tag)
                         <li>{{ $tag->name }}</li>
