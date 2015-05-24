@@ -54,12 +54,13 @@
             <div class="col-lg-5 col-md-6 wow fadeInLeft" style="visibility: hidden; -webkit-animation-name: none;">
                 <div class="banner features-right features-active">
                     <div class="image-container">
-                        <div class="banner-image" style="background-image:url('/img/food1.jpg')" alt="Marine Food Banner"></div>
+                        <div class="banner-image" style="background-image:url('/img/food1.jpg')" alt="Marine Food Banner">
+                        </div>
                     </div>
                     <div class="banner-features">
                         <div class="banner-features-inner">
                             <div class="food-price">
-                                <p><sup>$</sup>7<sup class="decimals">99</sup></p>
+                                <p><sup>$</sup>22 - <sup>$</sup>24</p>
                             </div><!-- /food-price -->
                             <ul>
                                 <li>
@@ -75,6 +76,9 @@
                                     <p>seasonal toppings</p>
                                 </li>
                             </ul>
+                            {{--<a class="addspecial fa fa-plus-circle fa-3x" href="javascript:void(0)" ></a>--}}
+
+                            {{--<span class="addspecial">+</span>--}}
                         </div><!-- /banner-features-inner -->
                     </div><!-- /banner-features -->
                 </div><!-- /banner -->

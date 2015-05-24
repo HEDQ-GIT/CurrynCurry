@@ -131,7 +131,17 @@ class WelcomeController extends Controller
         Mail::send('emails.testmail', $data, function ($message) use ($data) {
             $message->to($data['email'])->subject($data['subject']);
         });
-        return 'We are waiting for you!';
+//        return 'We are waiting for you!';
+        $msg = "OREDR: ";
+        foreach($result as $idx => $dishNum)
+        {
+            $msg .= '<';
+            $msg .= $idx+1 .'-'. $dishNum->dish->name . '  × '. $dishNum->count .'>';
+        }
+        $msg .= 'CUSTOMER: '. $data['customTime'] .', '. $data['customName'] .', '. $data['customPhone'];
+
+        return $msg;
+
     }
 
     public function contact()

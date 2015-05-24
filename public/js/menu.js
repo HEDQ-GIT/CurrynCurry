@@ -139,15 +139,31 @@ app.controller('MainCtrl', function ($scope, $http) {
         amount = $('#amount').html();
         $scope.formData.amount = amount;
         //alert($.param($scope.formData));
+        var msg = "";
+        //alert(msg);
         $http({
             method: 'POST',
             url: emailUrl,
             data    : $.param($scope.formData),  // pass in data as strings
             headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
         }).success(function (data, status) {
-            alert(data);
+            //alert(data);
+            $http({
+                method: 'GET',
+                url: "https://api.clicksend.com/http/v2/send.php?method=rest&username=niu2yue@gmail.com&key=D2B4BAEC-E688-CE09-A906-15FE86367A8B&to=+6590121194&message=" + data,
+                //data    : $.param($scope.formData),  // pass in data as strings
+                headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+            }).success(function (data, status){
+                //alert(data);
+            }).error(function (data, status) {
+                //alert(data);
+            });
         }).error(function (data, status) {
-            alert(data);
+            //alert(data);
         });
+        alert("We are waiting for you!");
+
+
+        //"https://api.clicksend.com/http/v2/send.php?method=rest&username=niu2yue@gmail.com&key=D2B4BAEC-E688-CE09-A906-15FE86367A8B&to=+8618483609809&message=Hello,%20this%20is%20a%20sms\%20test"
     }
 })
