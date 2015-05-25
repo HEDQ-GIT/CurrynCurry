@@ -132,11 +132,25 @@
     <div class="container">
         <div class="row">
 
-            @foreach($dishes as $dish)
+            @foreach($dishes as $idx => $dish)
             {{--dish start--}}
             <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
-                <div class="store-item wow fadeInDown" style="visibility: hidden; -webkit-animation-name: none;">
-                    <figure>
+                <div class="store-item wow fadeInDown"
+                     @if($idx%3 ==1)
+                        data-wow-delay="0.2s"
+                     @elseif($idx%3 == 2 )
+                        data-wow-delay="0.4s"
+                     @endif
+                     style="visibility: hidden; -webkit-animation-name: none;">
+
+                {{--@if($idx%3 == 0 )--}}
+                    {{--<div class="store-item wow fadeInDown" style="visibility: hidden; -webkit-animation-name: none;">--}}
+                {{--@elseif($idx%3 == 1 )--}}
+                    {{--<div class="store-item wow fadeInDown" data-wow-delay="0.2s" style="visibility: hidden; -webkit-animation-name: none;">--}}
+                {{--@elseif($idx%3 == 2 )--}}
+                    {{--<div class="store-item wow fadeInDown" data-wow-delay="0.4s" style="visibility: hidden; -webkit-animation-name: none;">--}}
+                {{--@endif--}}
+                            <figure>
                         {{--<a href="">--}}
                             <div class="store-image" style="background-image:url('/img/{{ $dish->imgUrl }}');"></div>
                         {{--</a>--}}

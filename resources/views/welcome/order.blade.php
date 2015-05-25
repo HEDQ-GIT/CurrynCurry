@@ -20,9 +20,10 @@
         var removeDishUrl = "{{ URL('removedish') }}";
         var emailUrl = "{{ URL('email') }}";
     </script>
-    <script src="/js/menu.js"></script>
+
 
     <script>
+        var bSubmit = false;
         $(function(){
             $('.date-wraper').datetimepicker();
 
@@ -51,6 +52,8 @@
                     $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
                 },
                 submitHandler: function(form) {
+//                    alert('submit');
+                    bSubmit = true;
 
                 }
             });
@@ -60,13 +63,14 @@
             }, "The date must be after today");
         });
     </script>
+    <script src="/js/menu.js"></script>
 </head>
 <body ng-app="app" ng-controller="MainCtrl">
 @include('common.nav')
 
 @if (Session::has('dishIds'))
     @if(count(Session::get('dishIds')) > 0)
-        <form id="order-form" ng-submit="submitOrder()">
+        <form id="order-form">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="form-group">
                 <div class="form-label">
@@ -148,7 +152,7 @@
             <div id="tb-footer">
                 <p class="total"><span>Total:&nbsp;&nbsp;</span>S$&nbsp;<span id="amount"></span></p>
                 <input id="submit" type="submit" class="send btn btn-success" ng-click="submitOrder()" value="Send">
-
+                {{--ng-click="submitOrder()"--}}
             </div>
 
         </div>

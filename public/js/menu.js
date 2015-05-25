@@ -76,7 +76,7 @@ app.controller('MainCtrl', function ($scope, $http) {
         }).success(function (data, status) {
             //alert(data);
         }).error(function (data, status) {
-            alert('fail');
+            //alert('fail');
         });
     }
 
@@ -127,15 +127,24 @@ app.controller('MainCtrl', function ($scope, $http) {
             //}
 
         }).error(function (data, status) {
-            alert('fail');
+            //alert('fail');
         });
     }
 
     $scope.formData = {};
 
     $scope.submitOrder = function() {
+        $('#order-form').submit();
+        if (bSubmit == false) {
+            return;
+        }
         consumeTime = $('#consume-time').val();
         $scope.formData.consumeTime = consumeTime;
+        //if (($scope.formData.consumeTime == null) || ($scope.formData.name == null) || ($scope.formData.phone == null)) {
+        //    alert('fill');
+        //    return;
+        //}
+
         amount = $('#amount').html();
         $scope.formData.amount = amount;
         //alert($.param($scope.formData));
@@ -150,7 +159,7 @@ app.controller('MainCtrl', function ($scope, $http) {
             //alert(data);
             $http({
                 method: 'GET',
-                url: "https://api.clicksend.com/http/v2/send.php?method=rest&username=niu2yue@gmail.com&key=D2B4BAEC-E688-CE09-A906-15FE86367A8B&to=+6590121194&message=" + data,
+                url: "https://api.clicksend.com/http/v2/send.php?method=rest&username=niu2yue@gmail.com&key=D2B4BAEC-E688-CE09-A906-15FE86367A8B&to=+6590121194&senderid=ekoolab&message=" + data,
                 //data    : $.param($scope.formData),  // pass in data as strings
                 headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
             }).success(function (data, status){
@@ -162,8 +171,5 @@ app.controller('MainCtrl', function ($scope, $http) {
             //alert(data);
         });
         alert("We are waiting for you!");
-
-
-        //"https://api.clicksend.com/http/v2/send.php?method=rest&username=niu2yue@gmail.com&key=D2B4BAEC-E688-CE09-A906-15FE86367A8B&to=+8618483609809&message=Hello,%20this%20is%20a%20sms\%20test"
     }
 })
