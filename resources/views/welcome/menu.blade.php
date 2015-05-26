@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css" media="all">
     <link rel="stylesheet" href="/css/menu.css">
     <script src="/js/jquery-2.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="http://cdn.bootcss.com/angular.js/1.4.0-rc.1/angular.min.js"></script>
     <script>
         var addToCartishUrl = "{{ URL('adddish') }}";
@@ -23,6 +24,8 @@
 </head>
 <body ng-app="app" ng-controller="MainCtrl">
 @include('common.nav')
+@include('flash::message')
+
 <header class="main-header" id="top">
     <div class="top-banner-container top-banner-container-style">
         <div class="top-banner-bg custom-bg parallax" data-stellar-background-ratio="0.5" style="background-position: 0% -29px;"></div>

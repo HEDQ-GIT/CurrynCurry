@@ -23,7 +23,7 @@ Route::controllers([
 //DQ route start
 get('/', 'WelcomeController@index');
 get('menu', 'WelcomeController@menu');
-get('order', 'WelcomeController@order');
+get('order', ['uses' => 'WelcomeController@order', 'middleware'=> 'order']);
 get('contact', 'WelcomeController@contact');
 
 post('adddish', 'WelcomeController@addDish');
