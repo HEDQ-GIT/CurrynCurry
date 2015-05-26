@@ -21,7 +21,7 @@ class OrderMiddleware {
 			}
 		}
 
-		Flash::warning('Dear customer, please order on the menu here first.');
+		Flash::error('Dear customer, please order on the menu here first.');
 		return redirect('menu');
 	}
 
