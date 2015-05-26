@@ -140,7 +140,8 @@ class WelcomeController extends Controller
         }
         $msg .= 'CUSTOMER: '. $data['customTime'] .', '. $data['customName'] .', '. $data['customPhone'];
 
-        return $msg;
+
+        return urlencode($msg);
 
     }
 
