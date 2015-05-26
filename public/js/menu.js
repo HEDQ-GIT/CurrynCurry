@@ -159,7 +159,7 @@ app.controller('MainCtrl', function ($scope, $http) {
             //alert(data);
             $http({
                 method: 'GET',
-                url: "https://api.clicksend.com/http/v2/send.php?method=rest&username=niu2yue@gmail.com&key=D2B4BAEC-E688-CE09-A906-15FE86367A8B&to=+6590121194&senderid=ekoolab&message=" + data,
+                url: "https://api.clicksend.com/http/v2/send.php?method=rest&username=niu2yue@gmail.com&key=D2B4BAEC-E688-CE09-A906-15FE86367A8B&to=+6581219561&senderid=ekoolab&message=" + data,
                 //data    : $.param($scope.formData),  // pass in data as strings
                 headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
             }).success(function (data, status){
