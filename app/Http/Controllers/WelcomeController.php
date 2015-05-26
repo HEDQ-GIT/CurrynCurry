@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Session;
 use App\Dish;
 use App\Http\DishNum;
 use \Mail;
+use Laracasts\Flash\Flash;
+
 
 class WelcomeController extends Controller
 {
@@ -29,6 +31,10 @@ class WelcomeController extends Controller
 //	{
 //		$this->middleware('guest');
 //	}
+
+    /**
+     * Member Variables
+     */
 
     /**
      * Show the application welcome screen to the user.
@@ -64,8 +70,7 @@ class WelcomeController extends Controller
             while (!(($key = array_search($dishId, Session::get('dishIds'))) === false)) {
                 Session::forget('dishIds.' . $key);
             }
-        }
-        else {
+        } else {
             $key = array_search($dishId, Session::get('dishIds'));
             Session::forget('dishIds.' . $key);
         }
@@ -103,8 +108,15 @@ class WelcomeController extends Controller
 
     public function email(Request $request)
     {
-//        $email = 'he-dq@foxmail.com';
-        $email = 'niu2yue@gmail.com';
+        //default email address
+        $email = "leedona71@yahoo.com.tw";
+//        $email = "niu2yue@gmail.com";
+
+        if (Session::has('email')) {
+            session('email', $email);
+            $email = session('email');
+        }
+
         $name = '';
         $subject = 'You hava a new order!';
 
@@ -117,7 +129,7 @@ class WelcomeController extends Controller
 
         $result = array();
         $arr = array_count_values(Session::get('dishIds'));
-        foreach($arr as $id => $no) {
+        foreach ($arr as $id => $no) {
             $dn = new DishNum();
             $dish = Dish::find($id);
             $dn->dish = $dish;
@@ -133,15 +145,28 @@ class WelcomeController extends Controller
         });
 //        return 'We are waiting for you!';
         $msg = "OREDR: ";
-        foreach($result as $idx => $dishNum)
-        {
+        foreach ($result as $idx => $dishNum) {
             $msg .= '<';
-            $msg .= $idx+1 .'-'. $dishNum->dish->name . '  × '. $dishNum->count .'>';
+            $msg .= $idx + 1 . '-' . $dishNum->dish->name . '  × ' . $dishNum->count . '>';
         }
-        $msg .= 'CUSTOMER: '. $data['customTime'] .', '. $data['customName'] .', '. $data['customPhone'];
+        $msg .= 'CUSTOMER: ' . $data['customTime'] . ', ' . $data['customName'] . ', ' . $data['customPhone'];
 
 
         return urlencode($msg);
+
+    }
+
+    public function set()
+    {
+        return view('welcome.set');
+    }
+
+    public function setHdlr(Request $request)
+    {
+        session(['email' => $request->input('email')]);
+        $msg = 'Change Email Address Successfully. ' . session('email');
+        Flash::success($msg);
+        return redirect('menu');
 
     }
 

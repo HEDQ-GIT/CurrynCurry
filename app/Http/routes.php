@@ -31,6 +31,7 @@ post('removedish', 'WelcomeController@removeDish');
 post('email', 'WelcomeController@email');
 get('clear', 'WelcomeController@clear');
 get('all', 'WelcomeController@all');
-
+get('set', 'WelcomeController@set');
+post('setHdlr', 'WelcomeController@setHdlr');
 
 //DQ route end
