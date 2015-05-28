@@ -111,7 +111,7 @@ class WelcomeController extends Controller
         //default email address
 //        $email = "leedona71@yahoo.com.tw";
 //        $email = "niu2yue@gmail.com";
-        $email = "curryncurry@yahoo.com";
+        $email = "curryncurrysg@yahoo.com";
 
         if (Session::has('email')) {
             session('email', $email);

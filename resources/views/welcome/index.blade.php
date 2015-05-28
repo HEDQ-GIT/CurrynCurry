@@ -69,10 +69,10 @@
 
 			<ul id="slider" class="rslides">
 		        <li>
-		        	<div class="image" style="background-image: url('/img/slider1_bg.jpg');"/>
+		        	<div class="image" style="background-image: url('/img/food1.jpg');"/>
 		        </li>
 		        <li>
-					<div class="image" style="background-image: url('/img/food1.jpg');"/>
+					<div class="image" style="background-image: url('/img/slider2_bg.jpg');"/>
 				</li>
 		        <li>
 					<div class="image" style="background-image: url('/img/slider2_bg_new.jpg'); background-position: center center;"/>
@@ -115,61 +115,61 @@ We needed a new Singapore web developer for our website and didn’t want an in-
         		<div class="food col-lg-4 col-md-4 col-sm-4 wow fadeInDown">
         			<figure class="effect-chico">
 						<div class="food-img" style="background-image: url('/img/food1.jpg');" alt="img15"></div>
-						<figcaption>
-							<h2>Curry <span>Snapper Head</span></h2>
+						{{--<figcaption>--}}
+							{{--<h2>Curry <span>Snapper Head</span></h2>--}}
 							{{--<p>Chico's main fear was missing the morning bus.</p>--}}
-							<a href="#">View more</a>
-						</figcaption>
+							{{--<a href="#">View more</a>--}}
+						{{--</figcaption>--}}
 					</figure>
 				</div>
 				<div class="food col-lg-4 col-md-4 col-sm-4 wow fadeInDown" data-wow-delay="0.2s">
 					<figure class="effect-chico">
 						<div class="food-img" style="background-image: url('/img/food2.jpg');" alt="img15"></div>
-						<figcaption>
-							<h2>Steam <span>Snapper Head</span></h2>
+						{{--<figcaption>--}}
+							{{--<h2>Steam <span>Snapper Head</span></h2>--}}
 							{{--<p>Chico's main fear was missing the morning bus.</p>--}}
-							<a href="#">View more</a>
-						</figcaption>
+							{{--<a href="#">View more</a>--}}
+						{{--</figcaption>--}}
 					</figure>
         		</div>
         		<div class="food col-lg-4 col-md-4 col-sm-4 wow fadeInDown" data-wow-delay="0.4s">
 					<figure class="effect-chico">
 						<div class="food-img" style="background-image: url('/img/dish_3.png');" alt="img15"></div>
-						<figcaption>
-							<h2>Prawn & Meat<span> Roll</span></h2>
+						{{--<figcaption>--}}
+							{{--<h2>Prawn & Meat<span> Roll</span></h2>--}}
 							{{--<p>Chico's main fear was missing the morning bus.</p>--}}
-							<a href="#">View more</a>
-						</figcaption>
+							{{--<a href="#">View more</a>--}}
+						{{--</figcaption>--}}
 					</figure>
         		</div>
         		<div class="food col-lg-4 col-md-4 col-sm-4 wow fadeInDown">
 					<figure class="effect-chico">
 						<div class="food-img" style="background-image: url('/img/dish_4.png');" alt="img15"></div>
-						<figcaption>
-							<h2>Curry <span>Snapper Tail</span></h2>
+						{{--<figcaption>--}}
+							{{--<h2>Curry <span>Snapper Tail</span></h2>--}}
 							{{--<p>Chico's main fear was missing the morning bus.</p>--}}
-							<a href="#">View more</a>
-						</figcaption>
+							{{--<a href="#">View more</a>--}}
+						{{--</figcaption>--}}
 					</figure>
         		</div>
         		<div class="food col-lg-4 col-md-4 col-sm-4 wow fadeInDown" data-wow-delay="0.2s">
 					<figure class="effect-chico">
 						<div class="food-img" style="background-image: url('/img/dish_5.jpg');" alt="img15"></div>
-						<figcaption>
-							<h2>Steam <span>Snapper Tail</span></h2>
+						{{--<figcaption>--}}
+							{{--<h2>Steam <span>Snapper Tail</span></h2>--}}
 							{{--<p>Chico's main fear was missing the morning bus.</p>--}}
-							<a href="#">View more</a>
-						</figcaption>
+							{{--<a href="#">View more</a>--}}
+						{{--</figcaption>--}}
 					</figure>
         		</div>
         		<div class="food col-lg-4 col-md-4 col-sm-4 wow fadeInDown" data-wow-delay="0.4s">
 					<figure class="effect-chico">
 						<div class="food-img" style="background-image: url('/img/dish_6.jpg');" alt="img15"></div>
-						<figcaption>
-							<h2>Sin Chow <span>Fried Rice</span></h2>
+						{{--<figcaption>--}}
+							{{--<h2>Sin Chow <span>Fried Rice</span></h2>--}}
 							{{--<p>Chico's main fear was missing the morning bus.</p>--}}
-							<a href="#">View more</a>
-						</figcaption>
+							{{--<a href="#">View more</a>--}}
+						{{--</figcaption>--}}
 					</figure>
         		</div>
         	</div>
@@ -183,7 +183,7 @@ We needed a new Singapore web developer for our website and didn’t want an in-
 	                <p>Feel free to contact us with any questions, to provide some feedback or if you just want to say
 	                    hello!</p>
 
-	                <p><a href="">curryncurry@yahoo.com</a></p>
+	                <p><a href="">curryncurrysg@yahoo.com</a></p>
 
 <ul class="list-inline banner-social-buttons">
     <li><a href="" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="">TWITTER</span></a></li>
