@@ -62,7 +62,7 @@ return array(
 	'permission'=> function()
 	{
 //		return Auth::check();
-		return false;
+		return true;
 	},
 
 	/**
