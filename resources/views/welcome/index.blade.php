@@ -117,7 +117,7 @@ We needed a new Singapore web developer for our website and didn’t want an in-
 						<div class="food-img" style="background-image: url('/img/food1.jpg');" alt="img15"></div>
 						<figcaption>
 							<h2>Curry <span>Fish</span></h2>
-							<p>Chico's main fear was missing the morning bus.</p>
+							{{--<p>Chico's main fear was missing the morning bus.</p>--}}
 							<a href="#">View more</a>
 						</figcaption>
 					</figure>
@@ -127,7 +127,7 @@ We needed a new Singapore web developer for our website and didn’t want an in-
 						<div class="food-img" style="background-image: url('/img/food2.jpg');" alt="img15"></div>
 						<figcaption>
 							<h2>Curry <span>Fish</span></h2>
-							<p>Chico's main fear was missing the morning bus.</p>
+							{{--<p>Chico's main fear was missing the morning bus.</p>--}}
 							<a href="#">View more</a>
 						</figcaption>
 					</figure>
@@ -137,7 +137,7 @@ We needed a new Singapore web developer for our website and didn’t want an in-
 						<div class="food-img" style="background-image: url('/img/dish_3.png');" alt="img15"></div>
 						<figcaption>
 							<h2>Curry <span>Fish</span></h2>
-							<p>Chico's main fear was missing the morning bus.</p>
+							{{--<p>Chico's main fear was missing the morning bus.</p>--}}
 							<a href="#">View more</a>
 						</figcaption>
 					</figure>
@@ -147,7 +147,7 @@ We needed a new Singapore web developer for our website and didn’t want an in-
 						<div class="food-img" style="background-image: url('/img/dish_4.png');" alt="img15"></div>
 						<figcaption>
 							<h2>Curry <span>Fish</span></h2>
-							<p>Chico's main fear was missing the morning bus.</p>
+							{{--<p>Chico's main fear was missing the morning bus.</p>--}}
 							<a href="#">View more</a>
 						</figcaption>
 					</figure>
@@ -157,7 +157,7 @@ We needed a new Singapore web developer for our website and didn’t want an in-
 						<div class="food-img" style="background-image: url('/img/dish_5.jpg');" alt="img15"></div>
 						<figcaption>
 							<h2>Curry <span>Fish</span></h2>
-							<p>Chico's main fear was missing the morning bus.</p>
+							{{--<p>Chico's main fear was missing the morning bus.</p>--}}
 							<a href="#">View more</a>
 						</figcaption>
 					</figure>
@@ -167,7 +167,7 @@ We needed a new Singapore web developer for our website and didn’t want an in-
 						<div class="food-img" style="background-image: url('/img/dish_6.jpg');" alt="img15"></div>
 						<figcaption>
 							<h2>Curry <span>Fish</span></h2>
-							<p>Chico's main fear was missing the morning bus.</p>
+							{{--<p>Chico's main fear was missing the morning bus.</p>--}}
 							<a href="#">View more</a>
 						</figcaption>
 					</figure>
@@ -183,7 +183,7 @@ We needed a new Singapore web developer for our website and didn’t want an in-
 	                <p>Feel free to contact us with any questions, to provide some feedback or if you just want to say
 	                    hello!</p>
 
-	                <p><a href="">contact@tanglong.com</a></p>
+	                <p><a href="">curryncurry@yahoo.com</a></p>
 
 <ul class="list-inline banner-social-buttons">
     <li><a href="" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="">TWITTER</span></a></li>
