@@ -116,7 +116,7 @@ We needed a new Singapore web developer for our website and didn’t want an in-
         			<figure class="effect-chico">
 						<div class="food-img" style="background-image: url('/img/food1.jpg');" alt="img15"></div>
 						<figcaption>
-							<h2>Curry <span>Fish</span></h2>
+							<h2>Curry <span>Snapper Head</span></h2>
 							{{--<p>Chico's main fear was missing the morning bus.</p>--}}
 							<a href="#">View more</a>
 						</figcaption>
@@ -126,7 +126,7 @@ We needed a new Singapore web developer for our website and didn’t want an in-
 					<figure class="effect-chico">
 						<div class="food-img" style="background-image: url('/img/food2.jpg');" alt="img15"></div>
 						<figcaption>
-							<h2>Curry <span>Fish</span></h2>
+							<h2>Steam <span>Snapper Head</span></h2>
 							{{--<p>Chico's main fear was missing the morning bus.</p>--}}
 							<a href="#">View more</a>
 						</figcaption>
@@ -136,7 +136,7 @@ We needed a new Singapore web developer for our website and didn’t want an in-
 					<figure class="effect-chico">
 						<div class="food-img" style="background-image: url('/img/dish_3.png');" alt="img15"></div>
 						<figcaption>
-							<h2>Curry <span>Fish</span></h2>
+							<h2>Prawn & Meat<span> Roll</span></h2>
 							{{--<p>Chico's main fear was missing the morning bus.</p>--}}
 							<a href="#">View more</a>
 						</figcaption>
@@ -146,7 +146,7 @@ We needed a new Singapore web developer for our website and didn’t want an in-
 					<figure class="effect-chico">
 						<div class="food-img" style="background-image: url('/img/dish_4.png');" alt="img15"></div>
 						<figcaption>
-							<h2>Curry <span>Fish</span></h2>
+							<h2>Curry <span>Snapper Tail</span></h2>
 							{{--<p>Chico's main fear was missing the morning bus.</p>--}}
 							<a href="#">View more</a>
 						</figcaption>
@@ -156,7 +156,7 @@ We needed a new Singapore web developer for our website and didn’t want an in-
 					<figure class="effect-chico">
 						<div class="food-img" style="background-image: url('/img/dish_5.jpg');" alt="img15"></div>
 						<figcaption>
-							<h2>Curry <span>Fish</span></h2>
+							<h2>Steam <span>Snapper Tail</span></h2>
 							{{--<p>Chico's main fear was missing the morning bus.</p>--}}
 							<a href="#">View more</a>
 						</figcaption>
@@ -166,7 +166,7 @@ We needed a new Singapore web developer for our website and didn’t want an in-
 					<figure class="effect-chico">
 						<div class="food-img" style="background-image: url('/img/dish_6.jpg');" alt="img15"></div>
 						<figcaption>
-							<h2>Curry <span>Fish</span></h2>
+							<h2>Sin Chow <span>Fried Rice</span></h2>
 							{{--<p>Chico's main fear was missing the morning bus.</p>--}}
 							<a href="#">View more</a>
 						</figcaption>
