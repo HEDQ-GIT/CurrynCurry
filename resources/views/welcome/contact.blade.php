@@ -81,7 +81,7 @@
     <div id="contact-info" class="col-sm-4 col-md-4 col-lg-4">
         <div id="email">
             <p class="info-title">EMAIL</p>
-            <p class="info-content">curryncurry@yahoo.com</p>
+            <p class="info-content">curryncurrysg@yahoo.com</p>
         </div>
 
         <div id="phone">
