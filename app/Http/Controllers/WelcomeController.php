@@ -109,8 +109,9 @@ class WelcomeController extends Controller
     public function email(Request $request)
     {
         //default email address
-        $email = "leedona71@yahoo.com.tw";
+//        $email = "leedona71@yahoo.com.tw";
 //        $email = "niu2yue@gmail.com";
+        $email = "curryncurry@yahoo.com";
 
         if (Session::has('email')) {
             session('email', $email);

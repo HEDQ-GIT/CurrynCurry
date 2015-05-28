@@ -72,10 +72,10 @@
 		        	<div class="image" style="background-image: url('/img/slider1_bg.jpg');"/>
 		        </li>
 		        <li>
-		        	<div class="image" style="background-image: url('/img/slider2_bg.jpg');"/>
-		        </li>
+					<div class="image" style="background-image: url('/img/food1.jpg');"/>
+				</li>
 		        <li>
-		        	<div class="image" style="background-image: url('/img/slider3_bg.jpg');"/>
+					<div class="image" style="background-image: url('/img/slider2_bg_new.jpg'); background-position: center center;"/>
 		        </li>
 		    </ul>
 		</section>
@@ -134,7 +134,7 @@ We needed a new Singapore web developer for our website and didn’t want an in-
         		</div>
         		<div class="food col-lg-4 col-md-4 col-sm-4 wow fadeInDown" data-wow-delay="0.4s">
 					<figure class="effect-chico">
-						<div class="food-img" style="background-image: url('/img/food3.jpg');" alt="img15"></div>
+						<div class="food-img" style="background-image: url('/img/dish_3.png');" alt="img15"></div>
 						<figcaption>
 							<h2>Curry <span>Fish</span></h2>
 							<p>Chico's main fear was missing the morning bus.</p>
@@ -144,7 +144,7 @@ We needed a new Singapore web developer for our website and didn’t want an in-
         		</div>
         		<div class="food col-lg-4 col-md-4 col-sm-4 wow fadeInDown">
 					<figure class="effect-chico">
-						<div class="food-img" style="background-image: url('/img/food4.jpg');" alt="img15"></div>
+						<div class="food-img" style="background-image: url('/img/dish_4.png');" alt="img15"></div>
 						<figcaption>
 							<h2>Curry <span>Fish</span></h2>
 							<p>Chico's main fear was missing the morning bus.</p>
@@ -154,7 +154,7 @@ We needed a new Singapore web developer for our website and didn’t want an in-
         		</div>
         		<div class="food col-lg-4 col-md-4 col-sm-4 wow fadeInDown" data-wow-delay="0.2s">
 					<figure class="effect-chico">
-						<div class="food-img" style="background-image: url('/img/food5.png');" alt="img15"></div>
+						<div class="food-img" style="background-image: url('/img/dish_5.jpg');" alt="img15"></div>
 						<figcaption>
 							<h2>Curry <span>Fish</span></h2>
 							<p>Chico's main fear was missing the morning bus.</p>
@@ -164,7 +164,7 @@ We needed a new Singapore web developer for our website and didn’t want an in-
         		</div>
         		<div class="food col-lg-4 col-md-4 col-sm-4 wow fadeInDown" data-wow-delay="0.4s">
 					<figure class="effect-chico">
-						<div class="food-img" style="background-image: url('/img/food6.jpg');" alt="img15"></div>
+						<div class="food-img" style="background-image: url('/img/dish_6.jpg');" alt="img15"></div>
 						<figcaption>
 							<h2>Curry <span>Fish</span></h2>
 							<p>Chico's main fear was missing the morning bus.</p>

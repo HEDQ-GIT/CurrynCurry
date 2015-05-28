@@ -22,12 +22,12 @@
         function initialize() {
             var mapOptions = {
                 zoom: 16,
-                center: new google.maps.LatLng(1.355261,103.8798769)
+                center: new google.maps.LatLng(1.357428,103.884693)
             }
             var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
             var image = '/img/pin.png';
-            var myLatLng = new google.maps.LatLng(1.355261,103.8798769);
+            var myLatLng = new google.maps.LatLng(1.357428,103.884693);
             var beachMarker = new google.maps.Marker({
                 position: myLatLng,
                 map: map,
@@ -81,17 +81,17 @@
     <div id="contact-info" class="col-sm-4 col-md-4 col-lg-4">
         <div id="email">
             <p class="info-title">EMAIL</p>
-            <p class="info-content">curryinfo@curry.com</p>
+            <p class="info-content">curryncurry@yahoo.com</p>
         </div>
 
         <div id="phone">
             <p class="info-title">PHONE</p>
-            <p class="info-content">+65 8934 9019</p>
+            <p class="info-content">+65 81219561</p>
         </div>
 
         <div id="addr">
             <p class="info-title">ADDRESS</p>
-            <p class="info-content">#06-243 Woodlands Drive 50 <br/> Singapore 278923</p>
+            <p class="info-content">Block 203 HouGang Street 21 #01-45 <br/> Singapore 530203</p>
         </div>
     </div>
 </section>

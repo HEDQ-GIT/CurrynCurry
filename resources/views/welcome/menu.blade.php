@@ -28,7 +28,7 @@
 
 <header class="main-header" id="top">
     <div class="top-banner-container top-banner-container-style">
-        <div class="top-banner-bg custom-bg parallax" data-stellar-background-ratio="0.5" style="background-position: 0% -29px;"></div>
+        <div class="top-banner-bg custom-bg parallax" data-stellar-background-ratio="0.5" style="background-position: -30%;"></div>
         <div class="top-banner" style="opacity: 1;">
             <div class="top-image animated fadeInDown">
                 <h1>Our Food Menu</h1>
