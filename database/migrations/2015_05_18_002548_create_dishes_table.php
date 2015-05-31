@@ -16,7 +16,14 @@ class CreateDishesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('imgUrl');
-            $table->decimal('price', 7, 2);
+            $table->decimal('min_price', 7, 2);
+            $table->decimal('max_price', 7, 2);
+            $table->boolean('isspicy');
+            $table->text('description');
+            $table->boolean('isrange');
+            $table->tinyInteger('menu_index');
+
+
             $table->timestamps();
         });
     }

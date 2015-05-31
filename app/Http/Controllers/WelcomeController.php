@@ -50,7 +50,6 @@ class WelcomeController extends Controller
     {
         $dishes = Dish::all();
         $itemno = count(Session::get('dishIds'));
-
         return view('welcome.menu', compact('dishes'))->with('itemno', $itemno);
     }
 

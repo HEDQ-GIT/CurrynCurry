@@ -4,78 +4,94 @@ return array(
     'single' => 'Dish',
     'model' => 'App\Dish',
     'columns' => array(
-        'id' => array(
-            'title' => 'ID'
+        'menu_index' => array(
+            'title' => 'Order'
         ),
         'name' => array(
             'title' => 'Name'
         ),
-        'price' => array(
-            'title' => 'Price',
+        'min_price' => array(
+            'title' => 'Min Price',
             'type' => 'number',
             'symbol' => 'S$', //optional, defaults to ''
             'decimals' => 2
+        ),
+        'max_price' => array(
+            'title' => 'Max Price',
+            'type' => 'number',
+            'symbol' => 'S$', //optional, defaults to ''
+            'decimals' => 2
+        ),
+        'isrange' => array(
+            'title' => 'Price Range',
+            'select' => "IF((:table).isrange, 'Yes', 'No')"
         ),
         'imgUrl' => array(
             'title' => 'Image',
             'output' => '<img src="/img/(:value)" height="100" />',
         ),
-//        'tags' => array(
-//            'title' => 'Tags',
-//            'type' => 'relationship',
-//            'name_field' => 'name',
-//
-////            'relationship'=> 'tags',
-////            'select' => "(:table).tags",
-//        )
+        'isspicy' => array(
+            'title' => 'Spicy',
+            'select' => "IF((:table).isspicy, 'Yes', 'No')"
+        ),
+        'description' => array(
+            'title' => 'Description',
+            'type' => 'textarea',
+            'limit' => 100, //optional, defaults to no limit
+        )
     ),
     'edit_fields' => array(
+        'menu_index' => array(
+            'title' => 'Order',
+            'type' => 'number',
+        ),
         'name' => array(
             'title' => 'Name',
             'type' => 'text'
         ),
-        'price' => array(
-            'title' => 'Price',
+        'min_price' => array(
+            'title' => 'Min Price',
             'type' => 'number',
             'symbol' => 'S$', //optional, defaults to ''
             'decimals' => 2
+        ),
+        'max_price' => array(
+            'title' => 'Max Price',
+            'type' => 'number',
+            'symbol' => 'S$', //optional, defaults to ''
+            'decimals' => 2
+        ),
+        'isrange' => array(
+            'title' => 'Price Range',
+            'type' => 'bool',
         ),
         'imgUrl' => array(
             'title' => 'Image',
             'type' => 'image',
             'naming' => 'keep',
             'location' => public_path() . '/img/',
-//            'size_limit' => 2,
-//            'sizes' => array(
-//                array(1200, 1314, 'crop', 'public/uploads/products/resize/', 100),
-//                array(452, 495, 'landscape', 'public/uploads/products/detail/', 100),
-//            )
         ),
-        'tags' => array(
-            'title' => 'Tags',
-            'type' => 'relationship',
-            'name_field' => 'name',
+        'isspicy' => array(
+            'title' => 'Spicy',
+            'type' => 'bool',
+        ),
+        'description' => array(
+            'title' => 'Description',
+            'type' => 'textarea',
+            'limit' => 100, //optional, defaults to no limit
         )
     ),
     'sort' => array(
-        'field' => 'id',
+        'field' => 'menu_index',
         'direction' => 'asc',
     ),
     'filters' => array(
-        'id',
+//        'menu-index' => array(
+//            'title' => 'Order',
+//            'type' => 'number',
+//        ),
         'name' => array(
             'title' => 'Name',
         ),
-        'price' => array(
-            'title' => 'Price',
-            'type' => 'number',
-            'symbol' => 'S$', //optional, defaults to ''
-            'decimals' => 2
-        ),
-        'tags' => array(
-            'title' => 'Tags',
-            'type' => 'relationship',
-            'name_field' => 'name',
-        )
     ),
 );
