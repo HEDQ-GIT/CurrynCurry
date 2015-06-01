@@ -178,7 +178,8 @@
 
                         <div style="overflow: hidden; height: 25px; font-size: 1.2em; margin-bottom: 12px;position:relative;">
                             @if($dish->isspicy)
-                            <img src="/img/chili.png" alt="" style="position: absolute;top:0;left: 20%; height:90%;"/>
+                            {{--<img src="/img/chili.png" alt="" style="position: absolute;top:0;left: 0; height:90%;"/>--}}
+                                <img src="/img/chili.png" alt="" style="height:90%;"/>
                             @endif
                             {{ $dish->name }}
                         </div>

@@ -20,6 +20,8 @@ class AuthController extends Controller {
 
 	use AuthenticatesAndRegistersUsers;
 
+	protected $redirectTo = 'dev-admin';
+
 	/**
 	 * Create a new authentication controller instance.
 	 *

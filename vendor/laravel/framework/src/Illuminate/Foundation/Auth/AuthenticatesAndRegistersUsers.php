@@ -27,7 +27,8 @@ trait AuthenticatesAndRegistersUsers {
 	 */
 	public function getRegister()
 	{
-		return view('auth.register');
+		return redirect('auth/login');
+//		return view('auth.register');
 	}
 
 	/**
