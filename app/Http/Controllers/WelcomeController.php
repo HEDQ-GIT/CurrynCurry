@@ -109,7 +109,7 @@ class WelcomeController extends Controller
     {
         //default email address
 //        $email = "leedona71@yahoo.com.tw";
-//        $email = "niu2yue@gmail.com";
+//        $email = "he-dq@foxmail.com";
         $email = "curryncurrysg@yahoo.com";
 
         if (Session::has('email')) {
@@ -147,7 +147,7 @@ class WelcomeController extends Controller
         $msg = "OREDR: ";
         foreach ($result as $idx => $dishNum) {
             $msg .= '<';
-            $msg .= $idx + 1 . '-' . $dishNum->dish->name . '  × ' . $dishNum->count . '>';
+            $msg .= $dishNum->dish->menu_index . '-' . $dishNum->dish->name . '  × ' . $dishNum->count . '>';
         }
         $msg .= 'CUSTOMER: ' . $data['customTime'] . ', ' . $data['customName'] . ', ' . $data['customPhone'];
 

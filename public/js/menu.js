@@ -1,12 +1,18 @@
 function init() {
     var amount = 0;
+    var bplus = false;
     $(".quan-input").each(function(i){
         n = $(this).html();
         m = $(this).parent().parent().next('.price-td').children('.price').html();
-        //alert(m);
+        if ($(this).parent().parent().next('.price-td').children('.price').hasClass('plus')) {
+            bplus = true;
+        }
         amount += n*m;
     });
-    $('#amount').html(amount.toFixed(2));
+    if(bplus)
+        $('#amount').html(amount.toFixed(2)+' ++');
+    else
+        $('#amount').html(amount.toFixed(2));
 }
 
 $(function() {
@@ -148,6 +154,7 @@ app.controller('MainCtrl', function ($scope, $http) {
         amount = $('#amount').html();
         $scope.formData.amount = amount;
         //alert($.param($scope.formData));
+        //return;
         var msg = "";
         //alert(msg);
         $http({
@@ -160,6 +167,7 @@ app.controller('MainCtrl', function ($scope, $http) {
             $http({
                 method: 'GET',
                 url: "https://api.clicksend.com/http/v2/send.php?method=rest&username=niu2yue@gmail.com&key=D2B4BAEC-E688-CE09-A906-15FE86367A8B&to=+6581219561&senderid=ekoolab&message=" + data,
+                //81219561 90121194
                 //data    : $.param($scope.formData),  // pass in data as strings
                 headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
             }).success(function (data, status){

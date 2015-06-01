@@ -121,7 +121,7 @@
 
 
 {{--cart start--}}
-<div class="shopping-cart wow bounceInRight" data-wow-delay="3s" data-wow-duration="3s">
+<div class="shopping-cart wow bounceInRight" data-wow-duration="5s">
     {{--<div class="shopping-cart">--}}
     <div class="cart-container clearfix">
         <i id="end"></i>
@@ -171,12 +171,15 @@
 
                         <figure style="position: relative;">
                             <div class="store-image" style="background-image:url('/img/{{ $dish->imgUrl }}');"></div>
-                            @if($dish->isspicy)
-                                <img src="/img/pin.png" alt="" style="position: absolute;top:10%;left: 10%;"/>
-                            @endif
+                            {{--@if($dish->isspicy)--}}
+                                {{--<img src="/img/chili.png" alt="" style="position: absolute;top:0;left: 0;"/>--}}
+                            {{--@endif--}}
                         </figure>
 
-                        <div style="overflow: hidden; height: 25px; font-size: 1.2em; margin-bottom: 12px;">
+                        <div style="overflow: hidden; height: 25px; font-size: 1.2em; margin-bottom: 12px;position:relative;">
+                            @if($dish->isspicy)
+                            <img src="/img/chili.png" alt="" style="position: absolute;top:0;left: 20%; height:90%;"/>
+                            @endif
                             {{ $dish->name }}
                         </div>
 

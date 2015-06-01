@@ -99,6 +99,10 @@ label.error{
 	text-align: center;
 	transform: translateY(50%);
 }
+
+.plus::after {
+	content: '++';
+}
 /*.quan-input {*/
 	/*width: 64px;*/
 	/*float: left;*/

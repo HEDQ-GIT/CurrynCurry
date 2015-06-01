@@ -12,7 +12,7 @@ Congratulations!
 ********Order Details********
 <br/>
 @foreach($result as $idx => $dishNum)
-    {{$idx+1}}.&nbsp;&nbsp; <em>{{ $dishNum->dish->name }}</em>&nbsp;&nbsp;×&nbsp; {{ $dishNum->count }}<br>
+    {{ $dishNum->dish->menu_index }}.&nbsp;&nbsp; <em>{{ $dishNum->dish->name }}</em>&nbsp;&nbsp;×&nbsp; {{ $dishNum->count }}<br>
 @endforeach
 <br/>
 Total:&nbsp;S$&nbsp;{{$amount}}

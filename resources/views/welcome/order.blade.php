@@ -138,7 +138,13 @@
                                 {{--<a class="subbtn btn btn-primary" href="javascript:void(0)" ng-click="removeDish($event, {{ $dishNum->dish }}, false)">-</a>--}}
                                 {{--<a class="addbtn btn btn-primary" href="javascript:void(0)" ng-click="addToCart($event, {{ $dishNum->dish }}, false)">+</a>--}}
                             </td>
-                            <td class="col-xs-1 col-sm-1 col-md-1 col-lg-1 price-td">S$<span class="price">{{ $dishNum->dish->price }}</span></td>
+                            <td class="col-xs-1 col-sm-1 col-md-1 col-lg-1 price-td">
+                                S$<span class="price @if($dishNum->dish->isrange) plus @endif">
+                                    {{ $dishNum->dish->min_price }}</span>
+                                {{--@if($dishNum->dish->isrange)--}}
+                                    {{--<span class="plus">++</span>--}}
+                                {{--@endif--}}
+                            </td>
                             {{--<td class="col-xs-1 col-sm-1 col-md-1 col-lg-1">Pending</td>--}}
                             <td class="col-xs-1 col-sm-1 col-md-1 col-lg-1"><span class="avail-sign glyphicon glyphicon-ok-sign"></span></td>
                             <td class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
