@@ -59,7 +59,7 @@
 				<div class="tlt">
 					<ul class="header-texts" style="display: none;">
 						<li class="current">Dine with us!</li>
-						<li class="">Try the Wine!</li>
+						{{--<li class="">Try the Wine!</li>--}}
 						<li class="">Bring the Family!</li>
 						<li class="">Enjoy our Food!</li>
 						<li class="">Have a Great Time!</li>
@@ -80,34 +80,34 @@
 		    </ul>
 		</section>
 
-		<section id="story" class="row wow fadeInDown">
-            <img id="story-img" class="col-lg-4 col-md-4 col-sm-4" src="/img/herb.jpg" alt="">
-            <div id="story-content" class="col-lg-8 col-md-8 col-sm-8">
-                <h1>Restaurant Story</h1>
-                <p>No one would have believed in the last years of the nine-teenth century that this world was
-                being watched keenly and closely by intelligences greater than man’s and yet as mor- tal as his own;
-                that as men busied themselves about their vari- ous concerns they were scrutinised and studied,
-                perhaps al- most as narrowly as a man with a microscope might scrutinise the transient creatures that
-                swarm and multiply in a drop of water.With infinite complacency men went to and fro over this
-                globe about their little affairs, serene in their assurance of their empire over matter.
-It is possible that the infusoria under the microscope do the same. No one gave a thought to the older.
-                </p>
-            </div>
-        </section>
+		{{--<section id="story" class="row wow fadeInDown">--}}
+            {{--<img id="story-img" class="col-lg-4 col-md-4 col-sm-4" src="/img/herb.jpg" alt="">--}}
+            {{--<div id="story-content" class="col-lg-8 col-md-8 col-sm-8">--}}
+                {{--<h1>Restaurant Story</h1>--}}
+                {{--<p>No one would have believed in the last years of the nine-teenth century that this world was--}}
+                {{--being watched keenly and closely by intelligences greater than man’s and yet as mor- tal as his own;--}}
+                {{--that as men busied themselves about their vari- ous concerns they were scrutinised and studied,--}}
+                {{--perhaps al- most as narrowly as a man with a microscope might scrutinise the transient creatures that--}}
+                {{--swarm and multiply in a drop of water.With infinite complacency men went to and fro over this--}}
+                {{--globe about their little affairs, serene in their assurance of their empire over matter.--}}
+{{--It is possible that the infusoria under the microscope do the same. No one gave a thought to the older.--}}
+                {{--</p>--}}
+            {{--</div>--}}
+        {{--</section>--}}
 
-        <section id="saying" class="row wow fadeInDown">
-        	 <div id="saying-content" class="col-lg-8 col-md-8 col-sm-8">
-                <p class="symbol-1"></p>
-                <p>
-We needed a new Singapore web developer for our website and didn’t want an in-house development
-(as it gave major challenges in updating the website). We compare a couple of website developers
-	                on cost and example sites and FutureWorkz scored well on both!
-                <span class="symbol-2"></span>
-                </p>
-                <p id="author">Peter Kloprogge - CEO at PointLogic</p>
-            </div>
-            <img id="saying-peo" class="col-lg-4 col-md-4 col-sm-4" src="/img/avatar.png" alt="">
-        </section>
+        {{--<section id="saying" class="row wow fadeInDown">--}}
+        	 {{--<div id="saying-content" class="col-lg-8 col-md-8 col-sm-8">--}}
+                {{--<p class="symbol-1"></p>--}}
+                {{--<p>--}}
+{{--We needed a new Singapore web developer for our website and didn’t want an in-house development--}}
+{{--(as it gave major challenges in updating the website). We compare a couple of website developers--}}
+	                {{--on cost and example sites and FutureWorkz scored well on both!--}}
+                {{--<span class="symbol-2"></span>--}}
+                {{--</p>--}}
+                {{--<p id="author">Peter Kloprogge - CEO at PointLogic</p>--}}
+            {{--</div>--}}
+            {{--<img id="saying-peo" class="col-lg-4 col-md-4 col-sm-4" src="/img/avatar.png" alt="">--}}
+        {{--</section>--}}
 
         <section id="food-gallery">
         	<h1>Dishes for You to Try</h1>
@@ -115,61 +115,62 @@ We needed a new Singapore web developer for our website and didn’t want an in-
         		<div class="food col-lg-4 col-md-4 col-sm-4 wow fadeInDown">
         			<figure class="effect-chico">
 						<div class="food-img" style="background-image: url('/img/food1.jpg');" alt="img15"></div>
-						{{--<figcaption>--}}
-							{{--<h2>Curry <span>Snapper Head</span></h2>--}}
+						<figcaption>
+							<h2>Chef recommendation</h2>
 							{{--<p>Chico's main fear was missing the morning bus.</p>--}}
 							{{--<a href="#">View more</a>--}}
-						{{--</figcaption>--}}
+						</figcaption>
 					</figure>
 				</div>
 				<div class="food col-lg-4 col-md-4 col-sm-4 wow fadeInDown" data-wow-delay="0.2s">
 					<figure class="effect-chico">
 						<div class="food-img" style="background-image: url('/img/food2.jpg');" alt="img15"></div>
-						{{--<figcaption>--}}
-							{{--<h2>Steam <span>Snapper Head</span></h2>--}}
+
+						<figcaption>
+							<h2>Chef recommendation</h2>
 							{{--<p>Chico's main fear was missing the morning bus.</p>--}}
 							{{--<a href="#">View more</a>--}}
-						{{--</figcaption>--}}
+						</figcaption>
 					</figure>
         		</div>
         		<div class="food col-lg-4 col-md-4 col-sm-4 wow fadeInDown" data-wow-delay="0.4s">
 					<figure class="effect-chico">
 						<div class="food-img" style="background-image: url('/img/dish_3.png');" alt="img15"></div>
-						{{--<figcaption>--}}
-							{{--<h2>Prawn & Meat<span> Roll</span></h2>--}}
+						<figcaption>
+							<h2>Chef recommendation</h2>
 							{{--<p>Chico's main fear was missing the morning bus.</p>--}}
 							{{--<a href="#">View more</a>--}}
-						{{--</figcaption>--}}
+						</figcaption>
 					</figure>
         		</div>
         		<div class="food col-lg-4 col-md-4 col-sm-4 wow fadeInDown">
 					<figure class="effect-chico">
 						<div class="food-img" style="background-image: url('/img/dish_4.png');" alt="img15"></div>
-						{{--<figcaption>--}}
-							{{--<h2>Curry <span>Snapper Tail</span></h2>--}}
+						<figcaption>
+							<h2>Chef recommendation</h2>
 							{{--<p>Chico's main fear was missing the morning bus.</p>--}}
 							{{--<a href="#">View more</a>--}}
-						{{--</figcaption>--}}
+						</figcaption>
 					</figure>
         		</div>
         		<div class="food col-lg-4 col-md-4 col-sm-4 wow fadeInDown" data-wow-delay="0.2s">
 					<figure class="effect-chico">
 						<div class="food-img" style="background-image: url('/img/dish_5.jpg');" alt="img15"></div>
-						{{--<figcaption>--}}
-							{{--<h2>Steam <span>Snapper Tail</span></h2>--}}
+						<figcaption>
+							<h2>Chef recommendation</h2>
 							{{--<p>Chico's main fear was missing the morning bus.</p>--}}
 							{{--<a href="#">View more</a>--}}
-						{{--</figcaption>--}}
+						</figcaption>
 					</figure>
         		</div>
         		<div class="food col-lg-4 col-md-4 col-sm-4 wow fadeInDown" data-wow-delay="0.4s">
 					<figure class="effect-chico">
 						<div class="food-img" style="background-image: url('/img/dish_6.jpg');" alt="img15"></div>
-						{{--<figcaption>--}}
-							{{--<h2>Sin Chow <span>Fried Rice</span></h2>--}}
+						<figcaption>
+							<h2>Chef recommendation</h2>
 							{{--<p>Chico's main fear was missing the morning bus.</p>--}}
 							{{--<a href="#">View more</a>--}}
-						{{--</figcaption>--}}
+						</figcaption>
 					</figure>
         		</div>
         	</div>

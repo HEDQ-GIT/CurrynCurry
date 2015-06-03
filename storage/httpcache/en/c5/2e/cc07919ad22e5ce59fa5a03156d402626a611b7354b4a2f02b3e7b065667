@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Curry and Curry</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="http://gourmet.arenaofthemes.com/favicon.ico">
+
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="http://gourmet.arenaofthemes.com/css/animate.css">
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css" media="all">
+    <link rel="stylesheet" href="/css/menu.css">
+    <script src="/js/jquery-2.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="http://cdn.bootcss.com/angular.js/1.4.0-rc.1/angular.min.js"></script>
+    <script>
+        var addToCartishUrl = "http://localhost:8000/adddish";
+    </script>
+    <script src="/js/menu.js"></script>
+
+</head>
+<body ng-app="app" ng-controller="MainCtrl">
+<link rel="stylesheet" href="/fa/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/wheelmenu.css">
+
+<style>
+    @import  url(http://fonts.googleapis.com/css?family=Cookie);
+
+    #toggle-menu {
+        position: absolute;
+        top: 1%;
+        right: 4%;
+        z-index: 999 !important;
+
+        color: #F8E8D8;
+        background-color: #B2A092;
+
+        padding: 10px 15px;
+    }
+
+    #toggle-menu:hover {
+        text-decoration: none;
+        color: #000000;
+        background-color: #F9E9D9;
+    }
+
+    #wheel {
+        padding: 30px;
+    }
+    .wheel li a{
+        background: #F9E9D9;
+        font-family: 'Cookie';
+        font-weight: bold;
+        font-size: 1.8em;
+        padding: 5px;
+        text-align: center;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.5);
+        -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.5);
+        -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.5);
+        color: #8E4535;
+        -moz-transition: all 0.25s ease;
+        -webkit-transition: all 0.25s ease;
+        -o-transition: all 0.25s ease;
+        transition: all 0.25s ease;
+    }
+
+    .wheel li a:hover {
+        background: #ffffff;
+        text-decoration: none;
+    }
+</style>
+<script src="/js/jquery.wheelmenu.min.js"></script>
+
+<script>
+    $(function () {
+
+        $(".wheel-button").wheelmenu({
+            trigger: "hover",
+            animation: "fly",
+            animationSpeed: "fast"
+        });
+    })
+</script>
+
+<a id="toggle-menu" class="fa fa-bars fa-4x wheel-button" href="#wheel"></a>
+<ul id="wheel" data-angle="SW" class="wheel">
+    <li class="item"><a href="http://localhost:8000/contact">Contact</a></li>
+    <li class="item"><a href="http://localhost:8000/order">Order</a></li>
+    <li class="item"><a href="http://localhost:8000/menu">Menu</a></li>
+    <li class="item"><a href="http://localhost:8000">Home</a></li>
+</ul><style>
+    .alert-msg{
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        font-weight: bold;
+    }
+</style>
+
+<script>
+    $('div.alert').delay(5000).slideUp(300);
+</script>
+<header class="main-header" id="top">
+    <div class="top-banner-container top-banner-container-style">
+        <div class="top-banner-bg custom-bg parallax" data-stellar-background-ratio="0.5"
+             style="background-position: -30%;"></div>
+        <div class="top-banner" style="opacity: 1;">
+            <div class="top-image animated fadeInDown">
+                <h1>Our Food Menu</h1>
+            </div>
+            <!-- /top-image -->
+            <div class="bottom-image animated fadeInDown">
+                <img src="/img/cooking-since2001.png" alt="Marine Food About">
+            </div>
+            <!-- /bottom-image -->
+        </div>
+        <!-- /top-banner -->
+        <div class="header-bottom-bar">
+            <div class="row">
+                <ul class="category-filter store-category-filter">
+                    <li class="filter active" data-filter="all"></li>
+                    <li class="filter" data-filter=".main"></li>
+                    <li class="filter" data-filter=".salad"></li>
+                    <li class="filter" data-filter=".starter"></li>
+                </ul>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /header-bottom-bar -->
+    </div>
+    <!-- /top-banner-container -->
+</header>
+<!-- End main-header -->
+
+<section class="food-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-md-6 wow fadeInLeft" style="visibility: hidden; -webkit-animation-name: none;">
+                <div class="banner features-right features-active">
+                    <div class="image-container">
+                        <div class="banner-image" style="background-image:url('/img/food1.jpg')"
+                             alt="Marine Food Banner">
+                        </div>
+                    </div>
+                    <div class="banner-features">
+                        <div class="banner-features-inner">
+                            <div class="food-price">
+                                <p><sup>$</sup>22 - <sup>$</sup>24</p>
+                            </div>
+                            <!-- /food-price -->
+                            <ul>
+                                <li>
+                                    <h6>Old School</h6>
+
+                                    <p>2 farm fresh eggs, 2 bacon or 1 house made sausage, fresh greens</p>
+                                </li>
+                                <li>
+                                    <h6>Chilaquiles</h6>
+
+                                    <p>tortilla chips, fire roasted tomatillo salsa, 2 sunny side farm fresh eggs</p>
+                                </li>
+                                <li>
+                                    <h6>Pancakes</h6>
+
+                                    <p>seasonal toppings</p>
+                                </li>
+                            </ul>
+                            
+                                                    </div>
+                        <!-- /banner-features-inner -->
+                    </div>
+                    <!-- /banner-features -->
+                </div>
+                <!-- /banner -->
+            </div>
+            <!-- /col-md-5 -->
+            <div class="col-lg-5 col-md-6 col-lg-offset-2 wow fadeInRight"
+                 style="visibility: hidden; -webkit-animation-name: none;">
+                <div class="banner features-left">
+                    <div class="image-container">
+                        <div class="banner-image" style="background-image:url('/img/food2.jpg')"
+                             alt="Marine Food Banner"></div>
+                    </div>
+                </div>
+                <!-- /banner -->
+            </div>
+            <!-- /col-md-5 -->
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</section>
+
+
+<div class="shopping-cart wow bounceInRight" data-wow-duration="5s">
+        <div class="cart-container clearfix">
+        <i id="end"></i>
+        <a href="http://localhost:8000/order" class="cart-link"><span id="itemno">0</span></a>
+                                                                                                                                                                                            </div>
+    <!-- /cart-container -->
+</div>
+
+<section class="store-items" id="MixItUp09871A">
+    <div class="container">
+        <div class="row">
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
+                    <div class="store-item wow fadeInDown"
+                                                 style="visibility: hidden; -webkit-animation-name: none;">
+
+                        <figure style="position: relative;">
+                            <div class="store-image" style="background-image:url('/img/food3.jpg');"></div>
+                                                                                                                </figure>
+
+                        <div style="overflow: hidden; height: 25px; font-size: 1.2em; margin-bottom: 12px;position:relative;">
+                                                                                        <img src="/img/chili.png" alt="" style="height:90%;"/>
+                                                        Spicy Baked EggsSpicy Baked EggsSpicy Baked Eggs
+                        </div>
+
+                        <div style="overflow: hidden; height: 45px; font-size: 1em; margin-bottom: 12px;">
+                            At animi quis fugiat. 
+                        </div>
+
+                                                                                                                                                                        <div class="food-order">
+                            <p class="food-price" style="font-size: 20px;line-height: 1em;"><sup>$</sup>32.21
+                                                                - <sup>$</sup>100.00
+                                                        </p>
+                            <a href="javascript:void(0);" ng-click="addToCart($event, {&quot;id&quot;:1,&quot;name&quot;:&quot;Spicy Baked EggsSpicy Baked EggsSpicy Baked Eggs&quot;,&quot;imgUrl&quot;:&quot;food3.jpg&quot;,&quot;min_price&quot;:&quot;32.21&quot;,&quot;max_price&quot;:&quot;100.00&quot;,&quot;isspicy&quot;:1,&quot;description&quot;:&quot;At animi quis fugiat. &quot;,&quot;isrange&quot;:1,&quot;menu_index&quot;:1,&quot;created_at&quot;:&quot;2015-05-31 14:09:45&quot;,&quot;updated_at&quot;:&quot;2015-06-01 13:56:10&quot;}, true)"
+                               class="add-to-cart-link">Add To Cart</a>
+                        </div>
+                        <!-- /food-order -->
+                    </div>
+                    <!-- /store-item -->
+                </div><!-- /col-md-4 -->
+                                                            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
+                    <div class="store-item wow fadeInDown"
+                                                     data-wow-delay="0.2s"
+                                                 style="visibility: hidden; -webkit-animation-name: none;">
+
+                        <figure style="position: relative;">
+                            <div class="store-image" style="background-image:url('/img/food3.jpg');"></div>
+                                                                                                                </figure>
+
+                        <div style="overflow: hidden; height: 25px; font-size: 1.2em; margin-bottom: 12px;position:relative;">
+                                                                                        <img src="/img/chili.png" alt="" style="height:90%;"/>
+                                                        Spicy Baked Eggs
+                        </div>
+
+                        <div style="overflow: hidden; height: 45px; font-size: 1em; margin-bottom: 12px;">
+                            Est blanditiis maiores non exercitationem mollitia eum. Ut veniam possimus quia inventore et nostrum
+                        </div>
+
+                                                                                                                                                                        <div class="food-order">
+                            <p class="food-price" style="font-size: 20px;line-height: 1em;"><sup>$</sup>31.82
+                                                        </p>
+                            <a href="javascript:void(0);" ng-click="addToCart($event, {&quot;id&quot;:2,&quot;name&quot;:&quot;Spicy Baked Eggs&quot;,&quot;imgUrl&quot;:&quot;food3.jpg&quot;,&quot;min_price&quot;:&quot;31.82&quot;,&quot;max_price&quot;:&quot;100.00&quot;,&quot;isspicy&quot;:1,&quot;description&quot;:&quot;Est blanditiis maiores non exercitationem mollitia eum. Ut veniam possimus quia inventore et nostrum&quot;,&quot;isrange&quot;:0,&quot;menu_index&quot;:2,&quot;created_at&quot;:&quot;2015-05-31 14:09:45&quot;,&quot;updated_at&quot;:&quot;2015-05-31 14:32:18&quot;}, true)"
+                               class="add-to-cart-link">Add To Cart</a>
+                        </div>
+                        <!-- /food-order -->
+                    </div>
+                    <!-- /store-item -->
+                </div><!-- /col-md-4 -->
+                                                            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
+                    <div class="store-item wow fadeInDown"
+                                                     data-wow-delay="0.4s"
+                                                 style="visibility: hidden; -webkit-animation-name: none;">
+
+                        <figure style="position: relative;">
+                            <div class="store-image" style="background-image:url('/img/food3.jpg');"></div>
+                                                                                                                </figure>
+
+                        <div style="overflow: hidden; height: 25px; font-size: 1.2em; margin-bottom: 12px;position:relative;">
+                                                                                        <img src="/img/chili.png" alt="" style="height:90%;"/>
+                                                        Spicy Baked Eggs
+                        </div>
+
+                        <div style="overflow: hidden; height: 45px; font-size: 1em; margin-bottom: 12px;">
+                            Quia fuga quam quidem et officia et dolorum deserunt. Non consequatur excepturi consectetur eos.
+                        </div>
+
+                                                                                                                                                                        <div class="food-order">
+                            <p class="food-price" style="font-size: 20px;line-height: 1em;"><sup>$</sup>77.52
+                                                        </p>
+                            <a href="javascript:void(0);" ng-click="addToCart($event, {&quot;id&quot;:3,&quot;name&quot;:&quot;Spicy Baked Eggs&quot;,&quot;imgUrl&quot;:&quot;food3.jpg&quot;,&quot;min_price&quot;:&quot;77.52&quot;,&quot;max_price&quot;:&quot;100.00&quot;,&quot;isspicy&quot;:1,&quot;description&quot;:&quot;Quia fuga quam quidem et officia et dolorum deserunt. Non consequatur excepturi consectetur eos.&quot;,&quot;isrange&quot;:0,&quot;menu_index&quot;:3,&quot;created_at&quot;:&quot;2015-05-31 14:09:45&quot;,&quot;updated_at&quot;:&quot;2015-05-31 14:32:31&quot;}, true)"
+                               class="add-to-cart-link">Add To Cart</a>
+                        </div>
+                        <!-- /food-order -->
+                    </div>
+                    <!-- /store-item -->
+                </div><!-- /col-md-4 -->
+                                                            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
+                    <div class="store-item wow fadeInDown"
+                                                 style="visibility: hidden; -webkit-animation-name: none;">
+
+                        <figure style="position: relative;">
+                            <div class="store-image" style="background-image:url('/img/food3.jpg');"></div>
+                                                                                                                </figure>
+
+                        <div style="overflow: hidden; height: 25px; font-size: 1.2em; margin-bottom: 12px;position:relative;">
+                                                        Spicy Baked Eggs
+                        </div>
+
+                        <div style="overflow: hidden; height: 45px; font-size: 1em; margin-bottom: 12px;">
+                            Blanditiis incidunt quia impedit non non repudiandae voluptatem. Facilis quia non exercitationem rec
+                        </div>
+
+                                                                                                                                                                        <div class="food-order">
+                            <p class="food-price" style="font-size: 20px;line-height: 1em;"><sup>$</sup>58.75
+                                                                - <sup>$</sup>100.00
+                                                        </p>
+                            <a href="javascript:void(0);" ng-click="addToCart($event, {&quot;id&quot;:4,&quot;name&quot;:&quot;Spicy Baked Eggs&quot;,&quot;imgUrl&quot;:&quot;food3.jpg&quot;,&quot;min_price&quot;:&quot;58.75&quot;,&quot;max_price&quot;:&quot;100.00&quot;,&quot;isspicy&quot;:0,&quot;description&quot;:&quot;Blanditiis incidunt quia impedit non non repudiandae voluptatem. Facilis quia non exercitationem rec&quot;,&quot;isrange&quot;:1,&quot;menu_index&quot;:4,&quot;created_at&quot;:&quot;2015-05-31 14:09:45&quot;,&quot;updated_at&quot;:&quot;2015-05-31 14:18:28&quot;}, true)"
+                               class="add-to-cart-link">Add To Cart</a>
+                        </div>
+                        <!-- /food-order -->
+                    </div>
+                    <!-- /store-item -->
+                </div><!-- /col-md-4 -->
+                                                            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
+                    <div class="store-item wow fadeInDown"
+                                                     data-wow-delay="0.2s"
+                                                 style="visibility: hidden; -webkit-animation-name: none;">
+
+                        <figure style="position: relative;">
+                            <div class="store-image" style="background-image:url('/img/food3.jpg');"></div>
+                                                                                                                </figure>
+
+                        <div style="overflow: hidden; height: 25px; font-size: 1.2em; margin-bottom: 12px;position:relative;">
+                                                        Spicy Baked Eggs
+                        </div>
+
+                        <div style="overflow: hidden; height: 45px; font-size: 1em; margin-bottom: 12px;">
+                            Explicabo rem qui quisquam exercitationem vel modi exercitationem. Accusamus delectus fugiat excepturi architecto repellendus itaque.
+                        </div>
+
+                                                                                                                                                                        <div class="food-order">
+                            <p class="food-price" style="font-size: 20px;line-height: 1em;"><sup>$</sup>66.75
+                                                        </p>
+                            <a href="javascript:void(0);" ng-click="addToCart($event, {&quot;id&quot;:5,&quot;name&quot;:&quot;Spicy Baked Eggs&quot;,&quot;imgUrl&quot;:&quot;food3.jpg&quot;,&quot;min_price&quot;:&quot;66.75&quot;,&quot;max_price&quot;:&quot;100.00&quot;,&quot;isspicy&quot;:0,&quot;description&quot;:&quot;Explicabo rem qui quisquam exercitationem vel modi exercitationem. Accusamus delectus fugiat excepturi architecto repellendus itaque.&quot;,&quot;isrange&quot;:0,&quot;menu_index&quot;:5,&quot;created_at&quot;:&quot;2015-05-31 14:09:45&quot;,&quot;updated_at&quot;:&quot;2015-05-31 14:09:45&quot;}, true)"
+                               class="add-to-cart-link">Add To Cart</a>
+                        </div>
+                        <!-- /food-order -->
+                    </div>
+                    <!-- /store-item -->
+                </div><!-- /col-md-4 -->
+                                                            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
+                    <div class="store-item wow fadeInDown"
+                                                     data-wow-delay="0.4s"
+                                                 style="visibility: hidden; -webkit-animation-name: none;">
+
+                        <figure style="position: relative;">
+                            <div class="store-image" style="background-image:url('/img/food3.jpg');"></div>
+                                                                                                                </figure>
+
+                        <div style="overflow: hidden; height: 25px; font-size: 1.2em; margin-bottom: 12px;position:relative;">
+                                                        Spicy Baked Eggs
+                        </div>
+
+                        <div style="overflow: hidden; height: 45px; font-size: 1em; margin-bottom: 12px;">
+                            Quae non excepturi facilis aspernatur veniam sit. Ipsa maxime rerum omnis temporibus dolorem vel dolores perspiciatis.
+                        </div>
+
+                                                                                                                                                                        <div class="food-order">
+                            <p class="food-price" style="font-size: 20px;line-height: 1em;"><sup>$</sup>93.54
+                                                        </p>
+                            <a href="javascript:void(0);" ng-click="addToCart($event, {&quot;id&quot;:6,&quot;name&quot;:&quot;Spicy Baked Eggs&quot;,&quot;imgUrl&quot;:&quot;food3.jpg&quot;,&quot;min_price&quot;:&quot;93.54&quot;,&quot;max_price&quot;:&quot;100.00&quot;,&quot;isspicy&quot;:0,&quot;description&quot;:&quot;Quae non excepturi facilis aspernatur veniam sit. Ipsa maxime rerum omnis temporibus dolorem vel dolores perspiciatis.&quot;,&quot;isrange&quot;:0,&quot;menu_index&quot;:6,&quot;created_at&quot;:&quot;2015-05-31 14:09:46&quot;,&quot;updated_at&quot;:&quot;2015-05-31 14:09:46&quot;}, true)"
+                               class="add-to-cart-link">Add To Cart</a>
+                        </div>
+                        <!-- /food-order -->
+                    </div>
+                    <!-- /store-item -->
+                </div><!-- /col-md-4 -->
+                                                            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
+                    <div class="store-item wow fadeInDown"
+                                                 style="visibility: hidden; -webkit-animation-name: none;">
+
+                        <figure style="position: relative;">
+                            <div class="store-image" style="background-image:url('/img/food3.jpg');"></div>
+                                                                                                                </figure>
+
+                        <div style="overflow: hidden; height: 25px; font-size: 1.2em; margin-bottom: 12px;position:relative;">
+                                                        Spicy Baked Eggs
+                        </div>
+
+                        <div style="overflow: hidden; height: 45px; font-size: 1em; margin-bottom: 12px;">
+                            Quo modi fugiat a ducimus dolore dolorem laboriosam. Culpa quibusdam asperiores repellendus. Inventore voluptates non ducimus quidem nihil atque.
+                        </div>
+
+                                                                                                                                                                        <div class="food-order">
+                            <p class="food-price" style="font-size: 20px;line-height: 1em;"><sup>$</sup>78.61
+                                                        </p>
+                            <a href="javascript:void(0);" ng-click="addToCart($event, {&quot;id&quot;:7,&quot;name&quot;:&quot;Spicy Baked Eggs&quot;,&quot;imgUrl&quot;:&quot;food3.jpg&quot;,&quot;min_price&quot;:&quot;78.61&quot;,&quot;max_price&quot;:&quot;100.00&quot;,&quot;isspicy&quot;:0,&quot;description&quot;:&quot;Quo modi fugiat a ducimus dolore dolorem laboriosam. Culpa quibusdam asperiores repellendus. Inventore voluptates non ducimus quidem nihil atque.&quot;,&quot;isrange&quot;:0,&quot;menu_index&quot;:7,&quot;created_at&quot;:&quot;2015-05-31 14:09:46&quot;,&quot;updated_at&quot;:&quot;2015-05-31 14:09:46&quot;}, true)"
+                               class="add-to-cart-link">Add To Cart</a>
+                        </div>
+                        <!-- /food-order -->
+                    </div>
+                    <!-- /store-item -->
+                </div><!-- /col-md-4 -->
+                                                            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
+                    <div class="store-item wow fadeInDown"
+                                                     data-wow-delay="0.2s"
+                                                 style="visibility: hidden; -webkit-animation-name: none;">
+
+                        <figure style="position: relative;">
+                            <div class="store-image" style="background-image:url('/img/food3.jpg');"></div>
+                                                                                                                </figure>
+
+                        <div style="overflow: hidden; height: 25px; font-size: 1.2em; margin-bottom: 12px;position:relative;">
+                                                        Spicy Baked Eggs
+                        </div>
+
+                        <div style="overflow: hidden; height: 45px; font-size: 1em; margin-bottom: 12px;">
+                            Autem numquam aperiam cum ullam impedit. Sed cumque iure temporibus ipsa adipisci qui voluptatibus ea. Sunt ut rem impedit.
+                        </div>
+
+                                                                                                                                                                        <div class="food-order">
+                            <p class="food-price" style="font-size: 20px;line-height: 1em;"><sup>$</sup>17.02
+                                                        </p>
+                            <a href="javascript:void(0);" ng-click="addToCart($event, {&quot;id&quot;:8,&quot;name&quot;:&quot;Spicy Baked Eggs&quot;,&quot;imgUrl&quot;:&quot;food3.jpg&quot;,&quot;min_price&quot;:&quot;17.02&quot;,&quot;max_price&quot;:&quot;100.00&quot;,&quot;isspicy&quot;:0,&quot;description&quot;:&quot;Autem numquam aperiam cum ullam impedit. Sed cumque iure temporibus ipsa adipisci qui voluptatibus ea. Sunt ut rem impedit.&quot;,&quot;isrange&quot;:0,&quot;menu_index&quot;:8,&quot;created_at&quot;:&quot;2015-05-31 14:09:46&quot;,&quot;updated_at&quot;:&quot;2015-05-31 14:09:46&quot;}, true)"
+                               class="add-to-cart-link">Add To Cart</a>
+                        </div>
+                        <!-- /food-order -->
+                    </div>
+                    <!-- /store-item -->
+                </div><!-- /col-md-4 -->
+                                                            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
+                    <div class="store-item wow fadeInDown"
+                                                     data-wow-delay="0.4s"
+                                                 style="visibility: hidden; -webkit-animation-name: none;">
+
+                        <figure style="position: relative;">
+                            <div class="store-image" style="background-image:url('/img/food3.jpg');"></div>
+                                                                                                                </figure>
+
+                        <div style="overflow: hidden; height: 25px; font-size: 1.2em; margin-bottom: 12px;position:relative;">
+                                                        Spicy Baked Eggs
+                        </div>
+
+                        <div style="overflow: hidden; height: 45px; font-size: 1em; margin-bottom: 12px;">
+                            Facere et est odit quo numquam dolores corrupti. Vel minus ipsa id vel.
+                        </div>
+
+                                                                                                                                                                        <div class="food-order">
+                            <p class="food-price" style="font-size: 20px;line-height: 1em;"><sup>$</sup>45.73
+                                                        </p>
+                            <a href="javascript:void(0);" ng-click="addToCart($event, {&quot;id&quot;:9,&quot;name&quot;:&quot;Spicy Baked Eggs&quot;,&quot;imgUrl&quot;:&quot;food3.jpg&quot;,&quot;min_price&quot;:&quot;45.73&quot;,&quot;max_price&quot;:&quot;100.00&quot;,&quot;isspicy&quot;:0,&quot;description&quot;:&quot;Facere et est odit quo numquam dolores corrupti. Vel minus ipsa id vel.&quot;,&quot;isrange&quot;:0,&quot;menu_index&quot;:9,&quot;created_at&quot;:&quot;2015-05-31 14:09:46&quot;,&quot;updated_at&quot;:&quot;2015-05-31 14:09:46&quot;}, true)"
+                               class="add-to-cart-link">Add To Cart</a>
+                        </div>
+                        <!-- /food-order -->
+                    </div>
+                    <!-- /store-item -->
+                </div><!-- /col-md-4 -->
+                                                            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
+                    <div class="store-item wow fadeInDown"
+                                                 style="visibility: hidden; -webkit-animation-name: none;">
+
+                        <figure style="position: relative;">
+                            <div class="store-image" style="background-image:url('/img/food3.jpg');"></div>
+                                                                                                                </figure>
+
+                        <div style="overflow: hidden; height: 25px; font-size: 1.2em; margin-bottom: 12px;position:relative;">
+                                                        Spicy Baked Eggs
+                        </div>
+
+                        <div style="overflow: hidden; height: 45px; font-size: 1em; margin-bottom: 12px;">
+                            Eius ea voluptatum est sapiente eum suscipit totam. Debitis impedit totam ut quis consectetur rerum. Sunt porro accusamus aut iusto voluptates.
+                        </div>
+
+                                                                                                                                                                        <div class="food-order">
+                            <p class="food-price" style="font-size: 20px;line-height: 1em;"><sup>$</sup>93.46
+                                                        </p>
+                            <a href="javascript:void(0);" ng-click="addToCart($event, {&quot;id&quot;:10,&quot;name&quot;:&quot;Spicy Baked Eggs&quot;,&quot;imgUrl&quot;:&quot;food3.jpg&quot;,&quot;min_price&quot;:&quot;93.46&quot;,&quot;max_price&quot;:&quot;100.00&quot;,&quot;isspicy&quot;:0,&quot;description&quot;:&quot;Eius ea voluptatum est sapiente eum suscipit totam. Debitis impedit totam ut quis consectetur rerum. Sunt porro accusamus aut iusto voluptates.&quot;,&quot;isrange&quot;:0,&quot;menu_index&quot;:10,&quot;created_at&quot;:&quot;2015-05-31 14:09:46&quot;,&quot;updated_at&quot;:&quot;2015-05-31 14:09:46&quot;}, true)"
+                               class="add-to-cart-link">Add To Cart</a>
+                        </div>
+                        <!-- /food-order -->
+                    </div>
+                    <!-- /store-item -->
+                </div><!-- /col-md-4 -->
+                                                            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
+                    <div class="store-item wow fadeInDown"
+                                                     data-wow-delay="0.2s"
+                                                 style="visibility: hidden; -webkit-animation-name: none;">
+
+                        <figure style="position: relative;">
+                            <div class="store-image" style="background-image:url('/img/food3.jpg');"></div>
+                                                                                                                </figure>
+
+                        <div style="overflow: hidden; height: 25px; font-size: 1.2em; margin-bottom: 12px;position:relative;">
+                                                        Spicy Baked Eggs
+                        </div>
+
+                        <div style="overflow: hidden; height: 45px; font-size: 1em; margin-bottom: 12px;">
+                            Eos non quod illo deleniti fugit perspiciatis. Enim officiis quo inventore saepe temporibus velit est.
+                        </div>
+
+                                                                                                                                                                        <div class="food-order">
+                            <p class="food-price" style="font-size: 20px;line-height: 1em;"><sup>$</sup>85.19
+                                                        </p>
+                            <a href="javascript:void(0);" ng-click="addToCart($event, {&quot;id&quot;:11,&quot;name&quot;:&quot;Spicy Baked Eggs&quot;,&quot;imgUrl&quot;:&quot;food3.jpg&quot;,&quot;min_price&quot;:&quot;85.19&quot;,&quot;max_price&quot;:&quot;100.00&quot;,&quot;isspicy&quot;:0,&quot;description&quot;:&quot;Eos non quod illo deleniti fugit perspiciatis. Enim officiis quo inventore saepe temporibus velit est.&quot;,&quot;isrange&quot;:0,&quot;menu_index&quot;:11,&quot;created_at&quot;:&quot;2015-05-31 14:09:46&quot;,&quot;updated_at&quot;:&quot;2015-05-31 14:09:46&quot;}, true)"
+                               class="add-to-cart-link">Add To Cart</a>
+                        </div>
+                        <!-- /food-order -->
+                    </div>
+                    <!-- /store-item -->
+                </div><!-- /col-md-4 -->
+                                                            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
+                    <div class="store-item wow fadeInDown"
+                                                     data-wow-delay="0.4s"
+                                                 style="visibility: hidden; -webkit-animation-name: none;">
+
+                        <figure style="position: relative;">
+                            <div class="store-image" style="background-image:url('/img/food3.jpg');"></div>
+                                                                                                                </figure>
+
+                        <div style="overflow: hidden; height: 25px; font-size: 1.2em; margin-bottom: 12px;position:relative;">
+                                                        Spicy Baked Eggs
+                        </div>
+
+                        <div style="overflow: hidden; height: 45px; font-size: 1em; margin-bottom: 12px;">
+                            Voluptates et qui totam ducimus occaecati aspernatur maxime. Sequi culpa nam veniam itaque molestiae autem velit.
+                        </div>
+
+                                                                                                                                                                        <div class="food-order">
+                            <p class="food-price" style="font-size: 20px;line-height: 1em;"><sup>$</sup>46.97
+                                                        </p>
+                            <a href="javascript:void(0);" ng-click="addToCart($event, {&quot;id&quot;:12,&quot;name&quot;:&quot;Spicy Baked Eggs&quot;,&quot;imgUrl&quot;:&quot;food3.jpg&quot;,&quot;min_price&quot;:&quot;46.97&quot;,&quot;max_price&quot;:&quot;100.00&quot;,&quot;isspicy&quot;:0,&quot;description&quot;:&quot;Voluptates et qui totam ducimus occaecati aspernatur maxime. Sequi culpa nam veniam itaque molestiae autem velit.&quot;,&quot;isrange&quot;:0,&quot;menu_index&quot;:12,&quot;created_at&quot;:&quot;2015-05-31 14:09:46&quot;,&quot;updated_at&quot;:&quot;2015-05-31 14:09:46&quot;}, true)"
+                               class="add-to-cart-link">Add To Cart</a>
+                        </div>
+                        <!-- /food-order -->
+                    </div>
+                    <!-- /store-item -->
+                </div><!-- /col-md-4 -->
+                                                            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
+                    <div class="store-item wow fadeInDown"
+                                                 style="visibility: hidden; -webkit-animation-name: none;">
+
+                        <figure style="position: relative;">
+                            <div class="store-image" style="background-image:url('/img/food3.jpg');"></div>
+                                                                                                                </figure>
+
+                        <div style="overflow: hidden; height: 25px; font-size: 1.2em; margin-bottom: 12px;position:relative;">
+                                                        Spicy Baked Eggs
+                        </div>
+
+                        <div style="overflow: hidden; height: 45px; font-size: 1em; margin-bottom: 12px;">
+                            Sint aliquid facere fugit fuga consequuntur vel eveniet. Eius quia consequatur tenetur dolore.
+                        </div>
+
+                                                                                                                                                                        <div class="food-order">
+                            <p class="food-price" style="font-size: 20px;line-height: 1em;"><sup>$</sup>26.67
+                                                        </p>
+                            <a href="javascript:void(0);" ng-click="addToCart($event, {&quot;id&quot;:13,&quot;name&quot;:&quot;Spicy Baked Eggs&quot;,&quot;imgUrl&quot;:&quot;food3.jpg&quot;,&quot;min_price&quot;:&quot;26.67&quot;,&quot;max_price&quot;:&quot;100.00&quot;,&quot;isspicy&quot;:0,&quot;description&quot;:&quot;Sint aliquid facere fugit fuga consequuntur vel eveniet. Eius quia consequatur tenetur dolore.&quot;,&quot;isrange&quot;:0,&quot;menu_index&quot;:13,&quot;created_at&quot;:&quot;2015-05-31 14:09:46&quot;,&quot;updated_at&quot;:&quot;2015-05-31 14:09:46&quot;}, true)"
+                               class="add-to-cart-link">Add To Cart</a>
+                        </div>
+                        <!-- /food-order -->
+                    </div>
+                    <!-- /store-item -->
+                </div><!-- /col-md-4 -->
+                                                            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
+                    <div class="store-item wow fadeInDown"
+                                                     data-wow-delay="0.2s"
+                                                 style="visibility: hidden; -webkit-animation-name: none;">
+
+                        <figure style="position: relative;">
+                            <div class="store-image" style="background-image:url('/img/food3.jpg');"></div>
+                                                                                                                </figure>
+
+                        <div style="overflow: hidden; height: 25px; font-size: 1.2em; margin-bottom: 12px;position:relative;">
+                                                        Spicy Baked Eggs
+                        </div>
+
+                        <div style="overflow: hidden; height: 45px; font-size: 1em; margin-bottom: 12px;">
+                            Quia magni expedita unde deserunt et sint accusantium. Placeat facere et quis aut amet voluptates tempora.
+                        </div>
+
+                                                                                                                                                                        <div class="food-order">
+                            <p class="food-price" style="font-size: 20px;line-height: 1em;"><sup>$</sup>82.28
+                                                        </p>
+                            <a href="javascript:void(0);" ng-click="addToCart($event, {&quot;id&quot;:14,&quot;name&quot;:&quot;Spicy Baked Eggs&quot;,&quot;imgUrl&quot;:&quot;food3.jpg&quot;,&quot;min_price&quot;:&quot;82.28&quot;,&quot;max_price&quot;:&quot;100.00&quot;,&quot;isspicy&quot;:0,&quot;description&quot;:&quot;Quia magni expedita unde deserunt et sint accusantium. Placeat facere et quis aut amet voluptates tempora.&quot;,&quot;isrange&quot;:0,&quot;menu_index&quot;:14,&quot;created_at&quot;:&quot;2015-05-31 14:09:46&quot;,&quot;updated_at&quot;:&quot;2015-05-31 14:09:46&quot;}, true)"
+                               class="add-to-cart-link">Add To Cart</a>
+                        </div>
+                        <!-- /food-order -->
+                    </div>
+                    <!-- /store-item -->
+                </div><!-- /col-md-4 -->
+                                                            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
+                    <div class="store-item wow fadeInDown"
+                                                     data-wow-delay="0.4s"
+                                                 style="visibility: hidden; -webkit-animation-name: none;">
+
+                        <figure style="position: relative;">
+                            <div class="store-image" style="background-image:url('/img/food3.jpg');"></div>
+                                                                                                                </figure>
+
+                        <div style="overflow: hidden; height: 25px; font-size: 1.2em; margin-bottom: 12px;position:relative;">
+                                                        Spicy Baked Eggs
+                        </div>
+
+                        <div style="overflow: hidden; height: 45px; font-size: 1em; margin-bottom: 12px;">
+                            Nobis non cum officiis fugit recusandae quia nihil. Rerum molestiae aut dicta et. Ducimus doloremque qui quidem doloremque et aliquid.
+                        </div>
+
+                                                                                                                                                                        <div class="food-order">
+                            <p class="food-price" style="font-size: 20px;line-height: 1em;"><sup>$</sup>24.89
+                                                        </p>
+                            <a href="javascript:void(0);" ng-click="addToCart($event, {&quot;id&quot;:15,&quot;name&quot;:&quot;Spicy Baked Eggs&quot;,&quot;imgUrl&quot;:&quot;food3.jpg&quot;,&quot;min_price&quot;:&quot;24.89&quot;,&quot;max_price&quot;:&quot;100.00&quot;,&quot;isspicy&quot;:0,&quot;description&quot;:&quot;Nobis non cum officiis fugit recusandae quia nihil. Rerum molestiae aut dicta et. Ducimus doloremque qui quidem doloremque et aliquid.&quot;,&quot;isrange&quot;:0,&quot;menu_index&quot;:15,&quot;created_at&quot;:&quot;2015-05-31 14:09:46&quot;,&quot;updated_at&quot;:&quot;2015-05-31 14:09:46&quot;}, true)"
+                               class="add-to-cart-link">Add To Cart</a>
+                        </div>
+                        <!-- /food-order -->
+                    </div>
+                    <!-- /store-item -->
+                </div><!-- /col-md-4 -->
+                                                            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
+                    <div class="store-item wow fadeInDown"
+                                                 style="visibility: hidden; -webkit-animation-name: none;">
+
+                        <figure style="position: relative;">
+                            <div class="store-image" style="background-image:url('/img/food3.jpg');"></div>
+                                                                                                                </figure>
+
+                        <div style="overflow: hidden; height: 25px; font-size: 1.2em; margin-bottom: 12px;position:relative;">
+                                                        Spicy Baked Eggs
+                        </div>
+
+                        <div style="overflow: hidden; height: 45px; font-size: 1em; margin-bottom: 12px;">
+                            Sed nemo id eligendi qui. Fugiat non suscipit odit cum saepe laboriosam.
+                        </div>
+
+                                                                                                                                                                        <div class="food-order">
+                            <p class="food-price" style="font-size: 20px;line-height: 1em;"><sup>$</sup>78.37
+                                                        </p>
+                            <a href="javascript:void(0);" ng-click="addToCart($event, {&quot;id&quot;:16,&quot;name&quot;:&quot;Spicy Baked Eggs&quot;,&quot;imgUrl&quot;:&quot;food3.jpg&quot;,&quot;min_price&quot;:&quot;78.37&quot;,&quot;max_price&quot;:&quot;100.00&quot;,&quot;isspicy&quot;:0,&quot;description&quot;:&quot;Sed nemo id eligendi qui. Fugiat non suscipit odit cum saepe laboriosam.&quot;,&quot;isrange&quot;:0,&quot;menu_index&quot;:16,&quot;created_at&quot;:&quot;2015-05-31 14:09:46&quot;,&quot;updated_at&quot;:&quot;2015-05-31 14:09:46&quot;}, true)"
+                               class="add-to-cart-link">Add To Cart</a>
+                        </div>
+                        <!-- /food-order -->
+                    </div>
+                    <!-- /store-item -->
+                </div><!-- /col-md-4 -->
+                                                            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
+                    <div class="store-item wow fadeInDown"
+                                                     data-wow-delay="0.2s"
+                                                 style="visibility: hidden; -webkit-animation-name: none;">
+
+                        <figure style="position: relative;">
+                            <div class="store-image" style="background-image:url('/img/food3.jpg');"></div>
+                                                                                                                </figure>
+
+                        <div style="overflow: hidden; height: 25px; font-size: 1.2em; margin-bottom: 12px;position:relative;">
+                                                        Spicy Baked Eggs
+                        </div>
+
+                        <div style="overflow: hidden; height: 45px; font-size: 1em; margin-bottom: 12px;">
+                            Similique ad sed deserunt magnam veniam. Perferendis culpa consectetur nam ut molestiae eos.
+                        </div>
+
+                                                                                                                                                                        <div class="food-order">
+                            <p class="food-price" style="font-size: 20px;line-height: 1em;"><sup>$</sup>41.81
+                                                        </p>
+                            <a href="javascript:void(0);" ng-click="addToCart($event, {&quot;id&quot;:17,&quot;name&quot;:&quot;Spicy Baked Eggs&quot;,&quot;imgUrl&quot;:&quot;food3.jpg&quot;,&quot;min_price&quot;:&quot;41.81&quot;,&quot;max_price&quot;:&quot;100.00&quot;,&quot;isspicy&quot;:0,&quot;description&quot;:&quot;Similique ad sed deserunt magnam veniam. Perferendis culpa consectetur nam ut molestiae eos.&quot;,&quot;isrange&quot;:0,&quot;menu_index&quot;:17,&quot;created_at&quot;:&quot;2015-05-31 14:09:46&quot;,&quot;updated_at&quot;:&quot;2015-05-31 14:09:46&quot;}, true)"
+                               class="add-to-cart-link">Add To Cart</a>
+                        </div>
+                        <!-- /food-order -->
+                    </div>
+                    <!-- /store-item -->
+                </div><!-- /col-md-4 -->
+                                                            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
+                    <div class="store-item wow fadeInDown"
+                                                     data-wow-delay="0.4s"
+                                                 style="visibility: hidden; -webkit-animation-name: none;">
+
+                        <figure style="position: relative;">
+                            <div class="store-image" style="background-image:url('/img/food3.jpg');"></div>
+                                                                                                                </figure>
+
+                        <div style="overflow: hidden; height: 25px; font-size: 1.2em; margin-bottom: 12px;position:relative;">
+                                                        Spicy Baked Eggs
+                        </div>
+
+                        <div style="overflow: hidden; height: 45px; font-size: 1em; margin-bottom: 12px;">
+                            Est officia esse ab est ex. Quas modi qui perspiciatis voluptas qui porro. Aliquid perferendis sed ad vel.
+                        </div>
+
+                                                                                                                                                                        <div class="food-order">
+                            <p class="food-price" style="font-size: 20px;line-height: 1em;"><sup>$</sup>45.54
+                                                        </p>
+                            <a href="javascript:void(0);" ng-click="addToCart($event, {&quot;id&quot;:18,&quot;name&quot;:&quot;Spicy Baked Eggs&quot;,&quot;imgUrl&quot;:&quot;food3.jpg&quot;,&quot;min_price&quot;:&quot;45.54&quot;,&quot;max_price&quot;:&quot;100.00&quot;,&quot;isspicy&quot;:0,&quot;description&quot;:&quot;Est officia esse ab est ex. Quas modi qui perspiciatis voluptas qui porro. Aliquid perferendis sed ad vel.&quot;,&quot;isrange&quot;:0,&quot;menu_index&quot;:18,&quot;created_at&quot;:&quot;2015-05-31 14:09:46&quot;,&quot;updated_at&quot;:&quot;2015-05-31 14:09:46&quot;}, true)"
+                               class="add-to-cart-link">Add To Cart</a>
+                        </div>
+                        <!-- /food-order -->
+                    </div>
+                    <!-- /store-item -->
+                </div><!-- /col-md-4 -->
+                                                            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
+                    <div class="store-item wow fadeInDown"
+                                                 style="visibility: hidden; -webkit-animation-name: none;">
+
+                        <figure style="position: relative;">
+                            <div class="store-image" style="background-image:url('/img/food3.jpg');"></div>
+                                                                                                                </figure>
+
+                        <div style="overflow: hidden; height: 25px; font-size: 1.2em; margin-bottom: 12px;position:relative;">
+                                                        Spicy Baked Eggs
+                        </div>
+
+                        <div style="overflow: hidden; height: 45px; font-size: 1em; margin-bottom: 12px;">
+                            Rerum facilis doloremque facilis eius vel tenetur. Aut qui nihil qui et aut in. Mollitia omnis aut eos veniam deleniti eius qui laboriosam.
+                        </div>
+
+                                                                                                                                                                        <div class="food-order">
+                            <p class="food-price" style="font-size: 20px;line-height: 1em;"><sup>$</sup>24.23
+                                                        </p>
+                            <a href="javascript:void(0);" ng-click="addToCart($event, {&quot;id&quot;:19,&quot;name&quot;:&quot;Spicy Baked Eggs&quot;,&quot;imgUrl&quot;:&quot;food3.jpg&quot;,&quot;min_price&quot;:&quot;24.23&quot;,&quot;max_price&quot;:&quot;100.00&quot;,&quot;isspicy&quot;:0,&quot;description&quot;:&quot;Rerum facilis doloremque facilis eius vel tenetur. Aut qui nihil qui et aut in. Mollitia omnis aut eos veniam deleniti eius qui laboriosam.&quot;,&quot;isrange&quot;:0,&quot;menu_index&quot;:19,&quot;created_at&quot;:&quot;2015-05-31 14:09:46&quot;,&quot;updated_at&quot;:&quot;2015-05-31 14:09:46&quot;}, true)"
+                               class="add-to-cart-link">Add To Cart</a>
+                        </div>
+                        <!-- /food-order -->
+                    </div>
+                    <!-- /store-item -->
+                </div><!-- /col-md-4 -->
+                                                            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
+                    <div class="store-item wow fadeInDown"
+                                                     data-wow-delay="0.2s"
+                                                 style="visibility: hidden; -webkit-animation-name: none;">
+
+                        <figure style="position: relative;">
+                            <div class="store-image" style="background-image:url('/img/food3.jpg');"></div>
+                                                                                                                </figure>
+
+                        <div style="overflow: hidden; height: 25px; font-size: 1.2em; margin-bottom: 12px;position:relative;">
+                                                        Spicy Baked Eggs
+                        </div>
+
+                        <div style="overflow: hidden; height: 45px; font-size: 1em; margin-bottom: 12px;">
+                            Voluptatem quidem dolores quae delectus. Dolorem minus accusantium dolores quos blanditiis corporis labore. Modi et qui alias consequuntur ipsam recusandae omnis.
+                        </div>
+
+                                                                                                                                                                        <div class="food-order">
+                            <p class="food-price" style="font-size: 20px;line-height: 1em;"><sup>$</sup>36.00
+                                                        </p>
+                            <a href="javascript:void(0);" ng-click="addToCart($event, {&quot;id&quot;:20,&quot;name&quot;:&quot;Spicy Baked Eggs&quot;,&quot;imgUrl&quot;:&quot;food3.jpg&quot;,&quot;min_price&quot;:&quot;36.00&quot;,&quot;max_price&quot;:&quot;100.00&quot;,&quot;isspicy&quot;:0,&quot;description&quot;:&quot;Voluptatem quidem dolores quae delectus. Dolorem minus accusantium dolores quos blanditiis corporis labore. Modi et qui alias consequuntur ipsam recusandae omnis.&quot;,&quot;isrange&quot;:0,&quot;menu_index&quot;:20,&quot;created_at&quot;:&quot;2015-05-31 14:09:46&quot;,&quot;updated_at&quot;:&quot;2015-05-31 14:09:46&quot;}, true)"
+                               class="add-to-cart-link">Add To Cart</a>
+                        </div>
+                        <!-- /food-order -->
+                    </div>
+                    <!-- /store-item -->
+                </div><!-- /col-md-4 -->
+                                                            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
+                    <div class="store-item wow fadeInDown"
+                                                     data-wow-delay="0.4s"
+                                                 style="visibility: hidden; -webkit-animation-name: none;">
+
+                        <figure style="position: relative;">
+                            <div class="store-image" style="background-image:url('/img/food3.jpg');"></div>
+                                                                                                                </figure>
+
+                        <div style="overflow: hidden; height: 25px; font-size: 1.2em; margin-bottom: 12px;position:relative;">
+                                                        Spicy Baked Eggs
+                        </div>
+
+                        <div style="overflow: hidden; height: 45px; font-size: 1em; margin-bottom: 12px;">
+                            Qui delectus est dolores totam reprehenderit nesciunt nostrum eum. Ducimus eos aut odit voluptas qui hic.
+                        </div>
+
+                                                                                                                                                                        <div class="food-order">
+                            <p class="food-price" style="font-size: 20px;line-height: 1em;"><sup>$</sup>24.58
+                                                        </p>
+                            <a href="javascript:void(0);" ng-click="addToCart($event, {&quot;id&quot;:21,&quot;name&quot;:&quot;Spicy Baked Eggs&quot;,&quot;imgUrl&quot;:&quot;food3.jpg&quot;,&quot;min_price&quot;:&quot;24.58&quot;,&quot;max_price&quot;:&quot;100.00&quot;,&quot;isspicy&quot;:0,&quot;description&quot;:&quot;Qui delectus est dolores totam reprehenderit nesciunt nostrum eum. Ducimus eos aut odit voluptas qui hic.&quot;,&quot;isrange&quot;:0,&quot;menu_index&quot;:21,&quot;created_at&quot;:&quot;2015-05-31 14:09:46&quot;,&quot;updated_at&quot;:&quot;2015-05-31 14:09:46&quot;}, true)"
+                               class="add-to-cart-link">Add To Cart</a>
+                        </div>
+                        <!-- /food-order -->
+                    </div>
+                    <!-- /store-item -->
+                </div><!-- /col-md-4 -->
+                                                            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
+                    <div class="store-item wow fadeInDown"
+                                                 style="visibility: hidden; -webkit-animation-name: none;">
+
+                        <figure style="position: relative;">
+                            <div class="store-image" style="background-image:url('/img/food3.jpg');"></div>
+                                                                                                                </figure>
+
+                        <div style="overflow: hidden; height: 25px; font-size: 1.2em; margin-bottom: 12px;position:relative;">
+                                                        Spicy Baked Eggs
+                        </div>
+
+                        <div style="overflow: hidden; height: 45px; font-size: 1em; margin-bottom: 12px;">
+                            Quas qui laudantium neque aut eos laboriosam. Labore aliquam modi nostrum dolor laborum aspernatur.
+                        </div>
+
+                                                                                                                                                                        <div class="food-order">
+                            <p class="food-price" style="font-size: 20px;line-height: 1em;"><sup>$</sup>34.28
+                                                        </p>
+                            <a href="javascript:void(0);" ng-click="addToCart($event, {&quot;id&quot;:22,&quot;name&quot;:&quot;Spicy Baked Eggs&quot;,&quot;imgUrl&quot;:&quot;food3.jpg&quot;,&quot;min_price&quot;:&quot;34.28&quot;,&quot;max_price&quot;:&quot;100.00&quot;,&quot;isspicy&quot;:0,&quot;description&quot;:&quot;Quas qui laudantium neque aut eos laboriosam. Labore aliquam modi nostrum dolor laborum aspernatur.&quot;,&quot;isrange&quot;:0,&quot;menu_index&quot;:22,&quot;created_at&quot;:&quot;2015-05-31 14:09:46&quot;,&quot;updated_at&quot;:&quot;2015-05-31 14:09:46&quot;}, true)"
+                               class="add-to-cart-link">Add To Cart</a>
+                        </div>
+                        <!-- /food-order -->
+                    </div>
+                    <!-- /store-item -->
+                </div><!-- /col-md-4 -->
+                                                            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
+                    <div class="store-item wow fadeInDown"
+                                                     data-wow-delay="0.2s"
+                                                 style="visibility: hidden; -webkit-animation-name: none;">
+
+                        <figure style="position: relative;">
+                            <div class="store-image" style="background-image:url('/img/food3.jpg');"></div>
+                                                                                                                </figure>
+
+                        <div style="overflow: hidden; height: 25px; font-size: 1.2em; margin-bottom: 12px;position:relative;">
+                                                        Spicy Baked Eggs
+                        </div>
+
+                        <div style="overflow: hidden; height: 45px; font-size: 1em; margin-bottom: 12px;">
+                            Nisi veritatis vel vitae blanditiis quisquam qui asperiores. Cupiditate ullam soluta non in sint.
+                        </div>
+
+                                                                                                                                                                        <div class="food-order">
+                            <p class="food-price" style="font-size: 20px;line-height: 1em;"><sup>$</sup>82.29
+                                                        </p>
+                            <a href="javascript:void(0);" ng-click="addToCart($event, {&quot;id&quot;:23,&quot;name&quot;:&quot;Spicy Baked Eggs&quot;,&quot;imgUrl&quot;:&quot;food3.jpg&quot;,&quot;min_price&quot;:&quot;82.29&quot;,&quot;max_price&quot;:&quot;100.00&quot;,&quot;isspicy&quot;:0,&quot;description&quot;:&quot;Nisi veritatis vel vitae blanditiis quisquam qui asperiores. Cupiditate ullam soluta non in sint.&quot;,&quot;isrange&quot;:0,&quot;menu_index&quot;:23,&quot;created_at&quot;:&quot;2015-05-31 14:09:46&quot;,&quot;updated_at&quot;:&quot;2015-05-31 14:09:46&quot;}, true)"
+                               class="add-to-cart-link">Add To Cart</a>
+                        </div>
+                        <!-- /food-order -->
+                    </div>
+                    <!-- /store-item -->
+                </div><!-- /col-md-4 -->
+                                                            <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
+                    <div class="store-item wow fadeInDown"
+                                                     data-wow-delay="0.4s"
+                                                 style="visibility: hidden; -webkit-animation-name: none;">
+
+                        <figure style="position: relative;">
+                            <div class="store-image" style="background-image:url('/img/food3.jpg');"></div>
+                                                                                                                </figure>
+
+                        <div style="overflow: hidden; height: 25px; font-size: 1.2em; margin-bottom: 12px;position:relative;">
+                                                        Spicy Baked Eggs
+                        </div>
+
+                        <div style="overflow: hidden; height: 45px; font-size: 1em; margin-bottom: 12px;">
+                            Voluptas quibusdam aperiam sunt autem rerum. Atque esse et enim sint.
+                        </div>
+
+                                                                                                                                                                        <div class="food-order">
+                            <p class="food-price" style="font-size: 20px;line-height: 1em;"><sup>$</sup>64.94
+                                                        </p>
+                            <a href="javascript:void(0);" ng-click="addToCart($event, {&quot;id&quot;:24,&quot;name&quot;:&quot;Spicy Baked Eggs&quot;,&quot;imgUrl&quot;:&quot;food3.jpg&quot;,&quot;min_price&quot;:&quot;64.94&quot;,&quot;max_price&quot;:&quot;100.00&quot;,&quot;isspicy&quot;:0,&quot;description&quot;:&quot;Voluptas quibusdam aperiam sunt autem rerum. Atque esse et enim sint.&quot;,&quot;isrange&quot;:0,&quot;menu_index&quot;:24,&quot;created_at&quot;:&quot;2015-05-31 14:09:46&quot;,&quot;updated_at&quot;:&quot;2015-05-31 14:09:46&quot;}, true)"
+                               class="add-to-cart-link">Add To Cart</a>
+                        </div>
+                        <!-- /food-order -->
+                    </div>
+                    <!-- /store-item -->
+                </div><!-- /col-md-4 -->
+                            
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                    
+        </div>
+    </div>
+</section>
+
+
+
+<script src="/js/imagesloaded.pkgd.min.js"></script>
+<script src="/js/jquery.nav.js"></script>
+<script src="/js/wow.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/fly.min.js"></script>
+<script src='https://rawgit.com/amibug/fly/master/src/requestAnimationFrame.js'></script>
+<script type="text/javascript">
+    $(function () {
+        var cw = $('div.image-container').width();
+        $('div.banner-image').css('width', cw);
+        $('div.banner-image').css('height', 3 * cw / 4);
+
+        var storecw = $('.store-item').width();
+        $('.store-image').css('width', storecw);
+        $('.store-image').css('height', storecw);
+
+//        cart start
+//        var itemno = $('#itemno').html();
+//        $(".add-to-cart-link").click(function(event){
+//            itemno++;
+//            var endtop = $(window).height() * 0.25;
+//            var endleft = $(window).width();
+//
+//            var addcar = $(this);
+//            var img = addcar.parent().parent().find('.store-image').css('background-image');
+//            var src = img.replace('url(','').replace(')','');
+//            var flyer = $('<img class="u-flyer" src="'+src+'">');
+//            flyer.fly({
+//                start: {
+//                    left: event.clientX, //开始位置（必填）
+//                    top: event.clientY-200 //开始位置（必填）
+//                },
+//                end: {
+//                    left: endleft, //结束位置（必填）
+//                    top: endtop, //结束位置（必填）
+//                    width: 0, //结束时宽度
+//                    height: 0 //结束时高度
+//                },
+//                speed: 1,
+//                onEnd: function(){ //结束回调
+////                    $("#msg").show().animate({width: '250px'}, 200).fadeOut(1000); //提示信息
+////                    addcar.css("cursor","default").removeClass('orange').unbind('click');
+////                    this.destory(); //移除dom
+//
+//                    $('#itemno').html(itemno);
+//                }
+//            });
+//        });
+//        cart end
+    });
+</script>
+
+</body>
+</html>

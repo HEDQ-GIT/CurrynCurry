@@ -272,7 +272,7 @@ figure div.food-img {
 }
 
 figure figcaption {
-    padding: 2em;
+    padding: 2em 1em !important;
     color: #fff;
     text-transform: uppercase;
     font-size: 1.25em;

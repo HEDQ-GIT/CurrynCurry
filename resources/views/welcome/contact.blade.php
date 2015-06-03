@@ -22,12 +22,12 @@
         function initialize() {
             var mapOptions = {
                 zoom: 16,
-                center: new google.maps.LatLng(1.357428,103.884693)
+                center: new google.maps.LatLng(1.35852,103.884676)
             }
             var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
             var image = '/img/pin.png';
-            var myLatLng = new google.maps.LatLng(1.357428,103.884693);
+            var myLatLng = new google.maps.LatLng(1.35852,103.884676);
             var beachMarker = new google.maps.Marker({
                 position: myLatLng,
                 map: map,

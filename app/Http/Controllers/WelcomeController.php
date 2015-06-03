@@ -53,6 +53,13 @@ class WelcomeController extends Controller
         return view('welcome.menu', compact('dishes'))->with('itemno', $itemno);
     }
 
+//    public function menuPage()
+//    {
+//        $dishes = Dish::all();
+//        $itemno = count(Session::get('dishIds'));
+//        return view('welcome.menuPage', compact('dishes'))->with('itemno', $itemno);
+//    }
+
     public function addDish(Request $request)
     {
         $dishId = $request->get('dishId');

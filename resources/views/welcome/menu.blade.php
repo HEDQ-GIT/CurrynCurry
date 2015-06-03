@@ -76,20 +76,27 @@
                             <!-- /food-price -->
                             <ul>
                                 <li>
-                                    <h6>Old School</h6>
-
-                                    <p>2 farm fresh eggs, 2 bacon or 1 house made sausage, fresh greens</p>
+                                    <h6>fish head</h6>
+                                    <ul>
+                                        <li>Red Snapper Fish</li>
+                                        <li>Ang Lor Li Fish</li>
+                                        <li>Ang Sai Fish</li>
+                                    </ul>
+                                    {{--<p>Red Snapper Fish</p>--}}
+                                    {{--<p>Ang Lor Li Fish</p>--}}
+                                    {{--<p>Ang Sai Fish</p>--}}
                                 </li>
-                                <li>
-                                    <h6>Chilaquiles</h6>
 
-                                    <p>tortilla chips, fire roasted tomatillo salsa, 2 sunny side farm fresh eggs</p>
-                                </li>
-                                <li>
-                                    <h6>Pancakes</h6>
+                                {{--<li>--}}
+                                {{--<h6>Chilaquiles</h6>--}}
 
-                                    <p>seasonal toppings</p>
-                                </li>
+                                {{--<p>tortilla chips, fire roasted tomatillo salsa, 2 sunny side farm fresh eggs</p>--}}
+                                {{--</li>--}}
+                                {{--<li>--}}
+                                {{--<h6>Pancakes</h6>--}}
+
+                                {{--<p>seasonal toppings</p>--}}
+                                {{--</li>--}}
                             </ul>
                             {{--<a class="addspecial fa fa-plus-circle fa-3x" href="javascript:void(0)" ></a>--}}
 
@@ -162,23 +169,23 @@
                 {{--dish start--}}
                 <div class="col-md-4 col-sm-6 col-xs-12 mix" style="display: inline-block;">
                     <div class="store-item wow fadeInDown"
-                        @if($idx%3 ==1)
-                             data-wow-delay="0.2s"
-                        @elseif($idx%3 == 2 )
-                             data-wow-delay="0.4s"
-                        @endif
+                    @if($idx%3 ==1)
+                         data-wow-delay="0.2s"
+                            @elseif($idx%3 == 2 )
+                         data-wow-delay="0.4s"
+                         @endif
                          style="visibility: hidden; -webkit-animation-name: none;">
 
                         <figure style="position: relative;">
                             <div class="store-image" style="background-image:url('/img/{{ $dish->imgUrl }}');"></div>
                             {{--@if($dish->isspicy)--}}
-                                {{--<img src="/img/chili.png" alt="" style="position: absolute;top:0;left: 0;"/>--}}
+                            {{--<img src="/img/chili.png" alt="" style="position: absolute;top:0;left: 0;"/>--}}
                             {{--@endif--}}
                         </figure>
 
                         <div style="overflow: hidden; height: 25px; font-size: 1.2em; margin-bottom: 12px;position:relative;">
                             @if($dish->isspicy)
-                            {{--<img src="/img/chili.png" alt="" style="position: absolute;top:0;left: 0; height:90%;"/>--}}
+                                {{--<img src="/img/chili.png" alt="" style="position: absolute;top:0;left: 0; height:90%;"/>--}}
                                 <img src="/img/chili.png" alt="" style="height:90%;"/>
                             @endif
                             {{ $dish->name }}
@@ -195,10 +202,11 @@
                         {{--@endforeach--}}
                         {{--</ul>--}}
                         <div class="food-order">
-                            <p class="food-price" style="font-size: 20px;line-height: 1em;"><sup>$</sup>{{ $dish->min_price }}
-                            @if($dish->isrange)
+                            <p class="food-price" style="font-size: 20px;line-height: 1em;">
+                                <sup>$</sup>{{ $dish->min_price }}
+                                @if($dish->isrange)
                                     - <sup>$</sup>{{ $dish->max_price }}
-                            @endif
+                                @endif
                             </p>
                             <a href="javascript:void(0);" ng-click="addToCart($event, {{ $dish }}, true)"
                                class="add-to-cart-link">Add To Cart</a>

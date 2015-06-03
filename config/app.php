@@ -143,6 +143,7 @@ return [
 		'Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider',
 		'Laracasts\Generators\GeneratorsServiceProvider',
 		'Laracasts\Flash\FlashServiceProvider',
+		'Barryvdh\HttpCache\ServiceProvider',
 
 
 		/*
