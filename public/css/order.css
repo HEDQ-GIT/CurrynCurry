@@ -113,11 +113,22 @@ label.error{
 	padding: 0 !important;
 }
 .addbtn, .subbtn {
-	padding-top: 5px !important;
+	/*padding-top: 5px !important;*/
+	padding: 5% auto !important;
 	margin: 3px auto;
 	border-radius: 3px !important;
 	/*width: 35px;*/
 	/*margin: 5px 3px;*/
+	background-color: transparent !important;
+	border: none;
+	color: #6DB3BD;
+
+}
+
+.addbtn:hover, .addbtn:visited, .addbtn:active, .addbtn:focus, .subbtn:hover, .subbtn:visited, .subbtn:active, .subbtn:focus{
+	color: #6DB3BD !important;
+	border: none;
+	box-shadow: none;
 }
 
 .pagination {

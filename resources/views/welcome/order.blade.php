@@ -130,8 +130,8 @@
                                 <div class="row count-row">
                                     <label class="quan-input col-xs-3 col-sm-3 col-md-3 col-lg-3">{{ $dishNum->count }}</label>
                                     <div class="btn-grp btn-group-vertical col-md-offset-1 col-sm-offset-1 col-lg-offset-1 col-xs-offset-1 col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                                        <a class="addbtn btn btn-primary fa fa-plus" href="javascript:void(0)" ng-click="addToCart($event, {{ $dishNum->dish }}, false)"></a>
-                                        <a class="subbtn btn btn-primary fa fa-minus" href="javascript:void(0)" ng-click="removeDish($event, {{ $dishNum->dish }}, false)"></a>
+                                        <a class="addbtn btn btn-primary fa fa-plus fa-lg text-center" href="javascript:void(0)" ng-click="addToCart($event, {{ $dishNum->dish }}, false)"></a>
+                                        <a class="subbtn btn btn-primary fa fa-minus fa-lg text-center" href="javascript:void(0)" ng-click="removeDish($event, {{ $dishNum->dish }}, false)"></a>
                                     </div>
                                 </div>
                                 {{--<input class="quan-input form-control" type="text" value="{{ $dishNum->count }}"/>--}}

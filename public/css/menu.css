@@ -125,7 +125,6 @@ h6{
    ========================================================================== */
 .custom-bg{
     background-image:url('/img/curry.JPG');
-
 }
 
 .main-header h1{
@@ -136,6 +135,7 @@ h6{
 
 .main-header{
     position: relative;
+
 }
 
 .main-header .top-banner-container{
@@ -169,6 +169,8 @@ h6{
     -webkit-transform: translateX(-50%) translateY(-50%) translateZ(0);
     -moz-transform: translateX(-50%) translateY(-50%) translateZ(0);
     transform: translateX(-50%) translateY(-50%) translateZ(0);
+
+
 }
 .main-header .header-bottom-bar{
     position: absolute;
