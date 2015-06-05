@@ -59,7 +59,6 @@
 				<div class="tlt">
 					<ul class="header-texts" style="display: none;">
 						<li class="current">Dine with us!</li>
-						{{--<li class="">Try the Wine!</li>--}}
 						<li class="">Bring the Family!</li>
 						<li class="">Enjoy our Food!</li>
 						<li class="">Have a Great Time!</li>

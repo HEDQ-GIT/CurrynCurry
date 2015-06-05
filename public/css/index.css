@@ -23,46 +23,46 @@ h1 {
 
 /*nav start*/
 /*#toggle-menu {*/
-    /*position: absolute;*/
-    /*top: 1%;*/
-    /*right: 4%;*/
-    /*z-index: 999 !important;*/
+/*position: absolute;*/
+/*top: 1%;*/
+/*right: 4%;*/
+/*z-index: 999 !important;*/
 
-    /*color: #F8E8D8;*/
-    /*background-color: #B2A092;*/
+/*color: #F8E8D8;*/
+/*background-color: #B2A092;*/
 
-    /*padding: 10px 15px;*/
+/*padding: 10px 15px;*/
 /*}*/
 
 /*#toggle-menu:hover {*/
-    /*text-decoration: none;*/
-    /*color: #000000;*/
-    /*background-color: #F9E9D9;*/
+/*text-decoration: none;*/
+/*color: #000000;*/
+/*background-color: #F9E9D9;*/
 /*}*/
 
 /*#wheel {*/
-    /*padding: 30px;*/
+/*padding: 30px;*/
 /*}*/
 /*.wheel li a{*/
-    /*background: #F9E9D9;*/
-    /*font-family: 'Cookie';*/
-    /*font-weight: bold;*/
-    /*font-size: 1.8em;*/
-    /*padding: 5px;*/
-    /*text-align: center;*/
-    /*box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.5);*/
-    /*-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.5);*/
-    /*-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.5);*/
-    /*color: #8E4535;*/
-    /*-moz-transition: all 0.25s ease;*/
-    /*-webkit-transition: all 0.25s ease;*/
-    /*-o-transition: all 0.25s ease;*/
-    /*transition: all 0.25s ease;*/
+/*background: #F9E9D9;*/
+/*font-family: 'Cookie';*/
+/*font-weight: bold;*/
+/*font-size: 1.8em;*/
+/*padding: 5px;*/
+/*text-align: center;*/
+/*box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.5);*/
+/*-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.5);*/
+/*-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.5);*/
+/*color: #8E4535;*/
+/*-moz-transition: all 0.25s ease;*/
+/*-webkit-transition: all 0.25s ease;*/
+/*-o-transition: all 0.25s ease;*/
+/*transition: all 0.25s ease;*/
 /*}*/
 
 /*.wheel li a:hover {*/
-    /*background: #ffffff;*/
-    /*text-decoration: none;*/
+/*background: #ffffff;*/
+/*text-decoration: none;*/
 /*}*/
 /*nav end*/
 
@@ -156,8 +156,33 @@ h1 {
     z-index: 3;
 }
 
+@media (max-width: 350px){
+    .single-page-header-text .tlt span {
+        font-size: 20px !important;
+    }
+}
+
+@media (max-width: 450px) and (min-width: 350px){
+    .single-page-header-text .tlt span {
+        font-size: 30px !important;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 450px) {
+    .single-page-header-text .tlt span {
+        font-size: 50px !important;
+    }
+}
+
+@media (max-width: 992px) and (min-width: 768px) {
+    .single-page-header-text .tlt span {
+        font-size: 80px !important;
+    }
+}
+
 .single-page-header-text .tlt span {
     font-size: 132px;
+    /*font-size: 50px;*/
     font-weight: normal;
     color: #fff;
     margin: 0;
@@ -266,7 +291,7 @@ figure div.food-img {
     min-height: 100%;
     max-width: 100%;
     opacity: 0.8;
-	background-size: cover;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
 }
