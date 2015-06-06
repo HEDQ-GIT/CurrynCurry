@@ -158,7 +158,11 @@ h1 {
 
 @media (max-width: 350px){
     .single-page-header-text .tlt span {
-        font-size: 20px !important;
+        font-size: 30px !important;
+    }
+    .single-page-header-text{
+        transform: translateY(650%);
+        -webkit-transform: translateY(650%);
     }
 }
 
@@ -166,17 +170,29 @@ h1 {
     .single-page-header-text .tlt span {
         font-size: 30px !important;
     }
+    .single-page-header-text{
+        transform: translateY(500%);
+        -webkit-transform: translateY(500%);
+    }
 }
 
 @media (max-width: 768px) and (min-width: 450px) {
     .single-page-header-text .tlt span {
         font-size: 50px !important;
     }
+    .single-page-header-text{
+        transform: translateY(300%);
+        -webkit-transform: translateY(300%);
+    }
 }
 
 @media (max-width: 992px) and (min-width: 768px) {
     .single-page-header-text .tlt span {
         font-size: 80px !important;
+    }
+    .single-page-header-text{
+        transform: translateY(100%);
+        -webkit-transform: translateY(100%);
     }
 }
 

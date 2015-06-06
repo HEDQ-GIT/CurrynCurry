@@ -149,11 +149,13 @@ h6{
 }
 
 .main-header .top-banner-container-style{
-    height: 600px;
+    /*height: 600px;*/
+    height: 66.67% !important;
 }
 .main-header .top-banner-container .top-banner-bg{
     width: 100%;
-    height: 100%;
+    /*height: 100%;*/
+    height: 66.67%;
     background-size: cover;
     -webkit-transform-origin: center bottom;
     -moz-transform-origin: center bottom;
@@ -177,6 +179,7 @@ h6{
     bottom: 0;
     left: 0;
     width: 100%;
+    height: 8% !important;
     background: #FF9500;
   	opacity: 0.8;
 }

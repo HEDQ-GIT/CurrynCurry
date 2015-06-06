@@ -28,8 +28,8 @@
 
 <header class="main-header" id="top">
     <div class="top-banner-container top-banner-container-style">
-        <div class="top-banner-bg custom-bg" style=""></div>
-        {{--<img src="/img/curry.JPG" alt="" class="img-responsive"/>--}}
+        {{--<div class="top-banner-bg custom-bg" style=""></div>--}}
+        <img src="/img/curry.JPG" alt="" class="img-responsive center-block"/>
         <div class="top-banner" style="opacity: 1;">
             <div class="top-image animated fadeInDown">
                 <h1>Our Food Menu</h1>
@@ -42,14 +42,14 @@
         </div>
         <!-- /top-banner -->
         <div class="header-bottom-bar">
-            <div class="row">
-                <ul class="category-filter store-category-filter">
-                    <li class="filter active" data-filter="all"></li>
-                    <li class="filter" data-filter=".main"></li>
-                    <li class="filter" data-filter=".salad"></li>
-                    <li class="filter" data-filter=".starter"></li>
-                </ul>
-            </div>
+            {{--<div class="row">--}}
+                {{--<ul class="category-filter store-category-filter">--}}
+                    {{--<li class="filter active" data-filter="all"></li>--}}
+                    {{--<li class="filter" data-filter=".main"></li>--}}
+                    {{--<li class="filter" data-filter=".salad"></li>--}}
+                    {{--<li class="filter" data-filter=".starter"></li>--}}
+                {{--</ul>--}}
+            {{--</div>--}}
             <!-- /row -->
         </div>
         <!-- /header-bottom-bar -->
@@ -79,7 +79,7 @@
                                     <h6>fish head</h6>
                                     <ul>
                                         <li>Red Snapper Fish</li>
-                                        <li>Ang Lor Li Fish</li>
+                                        <li>Ang Kor Li Fish</li>
                                         <li>Ang Sai Fish</li>
                                     </ul>
                                     {{--<p>Red Snapper Fish</p>--}}
