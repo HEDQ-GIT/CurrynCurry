@@ -101,9 +101,20 @@ section{
 h1, h2, h3, h4, h5, h6{
     font-family: "Palatino Linotype", Palatino, "Book Antiqua", "URW Palladio L", serif;
 }
+@media (max-width: 350px) and (min-width: 350px){
+    h1 {
+        font-size: 30px !important;
+    }
+}
+@media (max-width: 450px) and (min-width: 350px){
+    h1 {
+        font-size: 32px !important;
+    }
+}
 h1{
     font-size: 36px;
 }
+
 h2{
     font-size: 30px;
 }

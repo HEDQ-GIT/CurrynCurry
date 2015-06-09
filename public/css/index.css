@@ -158,11 +158,11 @@ h1 {
 
 @media (max-width: 350px){
     .single-page-header-text .tlt span {
-        font-size: 30px !important;
+        font-size: 40px !important;
     }
     .single-page-header-text{
-        transform: translateY(650%);
-        -webkit-transform: translateY(650%);
+        transform: translateY(500%);
+        -webkit-transform: translateY(500%);
     }
 }
 
@@ -171,8 +171,8 @@ h1 {
         font-size: 30px !important;
     }
     .single-page-header-text{
-        transform: translateY(500%);
-        -webkit-transform: translateY(500%);
+        transform: translateY(400%);
+        -webkit-transform: translateY(400%);
     }
 }
 
