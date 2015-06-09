@@ -168,7 +168,7 @@ h1 {
 
 @media (max-width: 450px) and (min-width: 350px){
     .single-page-header-text .tlt span {
-        font-size: 30px !important;
+        font-size: 45px !important;
     }
     .single-page-header-text{
         transform: translateY(400%);
